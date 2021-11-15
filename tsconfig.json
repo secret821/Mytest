@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "ES6",
+		"target": "ES5",
+		"jsx": "react",
+		"allowJs": true,
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"lib": [
+			"ES2015",
+			"DOM"
+		]
+	},
+	"include": ["src"]
+}

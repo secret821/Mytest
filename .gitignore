@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.temp
+node_modules
+dist
+/src-js
+yarn.lock
+package-template.iml
+/test/src/bundle.js
+/test/src/meta.json
+types

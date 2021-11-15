@@ -1,0 +1,28 @@
+{
+	"name": "@spark/test",
+	"version": "1.0.0",
+	"main": "dist/bundle.js",
+	"types": "types/index.d.ts",
+	"license": "MIT",
+	"scripts": {
+		"dev": "npm-run-all -p -r dev:**",
+		"dev:me": "spark package pack -s src -o test/src/bundle.js -w",
+		"dev:test": "cd test && npm run dev",
+		"build": "tsc --outDir 'src-js' -t es2017 -d --declarationDir 'types' --jsx preserve && node scripts/copy-others.js 'src-js'",
+		"pack": "spark package pack -s src -o dist/bundle.js -p",
+		"declare": "tsc -d --declarationDir 'types' --emitDeclarationOnly",
+		"pub": "npm run build && read -p 'Input version: ' version && read -p 'Input remark: ' remark && spark package publish -s src -v $version -r $remark"
+	},
+	"dependencies": {
+		"@types/react": "^16.9.56",
+		"fyge": "^3.0.4",
+		"spark-wrapper-fyge": "^1.0.26"
+	},
+	"devDependencies": {
+		"fs-extra": "^9.0.1",
+		"less": "^4.1.0",
+		"npm-run-all": "^4.1.5",
+		"tslib": "^2.0.1",
+		"typescript": "^4.1.3"
+	}
+}

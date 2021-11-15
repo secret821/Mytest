@@ -1,0 +1,43 @@
+{
+	"id": "Test",
+	"name": "测试模块",
+	"desc": "实现了测试模块",
+	"config": {
+		"Test": {
+			"props": [
+				{
+					"name": "textArray",
+					"alias": "文本组",
+					"type": "string",
+					"default": ["aaa", "bbb", "ccc", "ddd"]
+				}
+			],
+			"assets": [
+				{
+					"name": "齿轮",
+					"url": "//yun.duiba.com.cn/spark/assets/齿轮8.fce30eaadda192b44a1b80038011947830d45ad8.png",
+					"uuid": "image",
+					"ext": ".png"
+				}
+			],
+			"events": {
+				"in": {
+					"start": {
+						"alias": "开始"
+					},
+					"stop": {
+						"alias": "停止"
+					}
+				},
+				"out": {
+					"show_one": {
+						"alias": "展示一个文本",
+						"data": {
+							"text": "文本"
+						}
+					}
+				}
+			}
+		}
+	}
+}
