@@ -1,22 +1,28 @@
-'use strict';
+"use strict"
 
-import React from 'react';
-import { RES_PATH } from '../../../sparkrc.js';
-import { observer } from 'mobx-react';
-import store from '../../store/index';
-import modalStore from '@src/store/modal';
-import API from '../../api';
-import './homepage.less';
+import React from "react"
+import { RES_PATH } from "../../../sparkrc.js"
+import { observer } from "mobx-react"
+import store from "../../store/index"
+import modalStore from "@src/store/modal"
+import API from "../../api"
+import "./homepage.less"
+import Index from "./Iconlist/Index.jsx"
 
 @observer
 class Homepage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.state = {
+      num: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    }
   }
 
   render() {
+    const { num } = this.state
     return (
       <div className="homepage">
+        <Index />
         <div className="bgalls">
           <span className="bgall"></span>
           <span className="top"></span>
@@ -141,31 +147,17 @@ class Homepage extends React.Component {
           <span className="mqian"></span>
         </div>
         <div className="titles">
-          <span className="_1"></span>
-          <span className="_2"></span>
-          <span className="_3"></span>
-          <span className="_4"></span>
-          <span className="_5"></span>
-          <span className="_6"></span>
-          <span className="_7"></span>
-          <span className="_8"></span>
-          <span className="_9"></span>
-          <span className="_10"></span>
-          <span className="_11"></span>
-          <span className="_12"></span>
-          <span className="_13"></span>
-          <span className="_14"></span>
-          <span className="_15"></span>
-          <span className="_16"></span>
-          <span className="_17"></span>
-          <span className="_18"></span>
-          <span className="_19"></span>
-          <span className="_20"></span>
-          <span className="title"></span>
+          {num.map((item, index) => {
+            return (
+              <div key={index}>
+                <span className={`_${index + 1}`}></span>
+              </div>
+            )
+          })}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Homepage;
+export default Homepage

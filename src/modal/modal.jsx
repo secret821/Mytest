@@ -3,7 +3,11 @@ import './modal.less';
 import { observer } from 'mobx-react';
 import modalStore from '../store/modal';
 import { toJS } from 'mobx';
-export const cfg = {};
+import Rule from "../components/Rule/Rule"
+
+export const cfg = {
+  Rule:Rule
+};
 
 @observer
 class Modal extends Component {

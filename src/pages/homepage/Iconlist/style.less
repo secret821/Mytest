@@ -1,0 +1,116 @@
+@import "@src/styles/common.less";
+.iconWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 999;
+  .musicOpen {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:270px;
+    right: 24px;
+    .webp('//yun.duiba.com.cn/aurora/assets/2382b7bb6ad1c16755ecb7439a933e5224ec35ab.png');
+  }
+  .musicClose {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:270px;
+    right: 24px;
+    .webp('//yun.duiba.com.cn/aurora/assets/aff7fd790420223872e2332756bb6fb8a001dbc1.png');
+  }
+  .icon-rule {
+    .webp("//yun.duiba.com.cn/aurora/assets/ec8e5dc3afc436da9fa55a781e98bea32d7c1215.png");
+    .absNormal(121px, 49px, 25px, @left: 0);
+    pointer-events: auto;
+  }
+  .icon-prize {
+    .webp("//yun.duiba.com.cn/aurora/assets/cbab8396556cf7ef49472380fd1c842b671c963f.png");
+    .absNormal(127px, 49px, 25px, 0);
+    pointer-events: auto;
+  }
+  .icon-kefu {
+    .webp("//yun.duiba.com.cn/aurora/assets/b1036dd2246c32b36c24880f00acb41de48bdff1.png");
+    .absNormal(82px, 82px, 141px, 15px);
+    pointer-events: auto;
+  }
+  .icon-story {
+    .absNormal(139px, 118px, @bottom: 75px, @left: 5px);
+    pointer-events: auto;
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .index-title {
+    .webp("//yun.duiba.com.cn/aurora/assets/db8261f6c6a5b335b1049814d507ec4b1d07ad95.png");
+    .absNormal(534px, 390px, 160px, @left: 102px);
+    // .title-ani{
+    //   width: 734px;
+    //   height: 237px;
+    //   z-index: 999;
+    // }
+  }
+  .my-credits {
+    .webp("//yun.duiba.com.cn/aurora/assets/7e5100f3f3c6b3a25eb9fbeabea1565d7d8721a2.png");
+    .absNormal(280px, 70px, 740px, @top: 600px, @right: 230px);
+    margin: 0 auto;
+    .credits-count {
+      display: block;
+      height: 37px;
+      margin-top: 16px;
+      .textfclaw(31px, #f5d7a4, @align: center, @lineH: 37px);
+    }
+  }
+  .icon-lottery {
+    .absNormal(109px, 124px, 380px, @left: 15px);
+    pointer-events: auto;
+    // .lottery-icom {
+      // width: 105px;
+      // height: 124px;
+      z-index: 999;
+      .webp('//yun.duiba.com.cn/aurora/assets/e5da71740d562e5d6c6214ef7f835c4dc76a3111.png');
+    // }
+    // .cost-num {
+    //   .textfclaw(24px, #20548f, @align: center);
+    //   font-weight: bold;
+    //   width: 155px;
+    //   margin-left: -25px;
+    //   z-index: 999;
+    //   // text-shadow: 3px 0px 0px #ff4759,-3px 0px 0px #ff4759, 0px 3px 0px #ff4759, 0px -3px 0px #ff4759;
+    // }
+  }
+  .toGetCoins {
+    .absNormal(115px, 124px, 580px, @left: 15px);
+    pointer-events: auto;
+    width: 105px;
+    height: 124px;
+    z-index: 999;
+    .webp('//yun.duiba.com.cn/aurora/assets/3ef1f1cb161cb2cde9e63c888ca289da67608b24.png');
+  }
+  .endbtn {
+    .webp("//yun.duiba.com.cn/aurora/assets/0fbc9ba968bc6a5fbaaad2fa8a57910bb18a7466.png");
+    .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
+    margin: 0 auto;
+    pointer-events: auto;
+    z-index: 999;
+  }
+  .startbtn {
+    .webp("//yun.duiba.com.cn/aurora/assets/878727fc0e68de45d249661aa064eceff71713f9.png");
+    .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
+    margin: 0 auto;
+    pointer-events: auto;
+    z-index: 999;
+  }
+  .signedBtn {
+    .webp("//yun.duiba.com.cn/aurora/assets/bc7b46d5a6434b21b99b8efcf136c7a6f64ec447.png");
+    .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
+    margin: 0 auto;
+    pointer-events: auto;
+    z-index: 999;
+  }
+}
