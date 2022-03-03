@@ -1,0 +1,29 @@
+@import "@src/styles/common.less";
+.IntroModal {
+  .absNormal(731px, 1247px, calc(~"(100vh - 1247px)/2"), calc(~"(100vw - 731px)/2"));
+  .webp('//yun.duiba.com.cn/aurora/assets/4a09ed6591f338c7f1fdff1b92a203da0bcab440.png');
+  margin-top: -100px;
+  .intro-close {
+    // .webp("//yun.duiba.com.cn/aurora/assets/7d04b60e2131f6c8313bf2c9a860fd706fe74b07.png");
+    // .absNormal(83px, 83px, 1122px, @left: 323px);
+    .webp("//yun.duiba.com.cn/aurora/assets/d3ecd26d69478ba65c0076267a2dafb6ff77e5e1.png");
+    .absNormal(50px, 50px, @bottom: 0px, @left: 0, @right: 0);
+    margin: 0 auto;
+  }
+  .intro-image {
+    .absNormal(551px, 415px, 324px, @left: 80px);
+    border-radius: 20px;
+  }
+  .intro-title { 
+    .textfclaw(36px, #062c17, @align: center, @lineH: 84px);
+    .absNormal(560px, 84px, 740px, @left: 80px);
+    font-weight: bold;
+  }
+  .intro-content {
+    .textfclaw(24px, #4f6b5c, @align: justify);
+    .absNormal(560px, 228px, 810px, @left: 80px);
+    overflow-y: scroll;
+    word-break: break-all;
+    padding: 0 30px;
+  }
+}

@@ -66,30 +66,31 @@
       .textfclaw(31px, #f5d7a4, @align: center, @lineH: 37px);
     }
   }
+
   .icon-lottery {
-    .absNormal(109px, 124px, 380px, @left: 15px);
+    .absNormal(109px, auto, 350px, @left: 15px);
     pointer-events: auto;
-    // .lottery-icom {
-      // width: 105px;
-      // height: 124px;
+    .lottery-icom {
+      width: 114px;
+      height: 122px;
+      position: absolute;
+      top:0px;
+      left: 0px;
+      .webp("//yun.duiba.com.cn/aurora/assets/30b9a8a2267b5e15aa3190633ac8736d5b61f82c.png");
+    }
+    .cost-num {
+      .textfclaw(24px, #9f3211, @align: center);
+      font-weight: bold;
+      width: 155px;
+      margin-left: -20px;
+      margin-top: 104px;
       z-index: 999;
-      .webp('//yun.duiba.com.cn/aurora/assets/e5da71740d562e5d6c6214ef7f835c4dc76a3111.png');
-    // }
-    // .cost-num {
-    //   .textfclaw(24px, #20548f, @align: center);
-    //   font-weight: bold;
-    //   width: 155px;
-    //   margin-left: -25px;
-    //   z-index: 999;
-    //   // text-shadow: 3px 0px 0px #ff4759,-3px 0px 0px #ff4759, 0px 3px 0px #ff4759, 0px -3px 0px #ff4759;
-    // }
+      // text-shadow: 3px 0px 0px #ff4759,-3px 0px 0px #ff4759, 0px 3px 0px #ff4759, 0px -3px 0px #ff4759;
+    }
   }
   .toGetCoins {
-    .absNormal(115px, 124px, 580px, @left: 15px);
+    .absNormal(115px, 124px, 520px, @left: 15px);
     pointer-events: auto;
-    width: 105px;
-    height: 124px;
-    z-index: 999;
     .webp('//yun.duiba.com.cn/aurora/assets/3ef1f1cb161cb2cde9e63c888ca289da67608b24.png');
   }
   .endbtn {
@@ -97,20 +98,23 @@
     .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
     margin: 0 auto;
     pointer-events: auto;
-    z-index: 999;
   }
   .startbtn {
     .webp("//yun.duiba.com.cn/aurora/assets/878727fc0e68de45d249661aa064eceff71713f9.png");
     .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
     margin: 0 auto;
     pointer-events: auto;
-    z-index: 999;
   }
   .signedBtn {
     .webp("//yun.duiba.com.cn/aurora/assets/bc7b46d5a6434b21b99b8efcf136c7a6f64ec447.png");
     .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
     margin: 0 auto;
     pointer-events: auto;
-    z-index: 999;
+  }
+  .prebtn{
+    .webp("//yun.duiba.com.cn/aurora/assets/063c73b4e419697fc1dded6bb1830ad0f514949c.png");
+    .absNormal(340px, 104px, @bottom: 72px, @right: 0, @left: 0);
+    margin: 0 auto;
+    pointer-events: auto;
   }
 }

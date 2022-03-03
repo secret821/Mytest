@@ -4,9 +4,15 @@ import { observer } from 'mobx-react';
 import modalStore from '../store/modal';
 import { toJS } from 'mobx';
 import Rule from "../components/Rule/Rule"
+import wxcode from "@src/components/WxCode/wxcode";
+import Service from "@src/components/ServiceModal/servicemodal";
+import taskModal from "@src/components/taskModal/Index";
 
 export const cfg = {
-  Rule:Rule
+  Rule:Rule,
+  wxcode:wxcode,
+  Service:Service,
+  taskModal:taskModal
 };
 
 @observer
