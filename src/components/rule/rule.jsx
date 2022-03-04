@@ -16,33 +16,34 @@ class Rule extends Component {
   }
 
   componentDidMount() {
-    this.getRule()
+    // this.getRule()
   }
 
-  getRule = async () => {
-    const result = await API.getRule()
-    if (result && result.success) {
-      this.setState({
-        text: result.data,
-      })
-    }
-  }
+  // getRule = async () => {
+  //   const result = await API.getRule()
+  //   if (result && result.success) {
+  //     this.setState({
+  //       text: result.data,
+  //     })
+  //   }
+  // }
 
  close =()=>{
-  modalStore.closePop()
+  this.closeModal()
  }
 
   render() {
+    console.log(this.props)
     return (
       <div className="rule modalbg">
         <span className="background"></span>
         <span className="redBtn" onClick={this.close}></span>
         <article
           className="activityRulesActivityRules"
-          dangerouslySetInnerHTML={{ __html: this.state.text }}
+          dangerouslySetInnerHTML={{ __html: this.props.ruleInfo }}
         ></article>
       </div>
     )
   }
 }
-export default observer(Rule)
+export default Rule

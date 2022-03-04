@@ -1,10 +1,47 @@
 import { makeAutoObservable } from "mobx"
 import API from "../api/index"
 import modalStore from "@src/store/modal"
+
+const LotteryData = {
+  lotteryPrizeList: [],
+
+  async onInitLotteryData() {
+    const {success, data} = await API.prizeQuery()
+    if (success) {
+      this.lotteryPrizeList = data
+    }
+  }
+}
+
+const GameIndex = {
+  GameInfo: {
+    gameRul:" 2",
+    targetScore: 20,
+    frequency: 22,
+    gameTime: 100,
+    newUsr: 1,
+    coins: 22
+  },
+
+  async setGameInfo() {
+    const { success, data } = await API.gameIndex()
+    if (success) {
+      this.GameInfo = data
+    }
+  },
+
+  reduceFrequency() {
+    this.GameInfo.frequency--
+  }
+}
+
 const store = makeAutoObservable({
   ruleInfo: "",
   frontVariable: {},
-  indexInfo: {},
+  indexInfo: {
+    totalCredits: 0,
+    prizeCredits: 20
+  },
   cardInfo:[],
   //前端开发配置
   curPageData: {},
@@ -21,6 +58,15 @@ const store = makeAutoObservable({
   setIndexInfo(indexInfo) {
     this.indexInfo = indexInfo
   },
+
+  /**
+   * 扣除疾风
+   * @param {*} num 
+   */
+  reduceCredits(num = 0) {
+    this.indexInfo.totalCredits -= num
+  },
+
   setCardInfo(cardInfo){
     this.cardInfo = cardInfo
   },
@@ -57,6 +103,9 @@ const store = makeAutoObservable({
         this.setCardInfo(cards)
       // })
     }
-  }
+  },
+
+  ...GameIndex,
+  ...LotteryData
 })
 export default store

@@ -14,5 +14,42 @@ const proxy = {
   "GET /home/accessData.do": accessData,
   "GET /home/cardList.do": cardList,
   ...require("./common/task"),
+  'GET /game/start.do': {
+    success: true,
+    data: {
+      startId: 111
+    }
+  },
+  'GET /game/submit.do': {
+    success: true,
+    data: null
+  },
+  'GET /game/index.do': {
+    success: true,
+    data: {
+      gameRul:" 2",
+      targetScore: 20,
+      frequency: 22,
+      gameTime: 100,
+      newUsr: 0,
+      coins: 11
+    }
+  },
+  "GET /rule_1.query": {
+    success: true,
+    data: Array(8).fill(1).map((_, index) => ({
+      icon: `http://qnpic.top/yoona${index+2}.jpg`,
+      name: 'yoona'+(index +2),
+      prizeId: 'thanks'
+    }))
+  },
+  'GET /prize/join.do': {
+    success: true,
+    data: {
+      prizeName: 11,
+      icon: 'http://qnpic.top/yoona2.jpg',
+      prizeId: 'thanks'
+    }
+  }
 };
 module.exports = proxy;

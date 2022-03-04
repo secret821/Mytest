@@ -1957,7 +1957,7 @@ exports.ResJson = {
             }
         }
     ],
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646309118/resource/"
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646366679/resource/"
 };
 
 
@@ -3638,7 +3638,8 @@ var Tools = (function () {
     };
     Tools.PAGE = {
         isNewGuy: false,
-        countDownNum: 30
+        countDownNum: 30,
+        musicStatus: false
     };
     Tools.cacheKey = "guideThreeSquirrels";
     Tools.indexMask = {};
@@ -3911,6 +3912,7 @@ function randomNum(m, n) {
 var GameEvent = {
     GAME_START: 'GAME_START',
     GAME_OVER: 'GAME_OVER',
+    GAME_BGM: 'GAME_BGM',
 };
 var CountDownBoard = (function (_super) {
     __extends(CountDownBoard, _super);
@@ -4179,10 +4181,11 @@ var IndexScene = (function (_super) {
             return this._musicStatus;
         },
         set: function (v) {
-            if (this._musicStatus === v)
-                return;
+            // if (this._musicStatus === v)
+            //     return;
             this._musicStatus = v;
             this.musicBtn.texture = RES_1.RES.getRes(v ? 'music-on.png' : 'music-off.png');
+            Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_BGM, v);
         },
         enumerable: false,
         configurable: true
@@ -4223,7 +4226,7 @@ var IndexScene = (function (_super) {
         this.initCountDown();
         this.initScoreBoard();
         this.onInitGamer();
-        this.initMusicBtn(true);
+        this.initMusicBtn(Tools_1.Tools.PAGE.musicStatus);
     };
     IndexScene.prototype.start = function (data) {
         return __awaiter(this, void 0, void 0, function () {
@@ -4252,7 +4255,6 @@ var IndexScene = (function (_super) {
         this.musicBtn = UI_1.default.Btn(this, isOn ? 'music-on.png' : 'music-off.png', function () {
             _this.musicStatus = !_this.musicStatus;
         }, this, 660, layers_1.layers.stageOffsetY + 200);
-        this.musicStatus = isOn;
     };
     IndexScene.prototype.onShowPreCountDown = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -4333,12 +4335,17 @@ var IndexScene = (function (_super) {
             });
         });
     };
+    IndexScene.prototype.onGameInit = function () {
+        this.score = 0;
+        this.musicStatus = Tools_1.Tools.PAGE.musicStatus;
+        this.recoverGameEles();
+        this.onInitGamer();
+    };
     IndexScene.prototype.onGameStart = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.score = 0;
                         if (!Tools_1.Tools.PAGE.isNewGuy) return [3, 2];
                         return [4, this.onShowNewGuySteps()];
                     case 1:
@@ -4347,6 +4354,7 @@ var IndexScene = (function (_super) {
                     case 2: return [4, this.onShowPreCountDown()];
                     case 3:
                         _a.sent();
+                        this.onGameInit();
                         this.GameStatus = 1;
                         this.CountDownCont.restart();
                         return [2];
@@ -4362,12 +4370,14 @@ var IndexScene = (function (_super) {
         });
     };
     IndexScene.prototype.onInitGamer = function () {
-        this.RobotGameEle = this.addChild(new GameEleSprit('robotGamer.png'));
+        if (!this.RobotGameEle) {
+            this.RobotGameEle = this.addChild(new GameEleSprit('robotGamer.png'));
+            this.RobotGameEle.addPythicCont(new RectPythicCont(50, 190, 100, 60), true);
+        }
         this.RobotGameEle.position.set(375 - this.RobotGameEle.width / 2, 1100);
-        this.RobotGameEle.addPythicCont(new RectPythicCont(50, 190, 100, 60), true);
     };
     IndexScene.prototype.onInitFallGameEle = function () {
-        this.spl = randomNum(40, 300);
+        this.spl = randomNum(80, 300);
         var curr = this.currGameEleResource;
         var currResource = curr.resource;
         var currGameELe = GPool_1.GPool.takeOut(currResource) || this.addChild(new GameEleSprit(currResource, curr.score));
@@ -4424,35 +4434,45 @@ var IndexScene = (function (_super) {
             return;
         this.RobotGameEle.position.set(this.startRobotPos.x + currPos.x - this.startPos.x, this.startRobotPos.y);
     };
+    IndexScene.prototype.recoverGameEles = function () {
+        for (var i = 0; i < this.gameElesList.length; i++) {
+            var gameEle = this.gameElesList[i];
+            gameEle.visible = false;
+            GPool_1.GPool.takeIn(gameEle.resource, gameEle);
+        }
+        this.gameElesList.length = 0;
+    };
     IndexScene.prototype.frameUpdate = function () {
-        var _this = this;
         if (!this.GameStatus)
             return;
         var delta = this.clock.getDelta();
+        if (delta > 100)
+            return;
         var sdt = this.speed * delta;
         this._cacheLen += sdt;
         if (this._cacheLen > this.spl) {
             this._cacheLen = 0;
             this.onInitFallGameEle();
         }
-        this.gameElesList.forEach(function (item) {
+        for (var i = this.gameElesList.length - 1; i >= 0; i--) {
+            var item = this.gameElesList[i];
             item.y += sdt;
             if (item.y > 1624) {
                 item.visible = false;
                 GPool_1.GPool.takeIn(item.resource, item);
-                _this.gameElesList.splice(_this.gameElesList.indexOf(item), 1);
+                this.gameElesList.splice(i, 1);
             }
-            if (onCollsionJudge(item.pythicCont.commonPythicPos, _this.RobotGameEle.pythicCont.commonPythicPos)) {
+            if (onCollsionJudge(item.pythicCont.commonPythicPos, this.RobotGameEle.pythicCont.commonPythicPos)) {
                 item.visible = false;
                 GPool_1.GPool.takeIn(item.resource, item);
-                _this.gameElesList.splice(_this.gameElesList.indexOf(item), 1);
+                this.gameElesList.splice(i, 1);
                 if (item.score == -1) {
                     console.log('boom', item);
-                    _this.onGameOver();
+                    this.onGameOver();
                 }
-                _this.score += item.score;
+                this.score += item.score;
             }
-        });
+        }
     };
     return IndexScene;
 }(Scene_1.Scene));
