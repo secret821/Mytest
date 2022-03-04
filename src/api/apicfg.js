@@ -8,7 +8,9 @@ const apiCfg = {
   },
   index:`home/index.do`,
   accessData:`home/accessData.do`,
-  cardList:`home/cardList.do`
+  cardList:`home/cardList.do`,
+  join:`home/join.do`,
+  GET_PHOTOLIST: `home/landscapePhoto.do`,
 }
 
 export default apiCfg;

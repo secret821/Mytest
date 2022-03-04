@@ -8,37 +8,156 @@ import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./homepage.less"
 import Index from "./Iconlist/Index.jsx"
+import { _throttle } from "@src/utils/utils"
+import EventBus from "@duiba/event-bus";
+import { SvgaPlayer, loadSvga } from "@spark/animation";
+import { SVGA_RES_INDEX } from "@src/utils/constants";
+import * as actions from "@src/store/action";
 
 @observer
 class Homepage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cards: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      cards: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      homeInfo: {},
+      cardInfo: [],
+      showSignAni: false, // 是否展示印章动画
       // totalCredits:0,
+    }
+    this.locateRef = React.createRef()
+  }
+
+  componentDidMount = async () => {
+    await store.getIndex()
+    await this.getCardInfo()
+    EventBus.on("UPDATE", this.update, this);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    EventBus.off("UPDATE", this.update);
+  }
+
+  update = async()=>{
+    const res = await API.join()
+    if(res?.success){
+      this.setState({
+        credits:res?.data?.credits
+      })
+      store.getIndex()
+      this.setState({
+        showSignAni: true
+      });
+      modalStore.pushPop('album',{credits:this.state.credits})
+      // this._type = +data?.taskTypeBySignDays;
     }
   }
 
-componentDidMount = async()=>{
-  // modalStore.pushPop('taskModal')
-  await store.getIndex()
-}
+  async componentDidUpdate(preprops, prestate) {
+    if (!preprops?.homeInfo && !this.props.homeInfo?.firstJoin) {
+      if (!prestate.pageShow && !this.state.pageShow) {
+        this.setState({ pageShow: true })
+      }
+    }
+    if (
+      !preprops?.homeInfo?.currentTaskId !== this.props.homeInfo?.currentTaskId
+    ) {
+      if (this.props.homeInfo?.currentTaskId) {
+        // 当前站点位置
+        let _locY =
+          this.locateRef.current?.children[
+            +this.props.homeInfo?.currentTaskId - 1
+          ].offsetTop
+        window.scrollTo(0, _locY - 250)
+      }
+    }
+  }
 
-getAllCoin(){
-  const { totalCredits } = store?.indexInfo
-  console.log(totalCredits,'totalCredits-------')
-  this.setState({
-    totalCredits:totalCredits,
-  })
-}
+
+
+  getCardInfo =async()=> {
+    const res = await API.cardList()
+    if (res?.success) {
+      this.setState({
+        cardInfo: res?.data.length
+          ? res?.data.map((item, inedx) => {
+              return item
+            })
+          : []
+      })
+      store.setCardInfo(res)
+    }
+  }
+  getAllCoin() {
+    const { totalCredits } = store?.indexInfo
+    console.log(totalCredits, "totalCredits-------")
+    this.setState({
+      totalCredits: totalCredits,
+    })
+  }
+
+  // 已打卡山-展示简介
+  showDeatil = _throttle(index => {
+    if (+index + 1 <= +store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus) {
+      // store.dispatch(actions.changeSelectIndex(index));
+      modalStore.pushPop('intro',{cardInfo:this.state.cardInfo,index:index})
+    } else {
+      Toast("该建筑未解锁");
+    }
+  });
+
+
 
   render() {
-    const { cards } = this.state
+    const { cards, cardInfo,showSignAni } = this.state
     const { totalCredits } = store.indexInfo
-    console.log(store.indexInfo?.totalCredits,'totalCredits------=====')
+    const homeInfo = store.indexInfo
+    console.log(store.indexInfo?.totalCredits, "totalCredits------=====")
     return (
       <div className="homepage">
-        {totalCredits&&<Index data={store.indexInfo}></Index>}
+        {totalCredits && <Index data={store.indexInfo}></Index>}
+          <div className="locateWrap" ref={this.locateRef}>
+            {cardInfo?.map((item, index) => {
+              return (
+                <div
+                  className={`locatpos${+index + 1}`}
+                  key={index}
+                  onClick={() => {
+                    this.showDeatil(index)
+                  }}
+                >
+                  {+index + 1 >
+                  +homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus ? (
+                    ""
+                  ) : (
+                    <div className="signedTag">
+                      {showSignAni &&
+                        index + 1 === +homeInfo?.currentTaskId &&
+                        homeInfo?.todaySignStatus && (
+                          <SvgaPlayer
+                            className="sign_ani"
+                            src={SVGA_RES_INDEX["index_sign"]}
+                            loop={1}
+                            onEnd={this.handleSignAniEnd}
+                          />
+                        )}
+                      <div
+                        className={
+                          showSignAni &&
+                          index + 1 === +homeInfo?.currentTaskId &&
+                          homeInfo?.todaySignStatus
+                            ? "sign_icon sign_icon_ani"
+                            : "sign_icon"
+                        }
+                      ></div>
+                    </div>
+                  )}
+                  {/* <div className={`tipsicon${item.type} tipsicon`}></div> */}
+                </div>
+              )
+            })}
+          </div>
         <div className="bgalls">
           <span className="bgall"></span>
           <span className="top"></span>

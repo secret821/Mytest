@@ -27,11 +27,11 @@ class taskModal extends Component {
       const res = await taskApi.queryTasks();
       if (res?.item) {
         let newArr = res?.item.map((item, index) => {
-          if (item?.code == "assist") {
+          if (item?.code == "game") {
             item.type = 1;
           } else if (item?.code.indexOf("browse") > -1) {
             item.type = 2;
-          } else if (item?.code == "answer") {
+          } else if (item?.code == "assist") {
             item.type = 3;
           }
           return item;
@@ -49,7 +49,7 @@ class taskModal extends Component {
     };
   }
   doTask = _throttle(async item => {
-    if (item.code == "assit") {
+    if (item.code == "assit" || item.code == "game") {
       //判断完成次数
       if (+item?.completedSize >= +item?.intervalLimitSize) {
         return;
@@ -63,6 +63,7 @@ class taskModal extends Component {
       +item?.type // 1游戏 2浏览 3邀请  
     ) {
       case 1:
+        //TODO
         window.location.href=''
         break;
       case 2:
@@ -83,15 +84,15 @@ class taskModal extends Component {
 
   renderBtnClass = item => {
     if (item.code == "assist") {
-      //判断完成次数
+      //去助力
       if (+item?.completedSize >= +item?.intervalLimitSize) {
         return "gobtn grey";
       } else {
         return `gobtn`;
       }
-    } else if (item?.code == "answer") {
+    } else if (item?.code == "game") {
       //去助力
-      if (item?.completedSize) {
+      if (+item?.completedSize >= +item?.intervalLimitSize) {
         //完成
         return "gobtn  grey";
       } else {
@@ -124,7 +125,9 @@ class taskModal extends Component {
                 <div className="itemicon">
                   <img src={item?.icon} />
                 </div>
-                <div className="itemtitle">{item?.title}</div>
+                {/* //任务标题 */}
+                <div className="itemtitle">{item?.title}({item?.completedSize}/{item?.intervalLimitSize})</div>
+                {/* //任务描述 */}
                 <div className="itemdesc">{item?.desc}</div>
                 <div
                   className={`itembtn ${this.renderBtnClass(item)} ${

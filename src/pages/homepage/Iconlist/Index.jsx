@@ -7,9 +7,14 @@ import "./style.less"
 import store from "@src/store"
 import modalStore from "@src/store/modal"
 import API from "@src/api"
+import { thisExpression } from "@babel/types"
+import EventBus from "@duiba/event-bus";
 class Index extends Component {
   constructor(props) {
     super(props)
+    this.state={
+      credits:0
+    }
   }
   componentDidMount() {}
 
@@ -28,16 +33,33 @@ class Index extends Component {
     Toast("活动未开始");
     return;
   });
-  // doStart = _throttle(() => {
-  //   const { startSign, actEndType } = this.props;
-  //   if (actEndType >= 1) {
-  //     Toast("活动已结束");
-  //     return;
-  //   }
-  //   startSign && startSign();
-  // });
+  doStart = _throttle(() => {
+    const { ifPre,ifEnd } = this.props?.data;
+    if (ifPre) {
+      Toast("活动未开始");
+      return;
+    }
+    if (ifEnd) {
+      Toast("活动已结束");
+      return;
+    }
+    this.getStart()
+  });
+
+  getStart = async()=>{
+    // const res = await API.join()
+    // if(res?.success){
+    //   this.setState({
+    //     credits:res?.data?.credits
+    //   })
+    //   store.getIndex()
+    //   modalStore.pushPop('album',{credits:this.state.credits})
+    // }
+    EventBus.fire("UPDATE")
+  }
+
   goLottery = _throttle(() => {
-    const { ifPre,ifEnd } = this.props;
+    const { ifPre,ifEnd } = this.props?.data;
     if (ifPre) {
       Toast("活动未开始");
       return;
@@ -51,7 +73,7 @@ class Index extends Component {
 
   //奖品
   goRecord = _throttle(() => {
-    const { ifPre } = this.props;
+    const { ifPre } = this.props?.data;
     if (ifPre) {
       Toast("活动未开始");
       return;
@@ -61,7 +83,7 @@ class Index extends Component {
 
   //规则
   goRule = _throttle(() => {
-    const { ifPre } = this.props;
+    const { ifPre } = this.props?.data;
     if (ifPre) {
       Toast("活动未开始");
       return;
@@ -71,7 +93,7 @@ class Index extends Component {
 
   //客服
   goService = _throttle(() => {
-    const { ifPre,ifEnd } = this.props;
+    const { ifPre,ifEnd } = this.props?.data;
     if (ifPre) {
       Toast("活动未开始");
       return;
@@ -85,7 +107,7 @@ class Index extends Component {
 
   //任务
   goTask =  _throttle(() => {
-    const { ifPre,ifEnd } = this.props;
+    const { ifPre,ifEnd,readLinkUrl } = this.props?.data;
     if (ifPre) {
       Toast("活动未开始");
       return;
@@ -94,7 +116,7 @@ class Index extends Component {
       Toast("活动已结束");
       return;
     }
-    modalStore.pushPop("taskModal")
+    modalStore.pushPop("taskModal",{readLinkUrl})
   });
 
   render() {

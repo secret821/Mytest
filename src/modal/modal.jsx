@@ -7,12 +7,18 @@ import Rule from "../components/Rule/Rule"
 import wxcode from "@src/components/WxCode/wxcode";
 import Service from "@src/components/ServiceModal/servicemodal";
 import taskModal from "@src/components/taskModal/Index";
+import album from "@src/components/Album/album";
+import albumInclude from "@src/components/AlbumInclude/albumInclude";
+import intro from "@src/components/Intro/intro";
 
 export const cfg = {
   Rule:Rule,
   wxcode:wxcode,
   Service:Service,
-  taskModal:taskModal
+  taskModal:taskModal,
+  album:album,
+  albumInclude:albumInclude,
+  intro:intro
 };
 
 @observer

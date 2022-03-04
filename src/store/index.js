@@ -5,7 +5,8 @@ const store = makeAutoObservable({
   ruleInfo: "",
   frontVariable: {},
   indexInfo: {},
-  cardInfo:[],
+  cardInfo:{},
+  curIndex:0,
   //前端开发配置
   curPage: "loading",
   setRule(ruleInfo) {
@@ -21,6 +22,9 @@ const store = makeAutoObservable({
   },
   setCardInfo(cardInfo){
     this.cardInfo = cardInfo
+  },
+  setCurIndex(curIndex){
+    this.curIndex = curIndex
   },
   async initRule() {
     // 模拟获取远程的数据
@@ -47,14 +51,14 @@ const store = makeAutoObservable({
     }
   },
   //卡片信息
-  async getCardInfo(){
-    const res = await API.cardList()
-    if(res?.success){
-      // this.setState({
-        let cards = res?.data.length? (res?.data.map((item,inedx)=>{return item})):[]
-        this.setCardInfo(cards)
-      // })
-    }
-  }
+  // async getCardInfo(){
+  //   const res = await API.cardList()
+  //   if(res?.success){
+  //     this.setState({
+  //       let cards = res?.data.length? (res?.data.map((item,inedx)=>{return item})):[]
+  //       this.setCardInfo(cards)
+  //     })
+  //   }
+  // }
 })
 export default store

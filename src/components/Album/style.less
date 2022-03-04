@@ -1,37 +1,39 @@
-@import '@src/styles/common.less';
+@import "@src/styles/common.less";
 .albumModal {
   // .absNormal(750px, 1336px, calc(~'(100vh - 1336px)/2'), calc(~'(100vw - 750px)/2'));
-  .absNormal(750px, 1336px, -128px, calc(~'(100vw - 750px)/2'));
-  .webp("//yun.duiba.com.cn/aurora/assets/cd29cca10c40c1c28950b3dc364b51553b28cf1b.png");
+  .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
+  .webp("//yun.duiba.com.cn/aurora/assets/89efad37189aa797d9cfbaf29fb544cdc59d628f.png");
   .album-title {
     .textfclaw(30px, #2a8fb1, @align: center, @lineH: 1);
     .absNormal(auto, 30px, 440px, @left: 155px);
   }
+  .head{
+    .absNormal(344px, 90px, @top: 61px, @left: 187px);
+    .webp("//yun.duiba.com.cn/aurora/assets/234f3ed4ed343188a3eaf534d0ebb410e90581b2.png");
+    z-index: 999;
+  }
   .album-close {
-    .webp("//yun.duiba.com.cn/aurora/assets/ccab82a445ab94c3f93fa5c9a2fa0b64b2e6a08c.png");
-    .absNormal(62px, 62px, 300px, @right: 50px)
+    .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
+    .absNormal(51px, 51px, @top: 860px, @left: 349px);
   }
-  .album-list {
-    .absNormal( 582px,716px, 498px, @left: 85px);
-    overflow-y: scroll;
-    .album-item {
-      width: 185px;
-      height: 232px;
-      display: inline-block;
-      position: relative;
-      margin-right: 5px;
-      &:last-child {
-        margin-right: 0px;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      .album-name {
-        .absNormal(134px, 55px, @bottom: 11px, @left: 35px);
-        .webp("//yun.duiba.com.cn/aurora/assets/5aa8a0bc9649d15fcd021dddb652e558820d4bef.png");
-        .textfclaw(24px, #24678c, @align: center, @lineH: 55px)
-      }
+    img {
+      width: 491px;
+      height: 383px;
+      position: absolute;
+      top: 80px;
+      left: 117px;
     }
-  }
+    .album-name {
+      .absNormal(494px, 46px, @bottom: 284px, @left: 121px);
+      .textfclaw(24px, #0f8c91, @align: center, @lineH: 55px);
+    }
+    .btn-albm {
+      .absNormal(269px, 82px, @bottom: 71px, @left: 237px);
+      .webp("//yun.duiba.com.cn/aurora/assets/3b02dd8136fa0eb8c677e158f3caf747a922fd3c.png");
+    }
+    .icons {
+      .absNormal(160px, 96px, @bottom: 167px, @left: 240px);
+      .textfclaw(65px, #fea72e, @align: center);
+      font-weight: 500;
+    }
 }
