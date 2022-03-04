@@ -9,6 +9,7 @@ import API from "../../api"
 import "./loading.less"
 import { preloadAsset } from "@src/utils/preload1.3.js"
 import assetList from "@src/assetList.json"
+import { registerSounds, preloadSounds } from "@spark/utils"
 @observer
 class Loading extends React.Component {
   constructor(props) {
@@ -23,15 +24,23 @@ class Loading extends React.Component {
     this.preloadAssetInit()
   }
   preloadAssetInit = async () => {
-    preloadAsset(assetList.preLoadImg, 3, (progress) =>
-      this.onLoadingProgress(progress)
-    ).then(() => {
+    registerSounds({
+      bgm: '//yun.duiba.com.cn/aurora/assets/055bfe07baca654e4d9723283661a61a1d400353.mp3'
+    })
+    await preloadSounds()
+    // 游戏基本信息
+    await store.setGameInfo()
+    await store.onInitLotteryData()
+    this.onLoadingProgress(0.3)
+    await preloadAsset(assetList.preLoadImg, 3).then(() => {
       //预加载资源完成
       setTimeout(() => {
         //异步加载资源开始
         preloadAsset(assetList.asyncLoadImg, 1)
       }, 5000)
     })
+    this.onLoadingProgress(1)
+
   }
   /**
    * 资源加载进度回调

@@ -36,8 +36,8 @@ export {
  * @param { message }  message 错误消息
  */
 /**  */
-function showToast(errCode, message) {
-  Toast(ERROR_MESSSAGE[errCode] || message || "网络异常，请稍后再试~", 2000, {hideOthers:true});
+function showToast(message, errCode) {
+  Toast(message || ERROR_MESSSAGE(errCode) || "网络异常，请稍后再试~", 2000, {hideOthers:true});
 }
 
 /**

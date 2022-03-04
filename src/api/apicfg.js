@@ -11,6 +11,14 @@ const apiCfg = {
   cardList:`home/cardList.do`,
   join:`home/join.do`,
   GET_PHOTOLIST: `home/landscapePhoto.do`,
+  gameStart: 'game/start.do',
+  gameSubmit: 'game/submit.do',
+  gameIndex: 'game/index.do',
+  prizeQuery: 'rule_1.query',
+  prizeLottery: {
+    uri: 'prize/join.do',
+    withToken: true,
+  }
 }
 
 export default apiCfg;

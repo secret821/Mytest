@@ -1,0 +1,29 @@
+'use strict';
+
+import React from 'react';
+import { RES_PATH } from '../../../sparkrc.js';
+import { observer } from 'mobx-react';
+import store from '../../store/index';
+import modalStore from '@src/store/modal';
+import API from '../../api';
+import './gametipsconfirmmodal.less';
+
+@observer
+class Gametipsconfirmmodal extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const { gameTime, targetScore, coins } = store.GameInfo
+    return (
+      <div className="gametipsconfirmmodal">
+        <span className="desc tc">{`在${gameTime}秒内游戏分数达到${targetScore}分\n即挑战成功\n可获得${coins}个金币！`}</span>
+        <span className="confirmbtn" onClick={() => {
+          this.closeModal()
+          this.props.onConfirm()
+        }}></span>
+      </div>
+    );
+  }
+}
+export default Gametipsconfirmmodal;

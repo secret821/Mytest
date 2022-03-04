@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import Drawfailmodal from "../components/drawfailmodal/drawfailmodal";
+import Drawsucmodal from "../components/drawsucmodal/drawsucmodal";
+import Gamefailmodal from "../components/gamefailmodal/gamefailmodal";
+import Gameovermodal from "../components/gameovermodal/gameovermodal";
+import Gametipsconfirmmodal from "../components/gametipsconfirmmodal/gametipsconfirmmodal";
 import './modal.less';
 import { observer } from 'mobx-react';
 import modalStore from '../store/modal';
 import { toJS } from 'mobx';
-import Rule from "../components/Rule/Rule"
 import wxcode from "@src/components/WxCode/wxcode";
 import Service from "@src/components/ServiceModal/servicemodal";
 import taskModal from "@src/components/taskModal/Index";
@@ -18,7 +22,12 @@ export const cfg = {
   taskModal:taskModal,
   album:album,
   albumInclude:albumInclude,
-  intro:intro
+  intro:intro,
+  Gametipsconfirmmodal: Gametipsconfirmmodal,
+  Gameovermodal: Gameovermodal,
+  Gamefailmodal: Gamefailmodal,
+  Drawsucmodal: Drawsucmodal,
+  Drawfailmodal: Drawfailmodal
 };
 
 @observer

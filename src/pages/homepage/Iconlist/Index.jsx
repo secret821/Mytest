@@ -9,6 +9,8 @@ import modalStore from "@src/store/modal"
 import API from "@src/api"
 import { thisExpression } from "@babel/types"
 import EventBus from "@duiba/event-bus";
+import { ModalCtrlIns } from "@lightfish/reactmodal"
+import Rule from "@src/components/rule/rule"
 class Index extends Component {
   constructor(props) {
     super(props)
@@ -16,7 +18,9 @@ class Index extends Component {
       credits:0
     }
   }
-  componentDidMount() {}
+  componentDidMount() {
+    store.initRule()
+  }
 
   //已打卡
   signedClick = _throttle(() => {
@@ -68,7 +72,7 @@ class Index extends Component {
       Toast("活动已结束");
       return;
     }
-    window.location.href = CFG.turngameUrl;
+    store.changePage('lottery')
   });
 
   //奖品
@@ -88,7 +92,10 @@ class Index extends Component {
       Toast("活动未开始");
       return;
     }
-    modalStore.pushPop("Rule")
+    // modalStore.pushPop("Rule")
+    ModalCtrlIns.showModal(Rule, {
+      ruleInfo: store.ruleInfo
+    })
   });
 
   //客服
