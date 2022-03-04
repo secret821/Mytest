@@ -10,22 +10,30 @@ MD();
 //此处为spark-cli动态生成
 import Loading from "@src/pages/loading/loading";
 import HomePage from "@src/pages/homePage/homePage";
+import Gamepage from "./pages/gamepage/gamepage";
+
 
 const pageMap = {
   loading: <Loading/>,
   homePage: <HomePage/>,
+  gamePage: <Gamepage />
 }
 @observer
 class App extends Component {
   async componentDidMount(){
     //获取前端开发配置，依据项目需要，酌情添加 ！！！
     // await store.getFrontVariable(); 
+    window.test = () => {
+      store.changePage('gamePage', {
+        isNewGuy: true
+      });
+    }
   }
   render() {
-    let { curPage  } = store;
+    let { curPage, curPageData } = store;
     return (
       <div>
-        {{...pageMap[curPage], props: {changePage: 'homePage'}}}
+        {{...pageMap[curPage], props: {changePage: 'homePage', ...curPageData}}}
         <Modal />
       </div>
     );

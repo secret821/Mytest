@@ -1,0 +1,102 @@
+@import "../../res.less";
+
+#cusEngine {
+  touch-action: none;
+}
+
+.gaming {
+  .gamepage {
+    display: none;
+  }
+  .game-scene-container {
+    display: block;
+  }
+}
+
+.game-scene-container {
+  display: none;
+}
+
+.gamepage {
+  width: 750px;
+  height: 1624px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  .back {
+    width: 750px;
+    height: 1624px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    .sparkBg("GamePage/back.png");
+  }
+  .groupcont {
+    width: 645px;
+    height: 933px;
+    left: 51px;
+    top: 354px;
+    position: absolute;
+    .groupback {
+      width: 645px;
+      height: 933px;
+      left: 0px;
+      top: 0px;
+      position: absolute;
+      .sparkBg("GamePage/group-back.png");
+    }
+    .titledesc {
+      width: 360px;
+      height: 82px;
+      left: 152px;
+      top: 140px;
+      position: absolute;
+      font-size: 33px;
+      color: rgba(34, 188, 224, 1);
+      white-space: pre-wrap;
+      text-align: center;
+    }
+    .smalltips {
+      width: 180px;
+      height: 25px;
+      left: 242px;
+      top: 835px;
+      position: absolute;
+      font-size: 25px;
+      line-height: 25px;
+      color: rgba(34, 188, 224, 1);
+    }
+    .startbtn {
+      width: 319px;
+      height: 90px;
+      left: 167px;
+      top: 717px;
+      position: absolute;
+      .sparkBg("GamePage/start-btn.png");
+    }
+    .lucky {
+      width: 261px;
+      height: 351px;
+      left: 191px;
+      top: 307px;
+      position: absolute;
+      .sparkBg("GamePage/lucky.png");
+    }
+  }
+  .goback {
+    width: 155px;
+    height: 58px;
+    left: 0px;
+    top: 229px;
+    position: absolute;
+    .sparkBg("GamePage/go-back.png");
+  }
+  .rulebtn {
+    width: 155px;
+    height: 58px;
+    left: 595px;
+    top: 229px;
+    position: absolute;
+    .sparkBg("GamePage/rule-btn.png");
+  }
+}

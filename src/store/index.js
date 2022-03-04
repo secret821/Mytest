@@ -5,11 +5,13 @@ const store = makeAutoObservable({
   frontVariable: {},
   //前端开发配置
   curPage: 'loading',
+  curPageData: {},
   setRule(ruleInfo) {
     this.ruleInfo = ruleInfo;
   },
-  changePage(page, callback) {
+  changePage(page, data, callback) {
     this.curPage = page;
+    this.curPageData = data
     callback && callback();
   },
   async initRule() {

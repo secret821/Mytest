@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import Gametipsconfirmmodal from "../components/gametipsconfirmmodal/gametipsconfirmmodal";
 import './modal.less';
 import { observer } from 'mobx-react';
 import modalStore from '../store/modal';
 import { toJS } from 'mobx';
-import Rule from "../components/Rule/Rule"
-
+import Rule from "../components/Rule/Rule";
 export const cfg = {
-  Rule:Rule
+  Rule: Rule,
+  Gametipsconfirmmodal: Gametipsconfirmmodal
 };
 
 @observer
