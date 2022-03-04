@@ -14,15 +14,31 @@ class Homepage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      num: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      cards: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      // totalCredits:0,
     }
   }
 
+componentDidMount = async()=>{
+  // modalStore.pushPop('taskModal')
+  await store.getIndex()
+}
+
+getAllCoin(){
+  const { totalCredits } = store?.indexInfo
+  console.log(totalCredits,'totalCredits-------')
+  this.setState({
+    totalCredits:totalCredits,
+  })
+}
+
   render() {
-    const { num } = this.state
+    const { cards } = this.state
+    const { totalCredits } = store.indexInfo
+    console.log(store.indexInfo?.totalCredits,'totalCredits------=====')
     return (
       <div className="homepage">
-        <Index />
+        {totalCredits&&<Index data={store.indexInfo}></Index>}
         <div className="bgalls">
           <span className="bgall"></span>
           <span className="top"></span>
@@ -147,7 +163,7 @@ class Homepage extends React.Component {
           <span className="mqian"></span>
         </div>
         <div className="titles">
-          {num.map((item, index) => {
+          {cards.map((item, index) => {
             return (
               <div key={index}>
                 <span className={`_${index + 1}`}></span>

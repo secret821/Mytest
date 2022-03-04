@@ -5,16 +5,29 @@ import { Toast } from "@spark/ui"
 import { _throttle } from "@src/utils/utils"
 import "./style.less"
 import store from "@src/store"
-import modalStore from "@src/store/modal";
+import modalStore from "@src/store/modal"
 import API from "@src/api"
 class Index extends Component {
   constructor(props) {
     super(props)
   }
-  // signedClick = _throttle(() => {
-  //   Toast("今日已打卡，请明天再来吧");
-  //   return;
-  // });
+  componentDidMount() {}
+
+  //已打卡
+  signedClick = _throttle(() => {
+    Toast("今日已打卡，请明天再来吧");
+    return;
+  });
+  //结束
+  doEnd = _throttle(() => {
+    Toast("活动已结束");
+    return;
+  });
+  //未开始
+  doPre = _throttle(() => {
+    Toast("活动未开始");
+    return;
+  });
   // doStart = _throttle(() => {
   //   const { startSign, actEndType } = this.props;
   //   if (actEndType >= 1) {
@@ -23,24 +36,70 @@ class Index extends Component {
   //   }
   //   startSign && startSign();
   // });
-  // goLottery = _throttle(() => {
-  //   const { actEndType } = this.props;
-  //   if (actEndType >= 2) {
-  //     Toast("活动已结束");
-  //     return;
-  //   }
-  //   window.location.href = CFG.turngameUrl;
-  // });
-  // goRecord = _throttle(() => {
-  //   const { actEndType } = this.props;
-  //   if (actEndType === 3) {
-  //     Toast("活动已结束");
-  //     return;
-  //   }
-  //   window.location.href = CFG.recordUrl;
-  // });
+  goLottery = _throttle(() => {
+    const { ifPre,ifEnd } = this.props;
+    if (ifPre) {
+      Toast("活动未开始");
+      return;
+    }
+    if (ifEnd) {
+      Toast("活动已结束");
+      return;
+    }
+    window.location.href = CFG.turngameUrl;
+  });
+
+  //奖品
+  goRecord = _throttle(() => {
+    const { ifPre } = this.props;
+    if (ifPre) {
+      Toast("活动未开始");
+      return;
+    }
+    window.location.href = CFG.recordUrl;
+  });
+
+  //规则
+  goRule = _throttle(() => {
+    const { ifPre } = this.props;
+    if (ifPre) {
+      Toast("活动未开始");
+      return;
+    }
+    modalStore.pushPop("Rule")
+  });
+
+  //客服
+  goService = _throttle(() => {
+    const { ifPre,ifEnd } = this.props;
+    if (ifPre) {
+      Toast("活动未开始");
+      return;
+    }
+    if (ifEnd) {
+      Toast("活动已结束");
+      return;
+    }
+    modalStore.pushPop("Service")
+  });
+
+  //任务
+  goTask =  _throttle(() => {
+    const { ifPre,ifEnd } = this.props;
+    if (ifPre) {
+      Toast("活动未开始");
+      return;
+    }
+    if (ifEnd) {
+      Toast("活动已结束");
+      return;
+    }
+    modalStore.pushPop("taskModal")
+  });
+
   render() {
-    // const { homeInfo, actEndType, pageShow } = this.props;
+    const { totalCredits, todaySignStatus, prizeCredits, ifPre, ifEnd } =
+      this.props?.data
     return (
       <div className="iconWrap">
         <div className="index-title">
@@ -53,21 +112,19 @@ class Index extends Component {
           {/* )} */}
         </div>
         <div
-          className="icon-rule md4"
-          onClick={() => {
-            modalStore.pushPop('Rule')
-          }}
+          className="icon-rule"
+          onClick={() => {this.goRule()}}
         ></div>
         <div
-          className="icon-prize md5"
+          className="icon-prize"
           onClick={() => {
             this.goRecord()
           }}
         ></div>
         <div
-          className="icon-kefu md6"
+          className="icon-kefu"
           onClick={() => {
-            // store.dispatch(actions.modalCtl("service"));
+            this.goService()
           }}
         ></div>
         <div>
@@ -75,41 +132,53 @@ class Index extends Component {
           {/* <span className="musicClose"></span> */}
         </div>
         <div className="my-credits">
-          <span className="credits-count">当前金币：9999{}</span>
+          <span className="credits-count">当前金币：{totalCredits}</span>
         </div>
         <div
-          className="icon-lottery md9"
+          className="icon-lottery"
           onClick={() => {
             this.goLottery()
           }}
         >
-          {/* <span className="lottery-icom"></span> */}
-          {/* <p className="cost-num">{}金币/次</p> */}
+          <div className="lottery-icom"></div>
+          <p className="cost-num">{prizeCredits}金币/次</p>
         </div>
-        <span className="toGetCoins"></span>
-        {/* {actEndType >= 1 ? (*/
+        <span className="toGetCoins" onClick={this.goTask}></span>
+        {ifEnd ? (
+          // 活动已结束
           <div
             className="endbtn"
             onClick={() => {
-              this.doStart();
+              this.doEnd()
             }}
           ></div>
-          /*
-        ) : homeInfo?.todaySignStatus ? (
+        ) : ifPre ? (
+          //未开始
           <div
-            className="signedBtn"
+            className="prebtn"
             onClick={() => {
-              this.signedClick();
+              this.doPre()
             }}
-          ></div>
+          ></div> ? (
+            !ifPre&&!ifEnd&&todaySignStatus
+          ) : (
+            // 明日再来
+            <div
+              className="signedBtn"
+              onClick={() => {
+                this.signedClick()
+              }}
+            ></div>
+          )
         ) : (
+          // 签到
           <div
-            className="startbtn md8"
+            className="startbtn"
             onClick={() => {
-              this.doStart();
+              this.doStart()
             }}
           ></div>
-        )} */}
+        )}
       </div>
     )
   }

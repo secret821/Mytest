@@ -1,0 +1,34 @@
+@import '@src/styles/common.less';
+
+.modal-service{
+  .absNormal(658px, 688px, @top: 38%, @left: 49%);
+  transform: translate(-50%, -50%);
+  .webp('//yun.duiba.com.cn/aurora/assets/509a7337b908db0902ead4247daf9ebaedb142fb.png');
+  .title{
+    .absNormal(100%, auto, 450px, 0, auto, 0);
+    font-size: 36px;
+    color: #032c17;
+    text-align: center;
+  }
+  .btn-box{
+    .absNormal(400px, auto, 490px, @left: 140px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .go{
+      width: 189px;
+      height: 57px;
+      .webp('//yun.duiba.com.cn/aurora/assets/ccef307a2c3f63e0f304d6ef3fba6bf96dd7392e.png');
+    }
+    .back{
+      width: 189px;
+      height: 57px;
+      .webp('//yun.duiba.com.cn/aurora/assets/5b604eda4e095ba3542d389086b3faddc2c71d3c.png');
+    }
+  }
+  .close {
+    .webp("//yun.duiba.com.cn/aurora/assets/d3ecd26d69478ba65c0076267a2dafb6ff77e5e1.png");
+    .absNormal(51px, 49px, @top: 721px, @left: 315px);
+    margin: 0 auto;
+  }
+}

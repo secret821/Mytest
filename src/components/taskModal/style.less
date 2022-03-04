@@ -1,0 +1,62 @@
+@import "@src/styles/common.less";
+.taskModal {
+  background: url("../../assets/taskModal/taskbg.png") no-repeat top left / 100%
+    100%;
+  .absNormal(750px, 821px, @bottom: 0, @left:0);
+  .taskmodalclose {
+    .absNormal(50px, 50px, 30px, 20px);
+    background: url("../../assets/taskModal/close.png") no-repeat top left / 100%
+  }
+  .tasklist {
+    .absNormal(750px, 751px, 234px, @left: 0);
+    overflow-y: scroll;
+    .taskItem {
+      background: url("../../assets/taskModal/white.png") no-repeat top left /
+        100% 100%;
+      width: 682px;
+      height: 140px;
+      margin: 0 auto 30px;
+      position: relative;
+      .itemicon {
+        .absNormal(100px, 100px, 16px, @left: 20px);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .itemtitle {
+        .textfclaw(32px, #112a7d, @align: left, @lineH: 1.2);
+        .absNormal(394px, auto, 34px, 152px);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .itemdesc {
+        .textfclaw(22px, #4385d7, @align: left, @lineH: 1.2);
+        .absNormal(394px, auto, 78px, 152px);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .itembtn {
+        .absNormal(169px, 64px, 38px, 19px);
+        &.gobtn {
+          background: url("../../assets/taskModal/invitebtn.png") no-repeat top
+            left / 100% 100%;
+        }
+        // &.goanswerbtn {
+        //   background: url("../../assets/taskModal/goqa.png") no-repeat top left /
+        //     100% 100%;
+        // }
+        // &.govisitbtn {
+        //   background: url("../../assets/taskModal/previewbtn.png") no-repeat top
+        //     left / 100% 100%;
+        // }
+        &.grey {
+          background: url("../../assets/taskModal/greybtn.png") no-repeat top
+            left / 100% 100%;
+        }
+      }
+    }
+  }
+}
