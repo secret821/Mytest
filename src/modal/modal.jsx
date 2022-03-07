@@ -14,6 +14,7 @@ import taskModal from "@src/components/taskModal/Index";
 import album from "@src/components/Album/album";
 import albumInclude from "@src/components/AlbumInclude/albumInclude";
 import intro from "@src/components/Intro/intro";
+import Rule from "@src/components/rule/rule";
 
 export const cfg = {
   Rule:Rule,
@@ -27,7 +28,8 @@ export const cfg = {
   Gameovermodal: Gameovermodal,
   Gamefailmodal: Gamefailmodal,
   Drawsucmodal: Drawsucmodal,
-  Drawfailmodal: Drawfailmodal
+  Drawfailmodal: Drawfailmodal,
+  Rule:Rule
 };
 
 @observer

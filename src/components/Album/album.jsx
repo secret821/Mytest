@@ -6,6 +6,7 @@ import { _throttle } from "@src/utils/utils"
 import { Toast } from "@spark/ui"
 import modalStore from "@src/store/modal"
 import { RES_PATH } from "../../../sparkrc"
+import { SvgaPlayer, loadSvga } from "@spark/animation"
 
 // const lockSrc =
 //   "//yun.duiba.com.cn/aurora/assets/cebd52aec5eff0fa453b4798ceb7c4476dc92627.png";
@@ -34,8 +35,11 @@ class album extends Component {
   }
 
   showPhoto = _throttle((index, item) => {
-    modalStore.closePop('album')
-    modalStore.pushPop('albumInclude',{cardsList:this.state.cardsList,curIndex:this.state.curIndex})
+    modalStore.closePop("album")
+    modalStore.pushPop("albumInclude", {
+      cardsList: this.state.cardsList,
+      curIndex: this.state.curIndex,
+    })
   })
   async getAlbumList() {
     const { success, data } = await API.GET_PHOTOLIST()
@@ -54,12 +58,25 @@ class album extends Component {
             modalStore.closePop("album")
           }}
         ></span>
-        <span className='head'></span>
-        <img src={`${RES_PATH}cards/${curIndex}.png`} />
+        <span className="head">
+          <p>打</p>
+          <p>卡</p>
+          <p>成</p>
+          <p>功</p>
+        </span>
+        {/* <img src={`${RES_PATH}cards/${curIndex}.png`} /> */}
+        <SvgaPlayer
+          className="imgSvga"
+          src={`${RES_PATH}svga/${curIndex}.svga`}
+          loop={false}
+        ></SvgaPlayer>
         {cardsList?.length && (
           <span className="album-name">{cardsList[curIndex - 1].name}一游</span>
         )}
-        <span className="icons">{credits}</span>
+        <div className="moneys">
+          <span className="icons">{credits}</span>
+          <span className="coin"></span>
+        </div>
         <span className="btn-albm" onClick={this.showPhoto}></span>
       </div>
     )

@@ -1,10 +1,14 @@
 @import "../../res.less";
+.wrapper-cont {
+  width: 750px;
+  overflow-x: hidden;
+}
 .homepage {
   width: 903px;
   height: 7886px;
   left: -42px;
   top: 0px;
-  position: absolute;
+  position: relative;
   .bgalls {
     width: 903px;
     height: 7886px;
@@ -20,12 +24,55 @@
       .sparkBg("homePage/bg-all.png");
     }
     .top {
-      width: 903px;
-      height: 3055px;
+      width: 800px;
+      height: 1295px;
       left: 0px;
       top: 49px;
       position: absolute;
       .sparkBg("homePage/top.png");
+    }
+    .liu {
+      width: 193px;
+      height: 123px;
+      position: absolute;
+      top: 100px;
+      left: 17px;
+      .sparkBg("homePage/柳条.png");
+      transform-origin: left top;
+      animation: move 6s linear infinite;
+    }
+    .liu2 {
+      width: 193px;
+      height: 123px;
+      position: absolute;
+      top: 300px;
+      right: 110px;
+      .sparkBg("homePage/柳条2.png");
+      transform-origin: right top;
+      animation: move 6s linear infinite;
+    }
+  }
+  @keyframes move {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-20deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
   .longjingwencha {
@@ -45,10 +92,12 @@
     .yanzilongjing {
       width: 109px;
       height: 75px;
-      left: 224px;
-      top: 74px;
+      left: -400px;
+      top: 380px;
       position: absolute;
       .sparkBg("homePage/yanzi-longjing.png");
+      z-index: 8;
+      animation: yanFly infinite linear 2s;
     }
   }
   .liulangwenyan {
@@ -58,12 +107,15 @@
     top: 2409px;
     position: absolute;
     .yanziliulang {
-      width: 187px;
-      height: 82px;
-      left: 409px;
-      top: 0px;
+      width: 266px;
+      height: 297px;
+      left: 60px;
+      top: 70px;
       position: absolute;
-      .sparkBg("homePage/yanzi-liulang.png");
+      .sparkBg("homePage/风筝线.png");
+      transform-origin: right bottom;
+      animation: flyBird2 infinite 7s linear;
+      z-index: 8;
     }
     .bgliuliang {
       width: 640px;
@@ -72,6 +124,44 @@
       top: 34px;
       position: absolute;
       .sparkBg("homePage/bg-liuliang.png");
+    }
+  }
+  @keyframes flyBird2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(20deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(-10deg);
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(10deg);
+    }
+  }
+  @keyframes yanFly {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      // transform:rotate(10deg);
+      transform: translate(950px, -500px);
+    }
+  }
+  @keyframes yanFly2 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      // transform:rotate(10deg);
+      transform: translate(-950px, -500px);
     }
   }
   .yuhuangfeiyun {
@@ -87,6 +177,8 @@
       top: 93px;
       position: absolute;
       .sparkBg("homePage/yun1-yuhuang.png");
+      animation: yunMove infinite 9s linear;
+      z-index: 2;
     }
     .shanhou {
       width: 284px;
@@ -103,6 +195,8 @@
       top: 227px;
       position: absolute;
       .sparkBg("homePage/yun2-yuhuang.png");
+      animation: yunMove infinite 9s linear;
+      z-index: 2;
     }
     .shanqian {
       width: 383px;
@@ -115,18 +209,22 @@
     .yunyouyuhuang {
       width: 163px;
       height: 81px;
-      left: 392px;
+      left: 412px;
       top: 211px;
       position: absolute;
       .sparkBg("homePage/yun-youyuhuang.png");
+      animation: yunMove infinite 9s linear;
+      z-index: 2;
     }
     .yun3yuhuang {
       width: 344px;
       height: 160px;
-      left: 211px;
+      left: 231px;
       top: 339px;
       position: absolute;
       .sparkBg("homePage/yun3-yuhuang.png");
+      animation: yunMove infinite 9s linear;
+      z-index: 2;
     }
     .shipyuhuang {
       width: 161px;
@@ -143,6 +241,30 @@
       top: 0px;
       position: absolute;
       .sparkBg("homePage/liushu-yuhuang.png");
+      transform-origin: right top;
+      animation: move 6s linear infinite;
+    }
+  }
+  @keyframes shipMove3 {
+    0% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+    }
+    25% {
+      transform: rotate(2deg);
+      transform: translate(55px, 25px);
+    }
+    50% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+    }
+    75% {
+      transform: rotate(-2deg);
+      transform: translate(55px, 25px);
+    }
+    100% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
     }
   }
   .nanpingwanzhong {
@@ -162,10 +284,11 @@
     .yun {
       width: 372px;
       height: 95px;
-      left: 0px;
+      left: -20px;
       top: 285px;
       position: absolute;
       .sparkBg("homePage/yun.png");
+      animation: yunMove infinite 9s linear;
     }
     .clock {
       width: 137px;
@@ -174,6 +297,8 @@
       top: 305px;
       position: absolute;
       .sparkBg("homePage/clock.png");
+      transform-origin: top;
+      animation: clockMove infinite 6s linear;
     }
     .dayan {
       width: 124px;
@@ -198,6 +323,41 @@
       top: 544px;
       position: absolute;
       .sparkBg("homePage/ship-nanping.png");
+      animation: shipman infinite linear 3s;
+    }
+  }
+  @keyframes shipman {
+    0%{
+      transform: translate(0,0);
+    }
+    50%{
+      transform: translate(20px,0);
+    }
+    100%{
+      transform: translate(0,0);
+    }
+  }
+  @keyframes clockMove {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
   .huanglongtucui {
@@ -221,7 +381,15 @@
       top: 506px;
       position: absolute;
       .sparkBg("homePage/ship-huanglong.png");
+      animation: linear shipMove3 9s infinite;
     }
+    // .water{
+    //   width: 73px;
+    //   height: 299px;
+    //   left: 117px;
+    //   top: 506px;
+    //   position: absolute;
+    // }
     .liuye {
       width: 176px;
       height: 151px;
@@ -229,6 +397,8 @@
       top: 408px;
       position: absolute;
       .sparkBg("homePage/liuye.png");
+      transform-origin: left top;
+      animation: move 6s linear infinite;
     }
   }
   .wushantianfeng {
@@ -245,30 +415,37 @@
       position: absolute;
       .sparkBg("homePage/bg-wushan.png");
     }
-    .yunbutton {
-      width: 426px;
-      height: 95px;
-      left: 64px;
-      top: 345px;
+    .wushansvga {
+      width: 514px;
+      height: 281px;
       position: absolute;
-      .sparkBg("homePage/yun-button.png");
-    }
-    .yuntop {
-      width: 140px;
-      height: 63px;
-      left: 372px;
-      top: 225px;
-      position: absolute;
-      .sparkBg("homePage/yun-top.png");
-    }
-    .yanwushan {
-      width: 307px;
-      height: 150px;
       left: 0px;
-      top: 205px;
-      position: absolute;
-      .sparkBg("homePage/yan-wushan.png");
+      top: 170px;
     }
+    // .yunbutton {
+    //   width: 426px;
+    //   height: 95px;
+    //   left: 64px;
+    //   top: 345px;
+    //   position: absolute;
+    //   .sparkBg("homePage/yun-button.png");
+    // }
+    // .yuntop {
+    //   width: 140px;
+    //   height: 63px;
+    //   left: 372px;
+    //   top: 225px;
+    //   position: absolute;
+    //   .sparkBg("homePage/yun-top.png");
+    // }
+    // .yanwushan {
+    //   width: 307px;
+    //   height: 150px;
+    //   left: 0px;
+    //   top: 205px;
+    //   position: absolute;
+    //   .sparkBg("homePage/yan-wushan.png");
+    // }
   }
   .hupaimengquan {
     width: 487px;
@@ -321,6 +498,8 @@
       top: 0px;
       position: absolute;
       .sparkBg("homePage/yanzi-you.png");
+      animation: BirdMove22 2s linear infinite;
+      animation-fill-mode: forwards;
     }
     .yanzizuo {
       width: 98px;
@@ -329,6 +508,8 @@
       top: 268px;
       position: absolute;
       .sparkBg("homePage/yanzi-zuo.png");
+      animation: BirdMove22 2s linear infinite;
+      animation-fill-mode: forwards;
     }
     .yanziwhite {
       width: 384px;
@@ -337,6 +518,14 @@
       top: 111px;
       position: absolute;
       .sparkBg("homePage/yanzi-white.png");
+    }
+  }
+  @keyframes BirdMove22 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(-835px, 215px);
     }
   }
   .pinghuqiuyue {
@@ -360,6 +549,31 @@
       top: 120px;
       position: absolute;
       .sparkBg("homePage/light.png");
+      // animation: lightMove steps(12 ,end) infinite 6s;
+      animation: lightMove 3s linear infinite normal;
+      // animation-fill-mode : backwards;
+    }
+  }
+  @keyframes lightMove {
+    0% {
+      opacity: 0;
+      transform: translate(0px, 0px);
+    }
+    25% {
+      opacity: 0.4;
+      transform: translate(5px, -5px);
+    }
+    50% {
+      opacity: 0.6;
+      transform: translate(10px, -10px);
+    }
+    75% {
+      opacity: 1;
+      transform: translate(15px, -15px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(25px, -25px);
     }
   }
   .duanqiaocanxue {
@@ -377,12 +591,12 @@
       .sparkBg("homePage/bg-duanqiao.png");
     }
     .snow {
-      width: 245px;
-      height: 176px;
-      left: 114px;
+      width: 247px;
+      height: 223px;
+      right: 0px;
       top: 0px;
       position: absolute;
-      .sparkBg("homePage/snow.png");
+      // .sparkBg("homePage/snow.png");
     }
   }
   .manlongguiyu {
@@ -402,19 +616,57 @@
     .swallowguiyu {
       width: 132px;
       height: 90px;
-      left: 126px;
-      top: 498px;
+      right: -50px;
+      top: 808px;
       position: absolute;
       .sparkBg("homePage/swallow-guiyu.png");
+      // animation: BirdMove2 2s linear 1;
+      animation: yanFly2 infinite linear 2s;
+      z-index: 2;
+    }
+    .flowers{
+      width: 331px;
+      height: 514px;
+      left: 0px;
+      top: 0px;
+      position: absolute;
     }
     .shipguiyu {
       width: 152px;
       height: 125px;
-      left: 496px;
-      top: 184px;
+      left: 240px;
+      top: 440px;
       position: absolute;
       .sparkBg("homePage/ship-guiyu.png");
+      animation:shipMove24 infinite linear 4s;
     }
+  }
+  @keyframes shipMove24 {
+    0% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    // 25% {
+    //   transform: rotate(2deg);
+    //   transform: translate(185px, -165px);
+    //   opacity: 0.8;
+    // }
+    100% {
+      transform: rotate(0deg);
+      transform: translate(195px, -195px);
+      opacity: 0;
+    }
+    // 75% {
+    //   transform: rotate(-2deg);
+    //   transform: translate(185px, -165px);
+    //   opacity: 0.4;
+    // }
+    // 100% {
+    //   transform: rotate(0deg);
+    //   transform: translate(0px, 0px);
+    //   opacity: 0;
+    // }
   }
   .sudichunwan {
     width: 750px;
@@ -437,6 +689,7 @@
       top: 306px;
       position: absolute;
       .sparkBg("homePage/ship.png");
+      animation: shipMove infinite 9s linear;
     }
     .swallow {
       width: 146px;
@@ -445,6 +698,8 @@
       top: 0px;
       position: absolute;
       .sparkBg("homePage/swallow.png");
+      animation: BirdMove 2s linear 1;
+      animation-fill-mode: forwards;
     }
     .kite {
       width: 238px;
@@ -453,6 +708,60 @@
       top: 383px;
       position: absolute;
       .sparkBg("homePage/kite.png");
+      transform-origin: left bottom;
+      animation: flyBird infinite 7s linear;
+    }
+  }
+  @keyframes shipMove {
+    0% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+      // background-position: 0px 0px;
+    }
+    25% {
+      transform: rotate(2deg);
+      // background-position: -10% 5%;
+      transform: translate(15px, -25px);
+    }
+    50% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+    }
+    75% {
+      transform: rotate(-2deg);
+      transform: translate(15px, -25px);
+    }
+    100% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+    }
+  }
+  @keyframes flyBird {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-20deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(-10deg);
+    }
+  }
+  @keyframes BirdMove {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(835px, 215px);
     }
   }
   .yunxizhujing {
@@ -484,6 +793,7 @@
       top: 152px;
       position: absolute;
       .sparkBg("homePage/yun-top.png");
+      animation: yunMove infinite 9s linear;
     }
     .zhuziqian {
       width: 437px;
@@ -496,10 +806,11 @@
     .yun2 {
       width: 236px;
       height: 101px;
-      left: 0px;
+      left: -20px;
       top: 360px;
       position: absolute;
       .sparkBg("homePage/yun2.png");
+      animation: yunMove infinite 9s linear;
     }
   }
   .santanyingyue {
@@ -519,28 +830,35 @@
     .yanzizuo_1 {
       width: 84px;
       height: 68px;
-      left: 0px;
-      top: 114px;
+      left: 40px;
+      top: 104px;
       position: absolute;
       .sparkBg("homePage/yanzi-zuo.png");
+      animation: BirdMove22 4s linear infinite;
+      animation-fill-mode: forwards;
     }
     .yanziyou_1 {
       width: 70px;
       height: 57px;
-      left: 158px;
-      top: 137px;
+      left: 178px;
+      top: 117px;
       position: absolute;
       .sparkBg("homePage/yanzi-you.png");
+      animation: BirdMove22 4s linear infinite;
+      animation-fill-mode: forwards;
     }
     .yanzi1 {
       width: 146px;
       height: 119px;
-      left: 31px;
-      top: 0px;
+      left: 91px;
+      top: -10px;
       position: absolute;
       .sparkBg("homePage/yanzi1.png");
+      animation: BirdMove22 4s linear infinite;
+      animation-fill-mode: forwards;
     }
   }
+
   .huagangguanyu {
     width: 460px;
     height: 617px;
@@ -556,20 +874,20 @@
       .sparkBg("homePage/bg-huagang.png");
     }
     .fish {
-      width: 415px;
-      height: 203px;
+      width: 448px;
+      height: 240px;
       left: 0px;
       top: 240px;
       position: absolute;
-      .sparkBg("homePage/fish.png");
     }
     .yunhuagang {
       width: 261px;
       height: 78px;
-      left: 0px;
+      left: -20px;
       top: 292px;
       position: absolute;
       .sparkBg("homePage/yun-huagang.png");
+      animation: yunMove infinite 9s linear;
     }
   }
   .leifengxizhao {
@@ -609,6 +927,7 @@
       top: 812px;
       position: absolute;
       .sparkBg("homePage/ship-leifeng.png");
+      animation: shipMove2 infinite 9s linear;
     }
     .shuye {
       width: 249px;
@@ -617,14 +936,50 @@
       top: 779px;
       position: absolute;
       .sparkBg("homePage/shuye.png");
+      transform-origin: right top;
+      animation: move 6s linear infinite;
     }
     .dayan_1 {
       width: 124px;
       height: 69px;
-      left: 267px;
-      top: 333px;
+      left: 207px;
+      top: 323px;
       position: absolute;
       .sparkBg("homePage/dayan.png");
+      animation:dayanmove infinite linear 5s ;
+      
+    }
+  }
+  @keyframes dayanmove {
+    0% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-450px, -200px);
+    }
+  }
+  @keyframes shipMove2 {
+    0% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+    }
+    25% {
+      transform: rotate(2deg);
+      transform: translate(55px, 25px);
+    }
+    50% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
+    }
+    75% {
+      transform: rotate(-2deg);
+      transform: translate(55px, 25px);
+    }
+    100% {
+      transform: rotate(0deg);
+      transform: translate(0px, 0px);
     }
   }
   .shuangfengchayun {
@@ -643,11 +998,12 @@
     }
     .yun1 {
       width: 311px;
-      height: 95px;
-      left: 165px;
+      height: 105px;
+      left: 185px;
       top: 80px;
       position: absolute;
       .sparkBg("homePage/yun1.png");
+      animation: yunMove infinite 9s linear;
     }
     .shan2 {
       width: 164px;
@@ -660,10 +1016,11 @@
     .yun2_2 {
       width: 178px;
       height: 94px;
-      left: 298px;
+      left: 318px;
       top: 207px;
       position: absolute;
-      .sparkBg("homePage/yun2.png");
+      .sparkBg("homePage/yun2_2.png");
+      animation: yunMove infinite 9s linear;
     }
     .shan3 {
       width: 375px;
@@ -680,14 +1037,16 @@
       top: 296px;
       position: absolute;
       .sparkBg("homePage/yun3.png");
+      animation: yunMove infinite 9s linear;
     }
     .yun4 {
       width: 268px;
       height: 103px;
-      left: 208px;
+      left: 228px;
       top: 427px;
       position: absolute;
       .sparkBg("homePage/yun4.png");
+      animation: yunMove infinite 9s;
     }
     .yan {
       width: 246px;
@@ -712,6 +1071,36 @@
       position: absolute;
       .sparkBg("homePage/组103.png");
     }
+    .zu1033 {
+      width: 452px;
+      height: 170px;
+      left: 142px;
+      top: 209px;
+      position: absolute;
+      .sparkBg("homePage/组 1033.png");
+      z-index: 1;
+    }
+    .heye {
+      width: 402px;
+      height: 191px;
+      position: absolute;
+      left: 190px;
+      top: 132px;
+    }
+  }
+  @keyframes yunMove {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    33% {
+      transform: translate(-20px, 0px);
+    }
+    66% {
+      transform: translate(20px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
   }
   .baoshiliuxia {
     width: 750px;
@@ -734,6 +1123,17 @@
       top: 265px;
       position: absolute;
       .sparkBg("homePage/yun-liuxia-you.png");
+      animation: yunMove infinite 9s linear;
+      z-index: 2;
+    }
+    .birdbao{
+      width: 34px;
+      height: 19px;
+      position: absolute;
+      left:450px;
+      top:300px;
+      .sparkBg("homePage/鸟.png");
+      animation: birdFlyMove infinite linear 3s;
     }
     .yunliuxiazuo {
       width: 306px;
@@ -742,6 +1142,18 @@
       top: 445px;
       position: absolute;
       .sparkBg("homePage/yun-liuxia-zuo.png");
+      animation: yunMove infinite 9s linear;
+      z-index: 2;
+    }
+  }
+  @keyframes birdFlyMove {
+    0%{
+      transform: translate(0,0);
+      opacity: 1;
+    }
+    100%{
+      transform: translate(-200px,-100px);
+      opacity: 0;
     }
   }
   .button {
@@ -757,6 +1169,7 @@
       top: 232px;
       position: absolute;
       .sparkBg("homePage/yun-zuo.png");
+      animation: yunMove infinite 9s linear;
     }
     .mzuo {
       width: 169px;
@@ -781,6 +1194,7 @@
       top: 106px;
       position: absolute;
       .sparkBg("homePage/yun-you.png");
+      animation: yunMove infinite 9s linear;
     }
     .mqian {
       width: 480px;
@@ -797,6 +1211,7 @@
     left: 60px;
     top: 341px;
     position: absolute;
+    z-index: 2;
     ._1 {
       width: 59px;
       height: 163px;
@@ -957,14 +1372,6 @@
       position: absolute;
       .sparkBg("homePage/20.png");
     }
-    // .title {
-    //   width: 468px;
-    //   height: 360px;
-    //   left: 117px;
-    //   top: 0px;
-    //   position: absolute;
-    //   .sparkBg("homePage/title.png");
-    // }
   }
   .locatpos1 {
     // .absNormal(300px, 500px, 7447px, @left: 0);

@@ -3,6 +3,7 @@
   .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
   .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
   margin-top: -100px;
+  animation: cardRun3 1 linear 1s;
   .intro-close {
     .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
     .absNormal(51px, 51px, @top: 860px, @left: 345px);
@@ -32,5 +33,16 @@
     line-height: 40px;
     white-space: pre-wrap;
     -webkit-overflow-scrolling: touch;
+  }
+  @keyframes cardRun3 {
+    0%{
+      transform: scale(55%);
+    }
+    80%{
+      transform: scale(115%);
+    }
+    100%{
+      transform: scale(100%);
+    }
   }
 }

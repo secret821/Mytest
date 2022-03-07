@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import "./style.less";
 import modalStore from '@src/store/modal';
 import { RES_PATH } from "../../../sparkrc"
+import { SvgaPlayer, loadSvga } from "@spark/animation"
+
 class intro extends Component {
   constructor(props) {
     super(props)
@@ -14,7 +16,8 @@ class intro extends Component {
     return (
       <div className={`mdmount${index+1} IntroModal`}>
         <span className="intro-close" onClick={()=>{modalStore.closePop('intro')}}></span>
-        <img src={`${RES_PATH}cards/${index+1}.png`} className="intro-image" />
+        {/* <img src={`${RES_PATH}cards/${index+1}.png`} className="intro-image" /> */}
+        <SvgaPlayer className='imgSvga' src={`${RES_PATH}svga/${index+1}.svga`} loop={false}></SvgaPlayer>
         <span className="intro-title">{cardInfo[index+1]?.name}一游</span>
         <div
           className="intro-content"

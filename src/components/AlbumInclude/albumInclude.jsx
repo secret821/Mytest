@@ -6,6 +6,8 @@ import { _throttle } from "@src/utils/utils"
 import { Toast } from "@spark/ui"
 import modalStore from "@src/store/modal"
 import { RES_PATH } from "../../../sparkrc"
+import { SvgaPlayer, loadSvga } from "@spark/animation"
+
 
 class albumInclude extends Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class albumInclude extends Component {
             modalStore.closePop("albumInclude")
           }}
         ></span>
-        <img src={`${RES_PATH}cards/${curIndex}.png`} />
+        <SvgaPlayer className='imgSvga2' src={`${RES_PATH}svga/${curIndex}.svga`} loop={false}></SvgaPlayer>
+        {/* <img src={`${RES_PATH}cards/${curIndex}.png`} /> */}
         {cardsList?.length && (
           <span className="albumInclude-name">{cardsList[curIndex - 1].name}一游</span>
         )}
