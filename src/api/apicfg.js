@@ -18,7 +18,11 @@ const apiCfg = {
   prizeLottery: {
     uri: 'prize/join.do',
     withToken: true,
-  }
+  },
+  getSceneId: 'gameInvite/createItem.do',
+  GET_QR_Content:`/wechat/sceneqrcode/getSceneQrCodeContent`,
+  GET_QR_Code:`/customActivity/qrcode/getQrcode`,
+  doAssist: 'gameInvite/doAssist.do'
 }
 
 export default apiCfg;

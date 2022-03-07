@@ -13,6 +13,9 @@ import EventBus from "@duiba/event-bus"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
 import { SVGA_RES_INDEX } from "@src/utils/constants"
 import * as actions from "@src/store/action"
+import { onInitShare } from "@src/store/utils.js"
+import { getUrlParam, setUrlParam } from "@lightfish/tools"
+import { showToast } from "@src/utils/utils.js"
 
 @observer
 class Homepage extends React.Component {
@@ -28,11 +31,11 @@ class Homepage extends React.Component {
     this.locateRef = React.createRef()
   }
 
-  componentDidMount = async () => {
-    await store.getIndex()
-    await this.getCardInfo()
-    EventBus.on("UPDATE", this.update, this)
-  }
+  // componentDidMount = async () => {
+  //   await store.getIndex()
+  //   await this.getCardInfo()
+  //   EventBus.on("UPDATE", this.update, this)
+  // }
 
   componentWillUnmount() {
     clearInterval(this.timer)
@@ -73,6 +76,32 @@ class Homepage extends React.Component {
       }
     }
   }
+  componentDidMount = async () => {
+    // modalStore.pushPop('taskModal')
+    await store.getIndex()
+    await this.getCardInfo()
+    EventBus.on("UPDATE", this.update, this)
+    if (store.indexInfo.followOfficalAccount) {
+      onInitShare()
+      this.onDoHelp()
+    } else {
+      onInitShare(false, false)
+    }
+  }
+
+  async onDoHelp() {
+    const shareCode = getUrlParam("shareCode")
+    if (!shareCode) {
+      return
+    }
+    const { success, data } = await API.doAssist({ assistItemId: shareCode })
+    if (success) {
+      showToast("恭喜为好友助力成功")
+      if (history) {
+        history.replaceState(null, null, setUrlParam("shareCode", ""))
+      }
+    }
+  }
 
   getCardInfo = async () => {
     const res = await API.cardList()
@@ -110,8 +139,6 @@ class Homepage extends React.Component {
       Toast("该建筑未解锁")
     }
   })
-
-
 
   render() {
     const { cards, cardInfo, showSignAni } = this.state
@@ -225,13 +252,19 @@ class Homepage extends React.Component {
           </div>
           <div className="duanqiaocanxue">
             <span className="bgduanqiao"></span>
-            <SvgaPlayer className='snow' src='//yun.duiba.com.cn/aurora/assets/2f6768ff2c3e5a322f47c32c2d60456ad325bb96.svga'></SvgaPlayer>
+            <SvgaPlayer
+              className="snow"
+              src="//yun.duiba.com.cn/aurora/assets/2f6768ff2c3e5a322f47c32c2d60456ad325bb96.svga"
+            ></SvgaPlayer>
           </div>
           <div className="manlongguiyu">
             <span className="bg_guiyu"></span>
             <span className="swallowguiyu"></span>
             <span className="shipguiyu"></span>
-            <SvgaPlayer className='flowers' src='//yun.duiba.com.cn/aurora/assets/f90ee4ba20d4df38795e0ace9f56a0b4326a175b.svga'></SvgaPlayer>
+            <SvgaPlayer
+              className="flowers"
+              src="//yun.duiba.com.cn/aurora/assets/f90ee4ba20d4df38795e0ace9f56a0b4326a175b.svga"
+            ></SvgaPlayer>
           </div>
           <div className="sudichunwan">
             <span className="bg_shudi"></span>
@@ -256,8 +289,9 @@ class Homepage extends React.Component {
             <span className="bghuagang"></span>
             {/* <span className="fish"></span> */}
             <SvgaPlayer
-            className='fish'
-            src='//yun.duiba.com.cn/aurora/assets/479eafd3181763d09cd569d52dd9f672bd997961.svga'></SvgaPlayer>
+              className="fish"
+              src="//yun.duiba.com.cn/aurora/assets/479eafd3181763d09cd569d52dd9f672bd997961.svga"
+            ></SvgaPlayer>
             <span className="yunhuagang"></span>
           </div>
           <div className="leifengxizhao">
@@ -290,7 +324,7 @@ class Homepage extends React.Component {
             <span className="bgliuxia"></span>
             <span className="yunliuxiayou"></span>
             <span className="yunliuxiazuo"></span>
-            <span className='birdbao'></span>
+            <span className="birdbao"></span>
           </div>
           <div className="button">
             <span className="yunzuo"></span>
