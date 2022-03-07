@@ -19,7 +19,7 @@ export const cfg = {
   Gameovermodal: Gameovermodal,
   Gamefailmodal: Gamefailmodal,
   Drawsucmodal: Drawsucmodal,
-  Drawfailmodal: Drawfailmodal
+  Drawfailmodal: Drawfailmodal,
 };
 
 @observer

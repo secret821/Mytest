@@ -8,6 +8,9 @@ import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./homepage.less"
 import Index from "./Iconlist/Index.jsx"
+import { onInitShare } from "@src/store/utils.js"
+import { getUrlParam, setUrlParam } from "@lightfish/tools"
+import { showToast } from "@src/utils/utils.js"
 
 @observer
 class Homepage extends React.Component {
@@ -22,6 +25,26 @@ class Homepage extends React.Component {
 componentDidMount = async()=>{
   // modalStore.pushPop('taskModal')
   await store.getIndex()
+  if (store.indexInfo.followOfficalAccount) {
+    onInitShare()
+    this.onDoHelp()
+  } else {
+    onInitShare(false, false)
+  }
+}
+
+async onDoHelp() {
+  const shareCode = getUrlParam('shareCode')
+  if (!shareCode) {
+    return
+  }
+  const { success, data } = await API.doAssist({ assistItemId: shareCode })
+  if (success) {
+    showToast('恭喜为好友助力成功')
+    if (history) {
+      history.replaceState(null, null, setUrlParam('shareCode', ''))
+    }
+  }
 }
 
 getAllCoin(){

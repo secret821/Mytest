@@ -40,7 +40,10 @@ const store = makeAutoObservable({
   frontVariable: {},
   indexInfo: {
     totalCredits: 0,
-    prizeCredits: 20
+    prizeCredits: 20,
+    followOfficalAccount: false,
+    showAnimate: true,
+    inviteCredits: 20
   },
   cardInfo:[],
   //前端开发配置
@@ -53,6 +56,12 @@ const store = makeAutoObservable({
     this.curPage = page;
     this.curPageData = data
     callback && callback();
+  },
+  /**
+   * 暂不使用
+   */
+  reduceIndexInfoOfTotalCredits() {
+    this.indexInfo.totalCredits -= this.indexInfo.prizeCredits
   },
   //首页数据
   setIndexInfo(indexInfo) {

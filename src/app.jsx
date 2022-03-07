@@ -12,13 +12,14 @@ import Loading from "@src/pages/loading/loading";
 import HomePage from "@src/pages/homePage/homePage";
 import Gamepage from "./pages/gamepage/gamepage";
 import Lukylotteryscene from "./pages/lukylotteryscene/lukylotteryscene";
+import Outshare from "./pages/outshare/outshare";
 
 
 const pageMap = {
-  loading: <Loading/>,
-  homePage: <HomePage/>,
-  gamePage: <Gamepage />,
-  lottery: <Lukylotteryscene />
+  loading: Loading,
+  homePage: HomePage,
+  gamePage: Gamepage,
+  lottery: Lukylotteryscene
 }
 @observer
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
     //获取前端开发配置，依据项目需要，酌情添加 ！！！
     // await store.getFrontVariable(); 
     window.test = () => {
-      store.changePage('lottery', {
+      store.changePage('gamePage', {
         isNewGuy: true
       });
     }
@@ -35,7 +36,14 @@ class App extends Component {
     let { curPage, curPageData } = store;
     return (
       <div>
-        {{...pageMap[curPage], props: {changePage: 'homePage', ...curPageData}}}
+        {
+          CFG.isShare ? (
+            <Outshare />
+          ) : (function() {
+            const Scene = pageMap[curPage]
+            return <Scene  {...curPageData} />
+          })()
+        }
         <Modal />
       </div>
     );
