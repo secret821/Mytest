@@ -24,8 +24,9 @@ class Loading extends React.Component {
     this.preloadAssetInit()
   }
   preloadAssetInit = async () => {
+    await store.getFrontVariable();
     registerSounds({
-      bgm: '//yun.duiba.com.cn/aurora/assets/055bfe07baca654e4d9723283661a61a1d400353.mp3'
+      bgm: store.frontVariable.gameBgm
     })
     await preloadSounds()
     // 游戏基本信息
@@ -79,8 +80,8 @@ class Loading extends React.Component {
     this.intervalId = setInterval(() => {
       if (curPercentage >= percentage) {
         clearInterval(this.intervalId)
-        percentage == 100 &&
-          store.changePage('homePage') //跳转页面
+        // percentage == 100 &&
+        //   // store.changePage('homePage') //跳转页面
         return
       }
       curPercentage += 1

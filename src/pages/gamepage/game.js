@@ -1957,7 +1957,8 @@ exports.ResJson = {
             }
         }
     ],
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646366679/resource/"
+    // eslint-disable-next-line
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646730699/resource/"
 };
 
 
@@ -4181,8 +4182,6 @@ var IndexScene = (function (_super) {
             return this._musicStatus;
         },
         set: function (v) {
-            // if (this._musicStatus === v)
-            //     return;
             this._musicStatus = v;
             this.musicBtn.texture = RES_1.RES.getRes(v ? 'music-on.png' : 'music-off.png');
             Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_BGM, v);
@@ -4346,6 +4345,7 @@ var IndexScene = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        this.onGameInit();
                         if (!Tools_1.Tools.PAGE.isNewGuy) return [3, 2];
                         return [4, this.onShowNewGuySteps()];
                     case 1:
@@ -4354,7 +4354,6 @@ var IndexScene = (function (_super) {
                     case 2: return [4, this.onShowPreCountDown()];
                     case 3:
                         _a.sent();
-                        this.onGameInit();
                         this.GameStatus = 1;
                         this.CountDownCont.restart();
                         return [2];

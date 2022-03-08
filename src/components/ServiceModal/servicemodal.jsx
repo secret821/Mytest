@@ -12,16 +12,11 @@ export default class Service extends Component {
       <div className="modal-service">
         {/* <div className="title">是否前往人工服务</div> */}
         <div className="btn-box">
-          <div
-            className="go"
-            onClick={() => {this.toGo()}}
-          ></div>
-          <div
-            className="back md7"
-            onClick={() => {
-              modalStore.closePop("Service")
-            }}
-          ></div>
+          <div className="go" onClick={() => {
+            window.location.href =
+              store.frontVariable.serviceUrl;
+          }}></div>
+          <div className="back md7" onClick={()=>{modalStore.closePop('Service')}}></div>
         </div>
         <div
           className="close"

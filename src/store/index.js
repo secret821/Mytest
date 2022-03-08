@@ -94,6 +94,7 @@ const store = makeAutoObservable({
     // 获取前端开发配置
     const { data } = await API.getFrontVariable()
     this.frontVariable = data || {}
+    CFG.thumbnail = this.frontVariable.shareUrl
     console.log("前端开发配置", data)
   },
   //首页
