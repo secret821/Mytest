@@ -10,7 +10,7 @@ export default class Service extends Component {
         <div className="btn-box">
           <div className="go" onClick={() => {
             window.location.href =
-              "https://activity.m.duiba.com.cn/faq/index?dbnewopen";
+              store.frontVariable.serviceUrl;
           }}></div>
           <div className="back md7" onClick={()=>{modalStore.closePop('Service')}}></div>
         </div>
