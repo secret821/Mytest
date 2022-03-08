@@ -1,0 +1,25 @@
+@import "@src/styles/common.less";
+.getinvite {
+  // .absNormal(750px, 1336px, calc(~'(100vh - 1336px)/2'), calc(~'(100vw - 750px)/2'));
+  .absNormal(467px, 433px, 180px, calc(~"(100vw - 650px)/2"));
+  .bggetinvite {
+    .absNormal(467px, 433px, 200px, 86px);
+    .webp("//yun.duiba.com.cn/aurora/assets/5d483a8ff4f9970eed4f2cc895cf5334af64b053.png");
+    z-index: 9;
+  }
+  .getinvite-close {
+    .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
+    .absNormal(41px, 41px, @top: 160px, @left: 345px);
+  }
+  .getinvite-name {
+    .absNormal(494px, 46px, @bottom: -236px, @left: -100px);
+    .textfclaw(34px, #f1f3f3, @align: center, @lineH: 55px);
+    z-index: 10;
+  }
+  .getinvite-btn{
+    .absNormal(262px, 74px, @top: 694px, @left: 16px);
+    .webp("//yun.duiba.com.cn/aurora/assets/fc64198e741184a9ae34fe4b7817b9f7dd027a2a.png");
+    z-index: 10;
+  }
+  
+}

@@ -102,7 +102,7 @@ const store = makeAutoObservable({
     const res = await API.index()
     if (res?.success) {
       this.setIndexInfo(res?.data)
-      const { followOfficalAccount,firstJoin } = res?.data
+      const { followOfficalAccount,firstJoin,showAnimate,inviteCredits,readCredits } = res?.data
       //数据访问记录接口
       if(firstJoin){
         await API.accessData()
@@ -111,6 +111,15 @@ const store = makeAutoObservable({
       if (!followOfficalAccount) {
         modalStore.pushPop("wxcode")
       }
+      if(showAnimate){
+        if(inviteCredits !== ''){
+          modalStore.pushPop('getinvite',{inviteCredits:inviteCredits})
+        }
+        if(readCredits !== ''){
+          modalStore.pushPop('getread',{readCredits:readCredits})
+        }
+      }
+
     }
   },
   //卡片信息

@@ -17,7 +17,7 @@ module.exports = {
     "targetScore": 23754823,
     "readLinkUrl": "http://www.baidu.com",
     "readCredits": 20,
-    "inviteCredits": 20
+    "inviteCredits": ''
   },
   "message": null,
   "success": true
