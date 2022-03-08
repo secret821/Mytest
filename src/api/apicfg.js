@@ -20,7 +20,9 @@ const apiCfg = {
   getSceneId: 'gameInvite/createItem.do',
   GET_QR_Content:`/wechat/sceneqrcode/getSceneQrCodeContent`,
   GET_QR_Code:`/customActivity/qrcode/getQrcode`,
-  doAssist: 'gameInvite/doAssist.do'
+  doAssist: 'gameInvite/doAssist.do',
+  queryTaskList: 'home/taskList.do',
+  doReadTask: 'home/doTask.do'
 }
 
 export default apiCfg;

@@ -79,8 +79,8 @@ class Loading extends React.Component {
     this.intervalId = setInterval(() => {
       if (curPercentage >= percentage) {
         clearInterval(this.intervalId)
-        // percentage == 100 &&
-        //   store.changePage('homePage') //跳转页面
+        percentage == 100 &&
+          store.changePage('homePage') //跳转页面
         return
       }
       curPercentage += 1

@@ -74,6 +74,38 @@ const proxy = {
   'GET /gameInvite/doAssist.do': {
     success: true,
     data: 11
+  },
+  'GET /home/taskList.do': {
+    success: true,
+    data: [
+      {
+        code: 'read',	
+        state: 0,
+        taskName: '阅读',
+        completeTimes: 1,	
+        allTimes: 2,
+        reward: '阅读奖励',
+      },
+      {
+        code: 'assist',	
+        state: 0,
+        taskName: '阅读',
+        completeTimes: 1,	
+        allTimes: 2,
+        reward: '阅读奖励',
+      },
+      {
+        code: 'game',	
+        state: 0,
+        taskName: '阅读',
+        completeTimes: 1,	
+        allTimes: 2,
+        reward: '阅读奖励',
+      }
+    ]
+  },
+  'GET /home/doTask.do': {
+    success: true,
   }
 
 };

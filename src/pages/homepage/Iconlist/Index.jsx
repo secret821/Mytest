@@ -9,6 +9,7 @@ import modalStore from "@src/store/modal"
 import API from "@src/api"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Rule from "@src/components/rule/rule"
+import taskModal from "@src/components/taskModal/Index"
 class Index extends Component {
   constructor(props) {
     super(props)
@@ -101,7 +102,10 @@ class Index extends Component {
       Toast("活动已结束");
       return;
     }
-    modalStore.pushPop("taskModal")
+    // modalStore.pushPop("taskModal")
+    ModalCtrlIns.showModal(taskModal, {}, {
+      transitionName: 'slide-top'
+    })
   });
 
   render() {

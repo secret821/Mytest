@@ -9,7 +9,7 @@ MD();
 
 //此处为spark-cli动态生成
 import Loading from "@src/pages/loading/loading";
-import HomePage from "@src/pages/homePage/homePage";
+import HomePage from "@src/pages/homepage/homepage";
 import Gamepage from "./pages/gamepage/gamepage";
 import Lukylotteryscene from "./pages/lukylotteryscene/lukylotteryscene";
 import Outshare from "./pages/outshare/outshare";
