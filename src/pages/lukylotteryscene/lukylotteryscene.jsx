@@ -139,7 +139,10 @@ class Lukylotteryscene extends React.Component {
 
   onJudgeTrun() {
     if (store.indexInfo.prizeCredits > store.indexInfo.totalCredits) {
-      showToast('积分不足')
+      showToast('金币不足哦~')
+      return false
+    } else if (!store.indexInfo.followOfficalAccount) {
+      showToast('请先关注公众号哦~')
       return false
     }
     return true
