@@ -11,15 +11,25 @@ import { toJS } from 'mobx';
 import wxcode from "@src/components/WxCode/wxcode";
 import Service from "@src/components/ServiceModal/servicemodal";
 import taskModal from "@src/components/taskModal/Index";
+import album from "@src/components/Album/album";
+import albumInclude from "@src/components/AlbumInclude/albumInclude";
+import intro from "@src/components/Intro/intro";
+import Rule from "@src/components/rule/rule";
+
 export const cfg = {
-  wxcode: wxcode,
-  Service: Service,
-  taskModal: taskModal,
+  Rule:Rule,
+  wxcode:wxcode,
+  Service:Service,
+  taskModal:taskModal,
+  album:album,
+  albumInclude:albumInclude,
+  intro:intro,
   Gametipsconfirmmodal: Gametipsconfirmmodal,
   Gameovermodal: Gameovermodal,
   Gamefailmodal: Gamefailmodal,
   Drawsucmodal: Drawsucmodal,
   Drawfailmodal: Drawfailmodal,
+  Rule:Rule
 };
 
 @observer

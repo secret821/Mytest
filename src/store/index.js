@@ -38,6 +38,9 @@ const GameIndex = {
 const store = makeAutoObservable({
   ruleInfo: "",
   frontVariable: {},
+  indexInfo: {},
+  // cardInfo:{},
+  curIndex:0,
   indexInfo: {
     totalCredits: 0,
     prizeCredits: 20,
@@ -78,6 +81,9 @@ const store = makeAutoObservable({
 
   setCardInfo(cardInfo){
     this.cardInfo = cardInfo
+  },
+  setCurIndex(curIndex){
+    this.curIndex = curIndex
   },
   async initRule() {
     // 模拟获取远程的数据

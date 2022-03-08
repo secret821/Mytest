@@ -6,21 +6,23 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 999;
+  z-index: 1000;
+  // .musicBtn{
+  //   z-index: 1000;
+  //   width: 60px;
+  //   height: 60px;
+  //   position: absolute;
+  //   top:270px;
+  //   right: 24px;
+  // }
   .musicOpen {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top:270px;
-    right: 24px;
+    .absNormal(60px, 60px, 270px, @right: 24px);
+    pointer-events: auto;
     .webp('//yun.duiba.com.cn/aurora/assets/2382b7bb6ad1c16755ecb7439a933e5224ec35ab.png');
   }
   .musicClose {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top:270px;
-    right: 24px;
+    .absNormal(60px, 60px, 270px, @right: 24px);
+    pointer-events: auto;
     .webp('//yun.duiba.com.cn/aurora/assets/aff7fd790420223872e2332756bb6fb8a001dbc1.png');
   }
   .icon-rule {
@@ -48,12 +50,57 @@
   }
   .index-title {
     .webp("//yun.duiba.com.cn/aurora/assets/db8261f6c6a5b335b1049814d507ec4b1d07ad95.png");
-    .absNormal(534px, 390px, 160px, @left: 102px);
-    // .title-ani{
-    //   width: 734px;
-    //   height: 237px;
-    //   z-index: 999;
-    // }
+    .absNormal(534px, 390px, 160px, @left: 110px);
+    .bird11{
+      width: 97px;
+      height: 65px;
+      position: absolute;
+      left: -90px;
+      top: 60px;
+      // .sparkBg("homePage/燕子 拷贝.png");
+      background: url('//yun.duiba.com.cn/aurora/assets/e68eaf3ac747ad1ce3c41b6b45155069a3c2b9ec.png') no-repeat top left /
+      100% 100%;
+      animation: birdFly infinite linear 2s;
+    }
+    .bird22{
+      width: 97px;
+      height: 65px;
+      position: absolute;
+      right: -60px;
+      top: 230px;
+      // .sparkBg("homePage/燕子.png");
+      background: url('//yun.duiba.com.cn/aurora/assets/1a3681ebe65546a0f40a4ab4336014384f2d3d7b.png') no-repeat top left /
+      100% 100%;
+      animation: birdFly2 infinite linear 2s;
+    }
+  }
+  @keyframes birdFly {
+    0%{
+      transform:rotate(0deg);
+      transform: translate(0px,0px)
+    }
+    50%{
+      transform:rotate(-20deg);
+      transform: translate(10px,10px)
+    }
+    100%{
+      transform:rotate(0deg);
+      transform: translate(0px,0px)
+    }
+  }
+  @keyframes birdFly2 {
+    0%{
+      transform:rotate(0deg);
+      transform: translate(0px,0px)
+    }
+    50%{
+      transform:rotate(-20deg);
+      transform: translate(10px,-10px)
+    }
+    100%{
+      transform:rotate(0deg);
+      transform: translate(0px,0px)
+    }
   }
   .my-credits {
     .webp("//yun.duiba.com.cn/aurora/assets/7e5100f3f3c6b3a25eb9fbeabea1565d7d8721a2.png");

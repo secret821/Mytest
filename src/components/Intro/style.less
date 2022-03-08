@@ -1,29 +1,48 @@
 @import "@src/styles/common.less";
 .IntroModal {
-  .absNormal(731px, 1247px, calc(~"(100vh - 1247px)/2"), calc(~"(100vw - 731px)/2"));
-  .webp('//yun.duiba.com.cn/aurora/assets/4a09ed6591f338c7f1fdff1b92a203da0bcab440.png');
+  .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
+  .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
   margin-top: -100px;
+  animation: cardRun3 1 linear 1s;
   .intro-close {
-    // .webp("//yun.duiba.com.cn/aurora/assets/7d04b60e2131f6c8313bf2c9a860fd706fe74b07.png");
-    // .absNormal(83px, 83px, 1122px, @left: 323px);
-    .webp("//yun.duiba.com.cn/aurora/assets/d3ecd26d69478ba65c0076267a2dafb6ff77e5e1.png");
-    .absNormal(50px, 50px, @bottom: 0px, @left: 0, @right: 0);
-    margin: 0 auto;
+    .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
+    .absNormal(51px, 51px, @top: 860px, @left: 345px);
   }
   .intro-image {
-    .absNormal(551px, 415px, 324px, @left: 80px);
-    border-radius: 20px;
+    width: 491px;
+    height: 383px;
+    position: absolute;
+    top: 80px;
+    left: 117px;
   }
-  .intro-title { 
-    .textfclaw(36px, #062c17, @align: center, @lineH: 84px);
-    .absNormal(560px, 84px, 740px, @left: 80px);
-    font-weight: bold;
+  .intro-title {
+    .textfclaw(30px, #2a8fb1, @align: center, @lineH: 1);
+    .absNormal(auto, 30px, 480px, @left: 302px);
   }
   .intro-content {
-    .textfclaw(24px, #4f6b5c, @align: justify);
-    .absNormal(560px, 228px, 810px, @left: 80px);
+    width: 430px;
+    height: 120px;
+    left: 147px;
+    top: 530px;
+    // margin: 0 auto;
+    position: absolute;
+    font-size: 28px;
+    color: #000000;
+    overflow-wrap: break-word;
     overflow-y: scroll;
-    word-break: break-all;
-    padding: 0 30px;
+    line-height: 40px;
+    white-space: pre-wrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  @keyframes cardRun3 {
+    0%{
+      transform: scale(55%);
+    }
+    80%{
+      transform: scale(115%);
+    }
+    100%{
+      transform: scale(100%);
+    }
   }
 }

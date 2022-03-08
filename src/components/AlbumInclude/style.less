@@ -1,0 +1,53 @@
+@import "@src/styles/common.less";
+.albumIncludeModal {
+  // .absNormal(750px, 1336px, calc(~'(100vh - 1336px)/2'), calc(~'(100vw - 750px)/2'));
+  .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
+  .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
+  animation: cardRun2 1 linear 1s;
+  .albumInclude-title {
+    .textfclaw(30px, #2a8fb1, @align: center, @lineH: 1);
+    .absNormal(auto, 30px, 440px, @left: 155px);
+  }
+
+  .albumInclude-close {
+    .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
+    .absNormal(51px, 51px, @top: 860px, @left: 345px);
+  }
+    img {
+      width: 491px;
+      height: 383px;
+      position: absolute;
+      top: 80px;
+      left: 117px;
+    }
+    .albumInclude-name {
+      .absNormal(494px, 46px, @bottom: 284px, @left: 121px);
+      .textfclaw(24px, #0f8c91, @align: center, @lineH: 55px);
+    }
+    .text {
+      width: 430px;
+      height: 120px;
+      left: 147px;
+      top: 530px;
+      // margin: 0 auto;
+      position: absolute;
+      font-size: 28px;
+      color: #000000;
+      overflow-wrap: break-word;
+      overflow-y: scroll;
+      line-height: 40px;
+      white-space: pre-wrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    @keyframes cardRun2 {
+      0%{
+        transform: scale(55%);
+      }
+      80%{
+        transform: scale(115%);
+      }
+      100%{
+        transform: scale(100%);
+      }
+    }
+}
