@@ -38,23 +38,23 @@ export function ERROR_MESSSAGE(errorCode) {
   return message;
 }
 // 首页svga资源组
-export const SVGA_RES_INDEX = {
-  index_enter:
-    "//yun.duiba.com.cn/aurora/assets/4838bdf10e63fd848c18913c5773ba1b2f39d650.svga",
-  index_car:
-    "//yun.duiba.com.cn/aurora/assets/ea19753c5892b754474067e5a97621f7f12fc192.svga",
-  index_cloud:
-    "//yun.duiba.com.cn/aurora/assets/8c8d5419bf2450242bd26ef97daadabab9427bbf.svga",
-  index_gameicon:
-    "//yun.duiba.com.cn/aurora/assets/c04f09b421a15c35fba238f8fa61d456b8943890.svga",
-  index_inviteicon:
-    "//yun.duiba.com.cn/aurora/assets/3d4681a250a541f835de8eb963c26758f07bc82b.svga",
-  index_readicon:
-    "//yun.duiba.com.cn/aurora/assets/322ea89467cb2f5bf5c9e0c601262dc62e19b09a.svga",
-  index_title:
-    "//yun.duiba.com.cn/aurora/assets/01b6bbf37f4bd8d719ff36d5c82cf8cb16dec560.svga",
-  index_sign: 
-    "//yun.duiba.com.cn/aurora/assets/d8d305132febd28c59eb41538d1f8a4d3ac34ef2.svga",
-  index_signmodal:
-    "//yun.duiba.com.cn/aurora/assets/c3383aff0ff2a8999d2def58041ef3d51855471c.svga",
-};
+// export const SVGA_RES_INDEX = {
+//   index_enter:
+//     "//yun.duiba.com.cn/aurora/assets/4838bdf10e63fd848c18913c5773ba1b2f39d650.svga",
+//   index_car:
+//     "//yun.duiba.com.cn/aurora/assets/ea19753c5892b754474067e5a97621f7f12fc192.svga",
+//   index_cloud:
+//     "//yun.duiba.com.cn/aurora/assets/8c8d5419bf2450242bd26ef97daadabab9427bbf.svga",
+//   index_gameicon:
+//     "//yun.duiba.com.cn/aurora/assets/c04f09b421a15c35fba238f8fa61d456b8943890.svga",
+//   index_inviteicon:
+//     "//yun.duiba.com.cn/aurora/assets/3d4681a250a541f835de8eb963c26758f07bc82b.svga",
+//   index_readicon:
+//     "//yun.duiba.com.cn/aurora/assets/322ea89467cb2f5bf5c9e0c601262dc62e19b09a.svga",
+//   index_title:
+//     "//yun.duiba.com.cn/aurora/assets/01b6bbf37f4bd8d719ff36d5c82cf8cb16dec560.svga",
+//   index_sign: 
+//     "//yun.duiba.com.cn/aurora/assets/d8d305132febd28c59eb41538d1f8a4d3ac34ef2.svga",
+//   index_signmodal:
+//     "//yun.duiba.com.cn/aurora/assets/c3383aff0ff2a8999d2def58041ef3d51855471c.svga",
+// };

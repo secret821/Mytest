@@ -57,7 +57,7 @@ class taskModal extends Component {
     }
   }
   doTask = _throttle(async (item) => {
-    console.log(item.state,'item.state')
+    console.log(item.state, "item.state")
     const { todaySignStatus } = store?.indexInfo
     if (item.state) {
       return
@@ -105,7 +105,8 @@ class taskModal extends Component {
                 <div
                   className={classnames(
                     `itembtn`,
-                    `${item.state ? "grey" : "gobtn"}`
+                    `${item.state ? "grey" : "gobtn"} ${
+                      item?.completedSize ? "" : `md${10 + index}`}`
                   )}
                   onClick={() => {
                     this.doTask(item)

@@ -102,8 +102,11 @@ const store = makeAutoObservable({
     const res = await API.index()
     if (res?.success) {
       this.setIndexInfo(res?.data)
-      await API.accessData()
-      const { followOfficalAccount } = res?.data
+      const { followOfficalAccount,firstJoin } = res?.data
+      //数据访问记录接口
+      if(firstJoin){
+        await API.accessData()
+      }
       //关注公众号弹窗
       if (!followOfficalAccount) {
         modalStore.pushPop("wxcode")

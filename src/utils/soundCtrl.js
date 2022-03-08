@@ -1,5 +1,6 @@
 import config from "./config";
 import { Howl } from "howler"
+// eslint-disable-next-line
 const soundurl = "https://yun.duiba.com.cn/aurora/assets/";
 const soundNames = new Map();
 soundNames.set('bg','101aaaf14f7cef75ea42cd8cfd989ed99c189eba')

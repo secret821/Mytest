@@ -166,14 +166,8 @@ class Homepage extends React.Component {
                     <div className="signedTag">
                       {showSignAni &&
                         index + 1 === +homeInfo?.currentTaskId &&
-                        homeInfo?.todaySignStatus && (
-                          <SvgaPlayer
-                            className="sign_ani"
-                            src={SVGA_RES_INDEX["index_sign"]}
-                            loop={1}
-                            onEnd={this.handleSignAniEnd}
-                          />
-                        )}
+                        homeInfo?.todaySignStatus 
+                        }
                       <div
                         className={
                           showSignAni &&
@@ -231,7 +225,8 @@ class Homepage extends React.Component {
             <span className="bgwushan"></span>
             <SvgaPlayer
               className="wushansvga"
-              src="//yun.duiba.com.cn/aurora/assets/9ab51170dca045696011f1aac7aa5ae6a6c2f058.svga"
+              src={`${RES_PATH}homeSvga/吴山天风.svga`}
+              // src="//yun.duiba.com.cn/aurora/assets/9ab51170dca045696011f1aac7aa5ae6a6c2f058.svga"
             ></SvgaPlayer>
           </div>
           <div className="hupaimengquan">
@@ -254,7 +249,8 @@ class Homepage extends React.Component {
             <span className="bgduanqiao"></span>
             <SvgaPlayer
               className="snow"
-              src="//yun.duiba.com.cn/aurora/assets/2f6768ff2c3e5a322f47c32c2d60456ad325bb96.svga"
+              src={`${RES_PATH}homeSvga/雪花.svga`}
+              // src="//yun.duiba.com.cn/aurora/assets/2f6768ff2c3e5a322f47c32c2d60456ad325bb96.svga"
             ></SvgaPlayer>
           </div>
           <div className="manlongguiyu">
@@ -263,7 +259,8 @@ class Homepage extends React.Component {
             <span className="shipguiyu"></span>
             <SvgaPlayer
               className="flowers"
-              src="//yun.duiba.com.cn/aurora/assets/f90ee4ba20d4df38795e0ace9f56a0b4326a175b.svga"
+              src={`${RES_PATH}homeSvga/花.svga`}
+              // src="//yun.duiba.com.cn/aurora/assets/f90ee4ba20d4df38795e0ace9f56a0b4326a175b.svga"
             ></SvgaPlayer>
           </div>
           <div className="sudichunwan">
@@ -290,7 +287,8 @@ class Homepage extends React.Component {
             {/* <span className="fish"></span> */}
             <SvgaPlayer
               className="fish"
-              src="//yun.duiba.com.cn/aurora/assets/479eafd3181763d09cd569d52dd9f672bd997961.svga"
+              // src="//yun.duiba.com.cn/aurora/assets/479eafd3181763d09cd569d52dd9f672bd997961.svga"
+              src={`${RES_PATH}homeSvga/鱼.svga`}
             ></SvgaPlayer>
             <span className="yunhuagang"></span>
           </div>
@@ -317,7 +315,8 @@ class Homepage extends React.Component {
             <span className="zu1033"></span>
             <SvgaPlayer
               className="heye"
-              src="//yun.duiba.com.cn/aurora/assets/40befec68d4f7a66b44fc797324ce51aadf53642.svga"
+              // src="//yun.duiba.com.cn/aurora/assets/40befec68d4f7a66b44fc797324ce51aadf53642.svga"
+              src={`${RES_PATH}homeSvga/荷花.svga`}
             />
           </div>
           <div className="baoshiliuxia">

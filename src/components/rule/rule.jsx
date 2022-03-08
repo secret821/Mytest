@@ -37,7 +37,7 @@ class Rule extends Component {
     return (
       <div className="rule modalbg">
         <span className="background"></span>
-        <span className="redBtn" onClick={this.close}></span>
+        <span className="redBtn md7" onClick={this.close}></span>
         <article
           className="activityRulesActivityRules"
           dangerouslySetInnerHTML={{ __html: this.props.ruleInfo }}

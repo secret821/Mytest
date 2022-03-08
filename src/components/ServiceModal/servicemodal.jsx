@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
-import './style.less';
-import modalStore from '@src/store/modal';
+import React, { Component } from "react"
+import "./style.less"
+import modalStore from "@src/store/modal"
 
 export default class Service extends Component {
-  render(){
+
+  render() {
     return (
       <div className="modal-service">
         {/* <div className="title">是否前往人工服务</div> */}
@@ -14,7 +15,12 @@ export default class Service extends Component {
           }}></div>
           <div className="back md7" onClick={()=>{modalStore.closePop('Service')}}></div>
         </div>
-        <div className="close" onClick={()=>{modalStore.closePop('Service')}}></div>
+        <div
+          className="close"
+          onClick={() => {
+            modalStore.closePop("Service")
+          }}
+        ></div>
       </div>
     )
   }
