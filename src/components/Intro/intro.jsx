@@ -15,9 +15,10 @@ class intro extends Component {
     const { cardInfo, index } = this.props.popData;
     return (
       <div className={`mdmount${index+1} IntroModal`}>
+        <span className='intro-bg'></span>
         <span className="intro-close" onClick={()=>{modalStore.closePop('intro')}}></span>
         {/* <img src={`${RES_PATH}cards/${index+1}.png`} className="intro-image" /> */}
-        <SvgaPlayer className='imgSvga' src={`${RES_PATH}svga/${index+1}.svga`} loop={false}></SvgaPlayer>
+        <SvgaPlayer className='intro-image' src={`${RES_PATH}svga/${index+1}.svga`} loop={false}></SvgaPlayer>
         <span className="intro-title">{cardInfo[index+1]?.name}一游</span>
         <div
           className="intro-content"

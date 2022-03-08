@@ -52,6 +52,7 @@ class album extends Component {
     const { credits } = this.props.popData
     return (
       <div className="albumModal md15">
+        <span className='bg'></span>
         <span
           className="album-close"
           onClick={() => {
