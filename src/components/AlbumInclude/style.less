@@ -2,52 +2,61 @@
 .albumIncludeModal {
   // .absNormal(750px, 1336px, calc(~'(100vh - 1336px)/2'), calc(~'(100vw - 750px)/2'));
   .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
-  .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
+  // .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
   animation: cardRun2 1 linear 1s;
+  .bgAlbum {
+    .absNormal(686px, 803px, 0px, -46px);
+    .webp("//yun.duiba.com.cn/aurora/assets/1df50a71b104696bbca5d45f425897e1455e0af4.png");
+    z-index: 9;
+  }
   .albumInclude-title {
     .textfclaw(30px, #2a8fb1, @align: center, @lineH: 1);
     .absNormal(auto, 30px, 440px, @left: 155px);
+    z-index: 10;
   }
 
   .albumInclude-close {
     .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
     .absNormal(51px, 51px, @top: 860px, @left: 345px);
   }
-    img {
-      width: 491px;
-      height: 383px;
-      position: absolute;
-      top: 80px;
-      left: 117px;
+  .imgSvga2 {
+    width: 469px;
+    height: 374px;
+    position: absolute;
+    top: 87px;
+    left: 135px;
+  }
+  .albumInclude-name {
+    .absNormal(494px, 46px, @bottom: 274px, @left: 121px);
+    .textfclaw(24px, #0f8c91, @align: center, @lineH: 55px);
+    z-index: 10;
+
+  }
+  .text {
+    width: 430px;
+    height: 120px;
+    left: 147px;
+    top: 540px;
+    // margin: 0 auto;
+    position: absolute;
+    font-size: 28px;
+    color: #000000;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    line-height: 40px;
+    white-space: pre-wrap;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+  }
+  @keyframes cardRun2 {
+    0% {
+      transform: scale(55%);
     }
-    .albumInclude-name {
-      .absNormal(494px, 46px, @bottom: 284px, @left: 121px);
-      .textfclaw(24px, #0f8c91, @align: center, @lineH: 55px);
+    80% {
+      transform: scale(115%);
     }
-    .text {
-      width: 430px;
-      height: 120px;
-      left: 147px;
-      top: 530px;
-      // margin: 0 auto;
-      position: absolute;
-      font-size: 28px;
-      color: #000000;
-      overflow-wrap: break-word;
-      overflow-y: scroll;
-      line-height: 40px;
-      white-space: pre-wrap;
-      -webkit-overflow-scrolling: touch;
+    100% {
+      transform: scale(100%);
     }
-    @keyframes cardRun2 {
-      0%{
-        transform: scale(55%);
-      }
-      80%{
-        transform: scale(115%);
-      }
-      100%{
-        transform: scale(100%);
-      }
-    }
+  }
 }

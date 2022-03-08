@@ -20,6 +20,7 @@ class albumInclude extends Component {
     const { curIndex,cardsList } = this.props.popData
     return (
       <div className="albumIncludeModal md15">
+        <span className='bgAlbum'></span>
         <span
           className="albumInclude-close"
           onClick={() => {

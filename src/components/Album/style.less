@@ -2,55 +2,102 @@
 .albumModal {
   // .absNormal(750px, 1336px, calc(~'(100vh - 1336px)/2'), calc(~'(100vw - 750px)/2'));
   .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
-  .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
+  // .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
   animation: cardRun 1 linear 1s;
+  .bg{
+    .absNormal(686px, 803px, 0px, -48px);
+    .webp("//yun.duiba.com.cn/aurora/assets/1df50a71b104696bbca5d45f425897e1455e0af4.png");
+    z-index: 9;
+  }
   .album-title {
     .textfclaw(30px, #2a8fb1, @align: center, @lineH: 1);
     .absNormal(auto, 30px, 440px, @left: 155px);
+    z-index: 20;
   }
   .head {
-    .absNormal(344px, 90px, @top: 61px, @left: 187px);
+    .absNormal(344px, 80px, @top: 61px, @left: 187px);
     .webp("//yun.duiba.com.cn/aurora/assets/da92c922d3407a710cea8b067c5ba5811bb98a82.png");
     z-index: 999;
     text-align: center;
-    p{
+    padding-top: 8px;
+    p {
+      height: 40px;
       font-size: 40px;
       display: inline;
       color: aliceblue;
       font-weight: 500;
-      // margin-left: 5px;
-      // text-align: center
+    }
+    p:nth-child(1) {
+      animation: sideSlide 1  0.5s;
+    }
+    p:nth-child(2) {
+      animation: sideSlide 1  1s;
+      animation-delay: 0.1s;
+    }
+    p:nth-child(3) {
+      animation: sideSlide 1  1.5s;
+      animation-delay: 0.2s;
+    }
+    p:nth-child(4) {
+      animation: sideSlide 1  2s;
+      animation-delay: 0.3s;
+    }
+  }
+  @keyframes sideSlide {
+    0% {
+      transform: translateX(-150px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 0;
+    }
+  }
+  @keyframes sideSlide2 {
+    0% {
+      transform: translateY(150px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 0;
     }
   }
   .album-close {
     .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
-    .absNormal(51px, 51px, @top: 860px, @left: 349px);
+    .absNormal(51px, 51px, @top: 860px, @left: 346px);
   }
   .imgSvga {
-    width: 491px;
-    height: 383px;
+    width: 469px;
+    height: 374px;
     position: absolute;
-    top: 80px;
-    left: 117px;
+    top: 89px;
+    left: 137px;
   }
   .album-name {
-    .absNormal(494px, 46px, @bottom: 284px, @left: 121px);
+    .absNormal(494px, 46px, @bottom: 272px, @left: 121px);
     .textfclaw(24px, #0f8c91, @align: center, @lineH: 55px);
+    z-index: 20;
+
   }
   .btn-albm {
     .absNormal(269px, 82px, @bottom: 71px, @left: 237px);
     .webp("//yun.duiba.com.cn/aurora/assets/3b02dd8136fa0eb8c677e158f3caf747a922fd3c.png");
+    z-index: 20;
   }
   .moneys {
     .absNormal(280px, 96px, @bottom: 0px, @left: 2px);
+    z-index: 20;
     .icons {
       .absNormal(160px, 96px, @bottom: 163px, @left: 240px);
       .textfclaw(65px, #fea72e, @align: center);
       font-weight: 500;
+      animation: sideSlide2 1  0.5s;
     }
     .coin {
       .absNormal(92px, 81px, @bottom: 176px, @left: 370px);
       .webp("//yun.duiba.com.cn/aurora/assets/c3d4bb7639d5b036f312f8ab0b358bc1fe254bcc.png");
+      animation: sideSlide2 1  1s;
     }
   }
 

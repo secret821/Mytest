@@ -1,34 +1,34 @@
-import React, { Component } from "react";
-import "./style.less";
-import modalStore from "@src/store/modal";
-import getTaskApi from "@spark/api-task";
-import { _throttle } from "@src/utils/utils";
-import store from "@src/store";
-import { Toast } from "@spark/ui";
+import React, { Component } from "react"
+import "./style.less"
+import modalStore from "@src/store/modal"
+import getTaskApi from "@spark/api-task"
+import { _throttle } from "@src/utils/utils"
+import store from "@src/store"
+import { Toast } from "@spark/ui"
 
-const taskApi = getTaskApi("task_1");
-import getInviteAssistApi from "@spark/api-inviteAssist";
-import { domain } from "@spark/dbdomain";
-import API from "@src/api";
-import { classnames } from "@lightfish/tools";
-import { showShareGuide } from "@spark/share";
+const taskApi = getTaskApi("task_1")
+import getInviteAssistApi from "@spark/api-inviteAssist"
+import { domain } from "@spark/dbdomain"
+import API from "@src/api"
+import { classnames } from "@lightfish/tools"
+import { showShareGuide } from "@spark/share"
 
 // const inviteAssistApi = getInviteAssistApi("inviteAssist_1");
 class taskModal extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      taskList: []
-    };
+      taskList: [],
+    }
   }
 
   componentDidMount() {
-    this.getTaskList();
+    this.getTaskList()
   }
   getTaskList = async () => {
-    const {success, data} = await API.queryTaskList()
+    const { success, data } = await API.queryTaskList()
     if (success) {
-      this.setState({ taskList: data });
+      this.setState({ taskList: data })
     }
 
     // try {
@@ -49,31 +49,40 @@ class taskModal extends Component {
     // } catch (e) {
     //   Toast(e?.message || "网络异常，请稍后再试～")
     // }
-  };
+  }
   //组件卸载
   componentWillUnmount() {
     this.setState = () => {
-      return;
-    };
-  }
-  doTask = _throttle(async item => {
-    if (item.state) return
-    switch(item.code) {
-      case 'assist':
-        showShareGuide()
-        break
-      case 'read':
-        await API.doReadTask()
-        window.location.href = store.indexInfo.readLinkUrl
-        break
-      case 'game':
-        store.changePage('gamePage')
-        break
+      return
     }
-    this.closeModal()
-  });
+  }
+  doTask = _throttle(async (item) => {
+    console.log(item.state,'item.state')
+    const { todaySignStatus } = store?.indexInfo
+    if (item.state) {
+      return
+    } else {
+      if (item.state === 0 && !todaySignStatus) {
+        Toast("请先完成今日打卡哦")
+        return
+      }
+      switch (item.code) {
+        case "assist":
+          showShareGuide()
+          break
+        case "read":
+          await API.doReadTask()
+          window.location.href = store.indexInfo.readLinkUrl
+          break
+        case "game":
+          store.changePage("gamePage")
+          break
+      }
+      this.closeModal()
+    }
+  })
   render() {
-    const { taskList } = this.state;
+    const { taskList } = this.state
     return (
       <div className="taskModal">
         <div
@@ -89,21 +98,26 @@ class taskModal extends Component {
                 <div className="itemicon">
                   <img src={item?.icon} />
                 </div>
-                <div className="itemtitle">{item?.taskName}({item.completeTimes}/{item.allTimes})</div>
-                <div className="itemdesc">{item?.desc || '--'}</div>
+                <div className="itemtitle">
+                  {item?.taskName}({item.completeTimes}/{item.allTimes})
+                </div>
+                <div className="itemdesc">{item?.desc || "--"}</div>
                 <div
-                  className={classnames(`itembtn`, `${item.state ? 'grey' : 'gobtn'}`)}
+                  className={classnames(
+                    `itembtn`,
+                    `${item.state ? "grey" : "gobtn"}`
+                  )}
                   onClick={() => {
-                    this.doTask(item);
+                    this.doTask(item)
                   }}
                 ></div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default taskModal;
+export default taskModal

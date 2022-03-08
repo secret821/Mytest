@@ -1,29 +1,36 @@
 @import "@src/styles/common.less";
 .IntroModal {
-  .absNormal(686px, 803px, 180px, calc(~"(100vw - 650px)/2"));
-  .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
+  .absNormal(686px, 803px, 280px, calc(~"(100vw - 650px)/2"));
+  // .webp("//yun.duiba.com.cn/aurora/assets/05b60ba08d9b5636357e6307b111ae64f3b8f373.png");
   margin-top: -100px;
   animation: cardRun3 1 linear 1s;
+  .intro-bg{
+    .absNormal(686px, 803px, 0px, -42px);
+    .webp("//yun.duiba.com.cn/aurora/assets/1df50a71b104696bbca5d45f425897e1455e0af4.png");
+    z-index: 9;
+  }
   .intro-close {
     .webp("//yun.duiba.com.cn/aurora/assets/51bfaae682a16b6179128af12bcf67fdac910380.png");
     .absNormal(51px, 51px, @top: 860px, @left: 345px);
   }
   .intro-image {
-    width: 491px;
-    height: 383px;
+    width: 469px;
+    height: 375px;
     position: absolute;
-    top: 80px;
-    left: 117px;
+    top: 87px;
+    left: 133px;
   }
   .intro-title {
     .textfclaw(30px, #2a8fb1, @align: center, @lineH: 1);
-    .absNormal(auto, 30px, 480px, @left: 302px);
+    .absNormal(auto, 30px, 496px, @left: 303px);
+    z-index: 10;
+
   }
   .intro-content {
     width: 430px;
-    height: 120px;
+    height: 140px;
     left: 147px;
-    top: 530px;
+    top: 540px;
     // margin: 0 auto;
     position: absolute;
     font-size: 28px;
@@ -33,6 +40,8 @@
     line-height: 40px;
     white-space: pre-wrap;
     -webkit-overflow-scrolling: touch;
+    z-index: 10;
+
   }
   @keyframes cardRun3 {
     0%{
