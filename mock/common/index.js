@@ -2,7 +2,7 @@ module.exports = {
   "code": null,
   "data": {
     "followOfficalAccount": true,
-    "currentTaskId": 20,
+    "currentTaskId": 1,
     "showAnimate": true,
     "firstJoin": true,
     "totalCredits": 100,

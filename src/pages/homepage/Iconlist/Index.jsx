@@ -181,19 +181,19 @@ class Index extends Component {
           <span className="bird22"></span>
         </div>
         <div
-          className="icon-rule"
+          className="icon-rule md4"
           onClick={() => {
             this.goRule()
           }}
         ></div>
         <div
-          className="icon-prize"
+          className="icon-prize md5"
           onClick={() => {
             this.goRecord()
           }}
         ></div>
         <div
-          className="icon-kefu"
+          className="icon-kefu md6"
           onClick={() => {
             this.goService()
           }}
@@ -209,7 +209,7 @@ class Index extends Component {
           <span className="credits-count">当前金币：{totalCredits}</span>
         </div>
         <div
-          className="icon-lottery"
+          className="icon-lottery md9"
           onClick={() => {
             this.goLottery()
           }}
@@ -247,7 +247,7 @@ class Index extends Component {
         ) : (
           // 签到
           <div
-            className="startbtn"
+            className="startbtn md8"
             onClick={() => {
               this.doStart()
             }}

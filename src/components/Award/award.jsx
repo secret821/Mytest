@@ -24,8 +24,8 @@ class award extends Component {
           onClick={this.close}
         ></span>
         <div className="award-image">
-          <img
-            src="//yun.duiba.com.cn/aurora/assets/6911429dd9d38e62c80540873a591f51006fe53f.png"
+          <span
+            // src="//yun.duiba.com.cn/aurora/assets/6911429dd9d38e62c80540873a591f51006fe53f.png"
             className="award-prizeimage"
           />
         </div>
