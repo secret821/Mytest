@@ -77,7 +77,7 @@ class Homepage extends React.Component {
     }
   }
   componentDidMount = async () => {
-    // modalStore.pushPop('taskModal')
+    // modalStore.pushPop('getinvite')
     await store.getIndex()
     await this.getCardInfo()
     EventBus.on("UPDATE", this.update, this)
@@ -153,7 +153,7 @@ class Homepage extends React.Component {
             {cardInfo?.map((item, index) => {
               return (
                 <div
-                  className={`locatpos${+index + 1}`}
+                  className={`locatpos${+index + 1} md13dpm_d=${+index + 1}`}
                   key={index}
                   onClick={() => {
                     this.showDeatil(index)
