@@ -11,6 +11,7 @@ import { thisExpression } from "@babel/types"
 import EventBus from "@duiba/event-bus"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Rule from "@src/components/rule/rule"
+import taskModal from "@src/components/taskModal/Index"
 import { soundCtrl } from '@src/utils/soundCtrl';
 import config from '@src/utils/config';
 class Index extends Component {
@@ -154,7 +155,10 @@ class Index extends Component {
       Toast("活动已结束")
       return
     }
-    modalStore.pushPop("taskModal", { readLinkUrl })
+    // modalStore.pushPop("taskModal")
+    ModalCtrlIns.showModal(taskModal, {}, {
+      transitionName: 'slide-top'
+    })
   })
 
   startMusic = async () => {

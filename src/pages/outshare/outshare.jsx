@@ -10,6 +10,7 @@ import './outshare.less';
 import { onInitShare } from '@src/store/utils.js';
 import { getUrlParam } from '@lightfish/tools'
 import { showToast } from '@src/utils/utils.js';
+import { accessLog } from 'duiba-utils'
 
 @observer
 class Outshare extends React.Component {
@@ -22,7 +23,7 @@ class Outshare extends React.Component {
 
   componentDidMount() {
     onInitShare(true, true)
-
+    accessLog(506)
     const sceneId = getUrlParam('sceneId')
     if (!sceneId) {
       showToast("场景值获取失败~")
@@ -32,7 +33,6 @@ class Outshare extends React.Component {
   }
 
   onGetSceneQrcode = async (sceneId) => {
-    console.log(API)
     API.GET_QR_Content({sceneId}).then(res=>{
       if(res.success){
         res?.data && this.getQR_Code(encodeURIComponent(res.data))
