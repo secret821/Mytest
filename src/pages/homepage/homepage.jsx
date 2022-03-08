@@ -146,7 +146,7 @@ class Homepage extends React.Component {
     const homeInfo = store.indexInfo
     console.log(store.indexInfo?.totalCredits, "totalCredits------=====")
     return (
-      <div className="wrapper-cont">
+      <div className="wrapper-cont md3">
         <div className="homepage">
           {totalCredits && <Index data={store.indexInfo}></Index>}
           <div className="locateWrap" ref={this.locateRef}>

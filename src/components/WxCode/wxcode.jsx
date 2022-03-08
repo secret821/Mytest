@@ -9,7 +9,7 @@ class wxcode extends Component {
       <div className="WxcodeModal md2">
         <span className="wxcode-close" onClick={() => {modalStore.closePop('wxcode')}}></span>
         <img
-          src="//yun.duiba.com.cn/aurora/assets/f8844b7790ad96e1aa0849fe6f1072abba032b55.png"
+          src={store.frontVariable.qrcode}
           className="wxcodeImage"
         />
       </div>

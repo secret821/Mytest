@@ -5,7 +5,7 @@ import "./app.less";
 import store from './store/index';
 import Modal from './modal/modal';
 import MD from '../MD';
-MD();
+// MD();
 
 //此处为spark-cli动态生成
 import Loading from "@src/pages/loading/loading";
