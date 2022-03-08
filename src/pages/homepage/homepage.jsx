@@ -166,14 +166,8 @@ class Homepage extends React.Component {
                     <div className="signedTag">
                       {showSignAni &&
                         index + 1 === +homeInfo?.currentTaskId &&
-                        homeInfo?.todaySignStatus && (
-                          <SvgaPlayer
-                            className="sign_ani"
-                            src={SVGA_RES_INDEX["index_sign"]}
-                            loop={1}
-                            onEnd={this.handleSignAniEnd}
-                          />
-                        )}
+                        homeInfo?.todaySignStatus 
+                        }
                       <div
                         className={
                           showSignAni &&

@@ -3,9 +3,6 @@ import "./style.less"
 import modalStore from "@src/store/modal"
 
 export default class Service extends Component {
-  toGo = () => {
-    window.location.href = "https://activity.m.duiba.com.cn/faq/index?dbnewopen"
-  }
 
   render() {
     return (
