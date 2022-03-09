@@ -97,10 +97,11 @@ class HoldFruitGameScene extends React.Component {
   componentDidUpdate() {
     if (this.props.gaming) {
       // 取消静音
+      const storevalue = localStorage.getItem('musicStatus')
       this.GameScene?.changeGamePageConfig({
         isNewGuy: store.GameInfo.newUsr,
         countDownNum: store.GameInfo.gameTime,
-        musicStatus: localStorage.getItem('musicStatus') === 'true' ? true : false,
+        musicStatus: storevalue === 'true' || storevalue === null ? true : false,
       })
       unmute()
     } else {
@@ -189,18 +190,18 @@ class Gamepage extends ModalControllerComponent {
   }
 
   onGameBgm(e) {
-    console.log(e)
+    // 默认是背景音乐的关闭
     const handle = typeof e.data === 'object' ? e.data : {
       isOn: e.data,
       store: true
     }
-    const {isOn, store} = handle
+    const {isOn, store=false, key="bgm", loop=true} = handle
     store && localStorage.setItem('musicStatus', isOn)
     if (isOn) {
       console.log('播放音乐')
-      playSound('bgm', { loop: true })
+      playSound(key, { loop })
     } else {
-      stopSound('bgm')
+      stopSound(key)
     }
   }
 

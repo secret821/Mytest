@@ -1968,7 +1968,7 @@ exports.ResJson = {
         }
     ],
     // eslint-disable-next-line
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646797330/resource/"
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646819976/resource/"
 };
 
 
@@ -4452,6 +4452,21 @@ var IndexScene = (function (_super) {
         }
         this.gameElesList.length = 0;
     };
+    IndexScene.prototype.playGameEleSounds = function (resource) {
+        if (!this.musicStatus) {
+            return;
+        }
+        var kv = {
+            'bellSprit.png': 'bell',
+            'orangeSprit.png': 'orange',
+            'boomSprit.png': 'boom'
+        };
+        Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_BGM, {
+            isOn: true,
+            key: kv[resource],
+            loop: false
+        });
+    };
     IndexScene.prototype.frameUpdate = function () {
         if (!this.GameStatus)
             return;
@@ -4475,6 +4490,7 @@ var IndexScene = (function (_super) {
             if (onCollsionJudge(item.pythicCont.commonPythicPos, this.RobotGameEle.pythicCont.commonPythicPos)) {
                 item.visible = false;
                 GPool_1.GPool.takeIn(item.resource, item);
+                this.playGameEleSounds(item.resource);
                 this.gameElesList.splice(i, 1);
                 if (item.score == -1) {
                     console.log('boom', item);

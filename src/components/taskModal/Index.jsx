@@ -14,6 +14,7 @@ import { classnames } from "@lightfish/tools"
 import { showShareGuide } from "@spark/share"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Sorrymodal from "../sorrymodal/sorrymodal"
+import { RES_PATH } from "../../../sparkrc"
 
 // const inviteAssistApi = getInviteAssistApi("inviteAssist_1");
 class taskModal extends Component {
@@ -61,7 +62,7 @@ class taskModal extends Component {
   doTask = _throttle(async (item) => {
     console.log(item.state, "item.state")
     const { todaySignStatus } = store?.indexInfo
-    if (item.state) {
+    if (false) {
       return
     } else {
       if (item.state === 0 && !todaySignStatus) {
@@ -71,11 +72,14 @@ class taskModal extends Component {
       switch (item.code) {
         case "assist":
           showShareGuide()
+          document.querySelector('#share_guide_layer .bg').src = RES_PATH + 'outShare/shareGuide.png'
           break
         case "read":
-          const {success, data} =  await API.doReadTask()
-          if (data?.ifLimit) {
-            ModalCtrlIns.showModal(Sorrymodal)
+          if (item.state === 0) {
+            const {success, data} =  await API.doReadTask()
+            if (data?.ifLimit) {
+              ModalCtrlIns.showModal(Sorrymodal)
+            }
           }
           window.location.href = store.indexInfo.readLinkUrl
           break
