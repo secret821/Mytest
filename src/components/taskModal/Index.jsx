@@ -93,6 +93,11 @@ class taskModal extends Component {
         ></div>
         <div className="tasklist">
           {taskList.map((item, index) => {
+            const mdKv = {
+              'assist': 10,
+              'read': 11,
+              'game': 12,
+            }
             return (
               <div className="taskItem" key={index}>
                 <div className="itemicon">

@@ -96,6 +96,11 @@ class HoldFruitGameScene extends React.Component {
   componentDidUpdate() {
     if (this.props.gaming) {
       // 取消静音
+      this.GameScene?.changeGamePageConfig({
+        isNewGuy: store.GameInfo.newUsr,
+        countDownNum: store.GameInfo.gameTime,
+        musicStatus: localStorage.getItem('musicStatus') === 'true' ? true : false,
+      })
       unmute()
     } else {
       mute()
@@ -144,9 +149,10 @@ class Gamepage extends ModalControllerComponent {
 
   onGameStart = () => {
     if (store.GameInfo.newUsr) {
-      ModalCtrlIns.showModal(Gametipsconfirmmodal, {
-        onConfirm: this.onGameRealStart.bind(this)
-      })
+      // ModalCtrlIns.showModal(Gametipsconfirmmodal, {
+      //   onConfirm: this.onGameRealStart.bind(this)
+      // })
+      this.onGameRealStart()
     } else {
       this.onGameRealStart()
     }
@@ -179,6 +185,7 @@ class Gamepage extends ModalControllerComponent {
   }
 
   onGameBgm(e) {
+    console.log(e)
     const handle = typeof e.data === 'object' ? e.data : {
       isOn: e.data,
       store: true
@@ -186,6 +193,7 @@ class Gamepage extends ModalControllerComponent {
     const {isOn, store} = handle
     store && localStorage.setItem('musicStatus', isOn)
     if (isOn) {
+      console.log('播放音乐')
       playSound('bgm', { loop: true })
     } else {
       stopSound('bgm')
@@ -214,6 +222,7 @@ class Gamepage extends ModalControllerComponent {
     this.setState({
       startGameFlag: false
     })
+    store.GameInfo.newUsr = false
     if (data && data.credits){
       ModalCtrlIns.showModal(Gameovermodal, {
         credits: data.credits,
@@ -230,7 +239,7 @@ class Gamepage extends ModalControllerComponent {
     const {startGameFlag} = this.state
     const { frequency, targetScore, newUsr, gameTime, coins, gameRul } = store.GameInfo
     return (
-      <div className={classnames('main-game-page', {gaming: startGameFlag})}>
+      <div className={classnames('main-game-page md15', {gaming: startGameFlag})}>
         <div className="gamepage">
           <span className="back"></span>
           <div className="groupcont">
@@ -249,9 +258,11 @@ class Gamepage extends ModalControllerComponent {
             })
           }}></span>
         </div>
-        <div className="game-scene-container">
-          <HoldFruitGameScene gaming={startGameFlag} isNewGuy={newUsr} countDownNum={gameTime}/>
-        </div>
+        {
+          startGameFlag && <div className="game-scene-container md18">
+            <HoldFruitGameScene gaming={startGameFlag} isNewGuy={newUsr} countDownNum={gameTime}/>
+          </div>
+        }
       </div>
     );
   }

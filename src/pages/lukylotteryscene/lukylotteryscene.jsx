@@ -139,7 +139,13 @@ class Lukylotteryscene extends React.Component {
 
   onJudgeTrun() {
     if (store.indexInfo.prizeCredits > store.indexInfo.totalCredits) {
-      showToast('积分不足')
+      showToast('金币不足哦~')
+      return false
+    } else if (!store.indexInfo.followOfficalAccount) {
+      showToast('请先关注公众号哦~')
+      return false
+    } else if (!store.indexInfo.todaySignStatus){
+      showToast('请先完成今日打卡哦！')
       return false
     }
     return true
@@ -175,7 +181,7 @@ class Lukylotteryscene extends React.Component {
       7: 4
     } // 当前排序 对应 转盘实际下标
     return (
-      <div className="lukylotteryscene">
+      <div className="lukylotteryscene md22">
         <span className="back"></span>
         <span className="goback md20" onClick={() => {
           store.changePage('homePage')

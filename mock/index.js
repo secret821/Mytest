@@ -35,7 +35,7 @@ const proxy = {
       targetScore: 20,
       frequency: 22,
       gameTime: 100,
-      newUsr: 0,
+      newUsr: 1,
       coins: 11
     }
   },
