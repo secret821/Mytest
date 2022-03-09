@@ -19,13 +19,33 @@ class Index extends Component {
     super(props)
     this.state = {
       credits: 0,
-      musicStart: false,
+      musicStart: true,
     }
   }
   componentDidMount() {
     store.initRule()
     config.mute = true
     soundCtrl.changeMute("bg")
+
+    document.addEventListener("visibilitychange", () => {
+      let { musicStart } = this.state;
+      if (document.hidden) {
+        config.mute = true
+        soundCtrl.changeMute('bg');
+        console.log("H5已切换到后台或手机息屏");
+      } else {
+        console.error(musicStart)
+        console.log("H5已切换到网页");
+        if (musicStart === true) {
+          config.mute = false
+          soundCtrl.changeMute('bg');
+        } else {
+          config.mute = true
+          soundCtrl.changeMute('bg');
+        }
+      }
+
+    })
   }
 
   audioAutoPlay = (music) => {
@@ -69,6 +89,12 @@ class Index extends Component {
     Toast("活动未开始")
     return
   })
+  //最后一天
+  ready = _throttle(() => {
+    Toast("今日已打卡")
+    return
+  })
+
   doStart = _throttle(() => {
     const { ifPre, ifEnd } = this.props?.data
     if (ifPre) {
@@ -169,13 +195,20 @@ class Index extends Component {
     this.setState({
       musicStart: !this.state.musicStart,
     })
-    config.mute = false
-    soundCtrl.playSound("bg")
+    console.log(this.state.musicStart,'this.state.musicStart')
+    const { musicStart } = this.state
+    if (!musicStart) {
+      config.mute = false
+      soundCtrl.playSound("bg")
+    } else {
+      config.mute = true
+      soundCtrl.changeMute("bg")
+    }
     console.log(this.state.musicStart, "-------music")
   }
 
   render() {
-    const { totalCredits, todaySignStatus, prizeCredits, ifPre, ifEnd } =
+    const { totalCredits, todaySignStatus, prizeCredits, ifPre, ifEnd ,currentTaskId} =
       this.props?.data
     const { musicStart } = this.state
     return (
@@ -248,7 +281,7 @@ class Index extends Component {
                   this.signedClick()
                 }}
               ></div>
-            ) : (
+            ) : !ifPre && !ifEnd && !todaySignStatus&& currentTaskId!==20 ? (
               // 签到
               <div
                 className="startbtn md1"
@@ -256,7 +289,13 @@ class Index extends Component {
                   this.doStart()
                 }}
               ></div>
-            )}
+            ):
+            <div
+                className="readybtn md2"
+                onClick={() => {
+                  this.ready()
+                }}
+              ></div>}
           </>
         )}
       </div>

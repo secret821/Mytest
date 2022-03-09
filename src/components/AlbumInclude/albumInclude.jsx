@@ -17,16 +17,15 @@ class albumInclude extends Component {
   }
 
   render() {
-    const { curIndex,cardsList } = this.props.popData
-    console.log(cardsList,'cardsList------')
-    console.log(curIndex,'curIndex------')
+    const { curIndex,cardsList } = this.props
+    console.log(this.props,'this.props--->>')
     return (
       <div className="albumIncludeModal md15">
         <span className='bgAlbum'></span>
         <span
           className="albumInclude-close"
           onClick={() => {
-            modalStore.closePop("albumInclude")
+            this.closeModal()
           }}
         ></span>
         <SvgaPlayer className='imgSvga2' src={`${RES_PATH}svga/${curIndex}.svga`} loop={false}></SvgaPlayer>

@@ -14,9 +14,11 @@ import { SvgaPlayer, loadSvga } from "@spark/animation"
 import { SVGA_RES_INDEX } from "@src/utils/constants"
 import * as actions from "@src/store/action"
 import { onInitShare } from "@src/store/utils.js"
-import { getUrlParam, setUrlParam } from "@lightfish/tools"
+import { getUrlParam, setUrlParam, scrollTo } from "@lightfish/tools"
 import { showToast } from "@src/utils/utils.js"
 import { Toast } from "@spark/ui"
+import { ModalCtrlIns } from "@lightfish/reactmodal"
+import album from "@src/components/Album/album.jsx"
 
 @observer
 class Homepage extends React.Component {
@@ -41,9 +43,11 @@ class Homepage extends React.Component {
   componentWillUnmount() {
     clearInterval(this.timer)
     EventBus.off("UPDATE", this.update)
+
+    window.scrollFunc = scrollTo
   }
 
-  update = async () => {
+  update = _throttle(async () => {
     console.info(store.cardInfo,'=====cards')
     const res = await API.join()
     if (res?.success) {
@@ -55,10 +59,29 @@ class Homepage extends React.Component {
       this.setState({
         showSignAni: true,
       })
-      modalStore.pushPop("album", { credits: this.state.credits,cardInfo: this.state.cardInfo })
+      const currDaysIndex = store.indexInfo.currentTaskId + 1
+      const parseIntTop = parseInt(getComputedStyle(document.querySelector('.locatpos' + currDaysIndex)).top)
+      // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
+      function disableHtml() {
+        document.querySelector('.wrapper-cont').style.pointerEvents = 'none'
+      }
+      function enableHtml() {
+        document.querySelector('.wrapper-cont').style.pointerEvents = 'auto'
+      }
+      disableHtml()
+      scrollTo(parseIntTop-400, 500, document.querySelector('html'))
+      enableHtml()
+      ModalCtrlIns.showModal(album, {
+        credits: this.state.credits,
+        cardInfo: this.state.cardInfo
+      }, {
+        transitionName: 'scale-in-center',
+        fixedBody: false
+      })
+      // modalStore.pushPop("album", )
       // this._type = +data?.taskTypeBySignDays;
     }
-  }
+  })
 
   async componentDidUpdate(preprops, prestate) {
     if (!preprops?.homeInfo && !this.props.homeInfo?.firstJoin) {
@@ -136,7 +159,8 @@ class Homepage extends React.Component {
 
   // 已打卡山-展示简介
   showDeatil = _throttle((index) => {
-    console.log(store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
+    const { ifend } = store?.indexInfo
+    // console.log(store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
     if (
       +index + 1 <=
       +store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus
@@ -155,7 +179,7 @@ class Homepage extends React.Component {
     const { cards, cardInfo, showSignAni } = this.state
     const { totalCredits } = store.indexInfo
     const homeInfo = store.indexInfo
-    console.log(store.indexInfo?.totalCredits, "totalCredits------=====")
+    console.log(homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus, "homeInfo?.todaySignStatus------=====")
     return (
       <div className="wrapper-cont">
         <div className="homepage">
@@ -164,7 +188,7 @@ class Homepage extends React.Component {
             {cardInfo?.map((item, index) => {
               return (
                 <div
-                  className={`locatpos${+index + 1} md9dpm_d=${+index + 1}`}
+                  className={`locatpos${+index + 1}`}
                   key={index}
                   onClick={() => {
                     this.showDeatil(index)
@@ -183,7 +207,7 @@ class Homepage extends React.Component {
                         className={
                           showSignAni &&
                           index + 1 === +homeInfo?.currentTaskId &&
-                          homeInfo?.todaySignStatus
+                           homeInfo?.todaySignStatus
                             ? "sign_icon sign_icon_ani"
                             : "sign_icon"
                         }

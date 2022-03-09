@@ -17,7 +17,7 @@ class getinvite extends Component {
   }
 
   render() {
-    const { inviteCredits } = this.props.popData
+    const { coinsReward,spReward } = this.props.popData.tagList
     return (
       <div className="getinvite">
         <span className='bggetinvite'></span>
@@ -27,7 +27,7 @@ class getinvite extends Component {
             modalStore.closePop("getinvite")
           }}
         ></span>
-          <span className="getinvite-name">恭喜获得{inviteCredits}</span>
+          <span className="getinvite-name">恭喜获得{coinsReward}金币+{spReward}次游戏次数</span>
         <span className='getinvite-btn md18' onClick={() => {
             modalStore.closePop("getinvite")
           }}></span>

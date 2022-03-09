@@ -12,6 +12,8 @@ import { domain } from "@spark/dbdomain"
 import API from "@src/api"
 import { classnames } from "@lightfish/tools"
 import { showShareGuide } from "@spark/share"
+import { ModalCtrlIns } from "@lightfish/reactmodal"
+import Sorrymodal from "../sorrymodal/sorrymodal"
 
 // const inviteAssistApi = getInviteAssistApi("inviteAssist_1");
 class taskModal extends Component {
@@ -71,7 +73,10 @@ class taskModal extends Component {
           showShareGuide()
           break
         case "read":
-          await API.doReadTask()
+          const {success, data} =  await API.doReadTask()
+          if (data?.ifLimit) {
+            ModalCtrlIns.showModal(Sorrymodal)
+          }
           window.location.href = store.indexInfo.readLinkUrl
           break
         case "game":

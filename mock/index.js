@@ -26,7 +26,9 @@ const proxy = {
   },
   'GET /game/submit.do': {
     success: true,
-    data: null
+    data: {
+      ifLimit: true
+    }
   },
   'GET /game/index.do': {
     success: true,
@@ -110,6 +112,9 @@ const proxy = {
   },
   'GET /home/doTask.do': {
     success: true,
+    data: {
+      ifLimit: true
+    }
   }
 
 };

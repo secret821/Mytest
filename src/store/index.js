@@ -111,18 +111,17 @@ const store = makeAutoObservable({
       if (!followOfficalAccount) {
         modalStore.pushPop("wxcode")
       }
-      if (tagList !== []) {
+      if (tagList !== null) {
         tagList.map((item, index) => {
           switch (item.code) {
             case "assist":
-              modalStore.pushPop("getinvite", { tagList: tagList })
+              modalStore.pushPop("getinvite", { tagList: item })
               break
             case "read":
-              modalStore.pushPop("getread", { tagList: tagList })
+              modalStore.pushPop("getread", { tagList: item })
               break
           }
         })
-        // if(tagList)
       }
       // if(showAnimate){
       //   if(inviteCredits !== ''){

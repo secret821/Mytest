@@ -3,7 +3,7 @@ import { Howl } from "howler"
 // eslint-disable-next-line
 const soundurl = "https://yun.duiba.com.cn/aurora/assets/";
 const soundNames = new Map();
-soundNames.set('bg','101aaaf14f7cef75ea42cd8cfd989ed99c189eba')
+soundNames.set('bg','e173c0cc01efe703300730a47aa2f5e03e276a23')
 
 
 

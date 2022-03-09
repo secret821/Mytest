@@ -181,7 +181,7 @@ class Lukylotteryscene extends React.Component {
       7: 4
     } // 当前排序 对应 转盘实际下标
     return (
-      <div className="lukylotteryscene md22">
+      <div className="lukylotteryscene">
         <span className="back"></span>
         <span className="goback md20" onClick={() => {
           store.changePage('homePage')

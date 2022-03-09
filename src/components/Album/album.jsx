@@ -7,10 +7,12 @@ import { Toast } from "@spark/ui"
 import modalStore from "@src/store/modal"
 import { RES_PATH } from "../../../sparkrc"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
+import { ModalControllerComponent, ModalCtrlIns } from "@lightfish/reactmodal"
+import albumInclude from "../AlbumInclude/albumInclude"
 
 // const lockSrc =
 //   "//yun.duiba.com.cn/aurora/assets/cebd52aec5eff0fa453b4798ceb7c4476dc92627.png";
-class album extends Component {
+class album extends ModalControllerComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,28 +20,40 @@ class album extends Component {
       cardsList: [],
     }
   }
+
+  transitionMounted() {
+    this.albumModal.classList.add('aniTitle')
+  }
+
   componentDidMount = async () => {
     console.log(this.props,'------')
     // await this.getCards()
     await this.getAlbumList()
   }
 
-  getCards = () => {
-    const { cardInfo } = this.props.popData
-    console.log(cardInfo[0].name,'----cardinfo')
-    // const { data } = store.cardInfo
-    this.setState({
-      cardsList: cardInfo || []
-        // : [],
-    })
-    console.log(this.state.cardsList,'......')
-  }
+  // getCards = () => {
+  //   const { cardInfo } = this.props
+  //   // console.log(cardInfo[0].name,'----cardinfo')
+  //   // const { data } = store.cardInfo
+  //   this.setState({
+  //     cardsList: cardInfo || []
+  //       // : [],
+  //   })
+  //   console.log(this.state.cardsList,'......')
+  // }
 
   showPhoto = _throttle((index, item) => {
-    modalStore.closePop("album")
-    modalStore.pushPop("albumInclude", {
-      cardsList: this.props.popData.cardInfo,
+    this.closeModal(null, false)
+    // modalStore.pushPop("albumInclude", {
+    //   cardsList: this.state.cardsList,
+    //   curIndex: this.state.curIndex,
+    // })
+    ModalCtrlIns.showModal(albumInclude, {
+      cardsList: this.props.cardInfo,
       curIndex: this.state.curIndex,
+    }, {
+      queue: true,
+      transitionName: 'scale-in-center',
     })
   })
   getAlbumList =async()=> {
@@ -50,25 +64,23 @@ class album extends Component {
   }
   render() {
     const { curIndex, cardsList } = this.state
-    const { cardInfo } = this.props.popData
-    // console.log(cardInfo?.length,'cardInfo---')
-    // console.log(curIndex,'curIndex---')
-    // console.log(cardInfo[curIndex-1].name,'cardInfo[]----')
-    const { credits } = this.props.popData
+    const { credits, cardInfo } = this.props
     return (
-      <div className="albumModal">
+      <div className="albumModal" ref={el => el && (this.albumModal=el)}>
         <span className='bg'></span>
         <span
           className="album-close"
           onClick={() => {
-            modalStore.closePop("album")
+            this.closeModal()
           }}
         ></span>
         <span className="head">
-          <p>打</p>
-          <p>卡</p>
-          <p>成</p>
-          <p>功</p>
+          <div className="head-title">
+            <p>打</p>
+            <p>卡</p>
+            <p>成</p>
+            <p>功</p>
+          </div>
         </span>
         {/* <img src={`${RES_PATH}cards/${curIndex}.png`} /> */}
         <SvgaPlayer
@@ -83,7 +95,8 @@ class album extends Component {
           <span className="icons">{credits}</span>
           <span className="coin"></span>
         </div>
-        <span className="btn-albm" onClick={this.showPhoto}></span>
+        {/* md9dpm_d=${+index + 1} */}
+        <span className={`btn-albm `} onClick={this.showPhoto}></span>
       </div>
     )
   }

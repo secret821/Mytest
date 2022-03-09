@@ -17,7 +17,7 @@ class getread extends Component {
   }
 
   render() {
-    const { readCredits } = this.props.popData
+    const { coinsReward } = this.props.popData.tagList
     return (
       <div className="getread">
         <span className='bgGetRead'></span>
@@ -27,7 +27,7 @@ class getread extends Component {
             modalStore.closePop("getread")
           }}
         ></span>
-          <span className="getread-name">恭喜获得{readCredits}</span>
+          <span className="getread-name">恭喜获得{coinsReward}金币</span>
         <span className='getread-btn md16' onClick={() => {
             modalStore.closePop("getread")
           }}></span>

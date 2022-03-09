@@ -7,7 +7,7 @@ class wxcode extends Component {
   render() {
     return (
       <div className="WxcodeModal">
-        <span className="wxcode-close" onClick={() => {modalStore.closePop('wxcode')}}></span>
+        {/* <span className="wxcode-close" onClick={() => {modalStore.closePop('wxcode')}}></span> */}
         <img
           src={store.frontVariable.qrcode}
           className="wxcodeImage md29"
