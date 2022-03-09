@@ -6,11 +6,11 @@ import modalStore from '@src/store/modal';
 class wxcode extends Component {
   render() {
     return (
-      <div className="WxcodeModal md2">
+      <div className="WxcodeModal">
         <span className="wxcode-close" onClick={() => {modalStore.closePop('wxcode')}}></span>
         <img
           src={store.frontVariable.qrcode}
-          className="wxcodeImage"
+          className="wxcodeImage md29"
         />
       </div>
     );

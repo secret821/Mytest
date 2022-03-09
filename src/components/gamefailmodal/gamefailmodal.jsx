@@ -13,12 +13,15 @@ class Gamefailmodal extends React.Component {
   constructor(props) {
     super(props);
   }
+  closeModal4 =()=>{
+    modalStore.closeModal('Gamefailmodal')
+  } 
   render() {
     return (
       <div className="gamefailmodal">
         <span className="back"></span>
-        <span className="closebtn" onClick={this.closeModal}></span>
-        <span className="confirmbtn" onClick={this.closeModal}></span>
+        <span className="closebtn" onClick={this.closeModal4}></span>
+        <span className="confirmbtn md27" onClick={this.closeModal4}></span>
         <span className="t2 tc">- 闯关失败 再接再厉 -</span>
         <span className="t1 tc">游戏得分：{this.props.score}分</span>
         <span className="xixi"></span>

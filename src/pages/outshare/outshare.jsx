@@ -58,7 +58,7 @@ class Outshare extends React.Component {
     return (
       <div className="outshare">
         <span className="back"></span>
-        <img className='QR_code' src={this.state.QR_code} />
+        <img className='QR_code md17' src={this.state.QR_code} />
       </div>
     );
   }

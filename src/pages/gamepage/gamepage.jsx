@@ -237,13 +237,13 @@ class Gamepage extends ModalControllerComponent {
             <span className="groupback"></span>
             <span className="titledesc">{`目标分数：${targetScore}分\n闯关成功获得${coins}个金币`}</span>
             <span className="smalltips tc">剩余次数：{frequency}次</span>
-            <span className="startbtn" onClick={this.onGameStart}></span>
+            <span className="startbtn md23" onClick={this.onGameStart}></span>
             <span className="lucky"></span>
           </div>
-          <span className="goback" onClick={() => {
+          <span className="goback md24" onClick={() => {
             store.changePage('homePage')
           }}></span>
-          <span className="rulebtn" onClick={() => {
+          <span className="rulebtn md25" onClick={() => {
             ModalCtrlIns.showModal(Rule, {
               ruleInfo: gameRul
             })

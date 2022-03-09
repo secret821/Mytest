@@ -13,11 +13,14 @@ class Drawfailmodal extends React.Component {
   constructor(props) {
     super(props);
   }
+  closeModal = ()=>{
+    modalStore.closePop('Drawfailmodal')
+  }
   render() {
     return (
       <div className="drawfailmodal">
         <span className="back"></span>
-        <span className="closebtn" onClick={this.closeModal}></span>
+        <span className="closebtn md22" onClick={this.closeModal}></span>
         <span className="good" onClick={this.closeModal}></span>
         <span className="tips" style={{
           whiteSpace: `pre-wrap`

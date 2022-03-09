@@ -51,7 +51,7 @@ class album extends Component {
     const { curIndex, cardsList } = this.state
     const { credits } = this.props.popData
     return (
-      <div className="albumModal md15">
+      <div className="albumModal">
         <span className='bg'></span>
         <span
           className="album-close"

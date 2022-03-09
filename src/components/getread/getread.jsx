@@ -28,7 +28,7 @@ class getread extends Component {
           }}
         ></span>
           <span className="getread-name">恭喜获得{readCredits}</span>
-        <span className='getread-btn' onClick={() => {
+        <span className='getread-btn md16' onClick={() => {
             modalStore.closePop("getread")
           }}></span>
       </div>

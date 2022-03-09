@@ -77,7 +77,7 @@ class Homepage extends React.Component {
     }
   }
   componentDidMount = async () => {
-    // modalStore.pushPop('getinvite')
+    // modalStore.pushPop('Drawfailmodal')
     await store.getIndex()
     await this.getCardInfo()
     EventBus.on("UPDATE", this.update, this)
@@ -146,14 +146,14 @@ class Homepage extends React.Component {
     const homeInfo = store.indexInfo
     console.log(store.indexInfo?.totalCredits, "totalCredits------=====")
     return (
-      <div className="wrapper-cont md3">
+      <div className="wrapper-cont">
         <div className="homepage">
           {totalCredits && <Index data={store.indexInfo}></Index>}
           <div className="locateWrap" ref={this.locateRef}>
             {cardInfo?.map((item, index) => {
               return (
                 <div
-                  className={`locatpos${+index + 1} md13dpm_d=${+index + 1}`}
+                  className={`locatpos${+index + 1} md9dpm_d=${+index + 1}`}
                   key={index}
                   onClick={() => {
                     this.showDeatil(index)

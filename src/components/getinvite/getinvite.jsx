@@ -28,7 +28,7 @@ class getinvite extends Component {
           }}
         ></span>
           <span className="getinvite-name">恭喜获得{inviteCredits}</span>
-        <span className='getinvite-btn' onClick={() => {
+        <span className='getinvite-btn md18' onClick={() => {
             modalStore.closePop("getinvite")
           }}></span>
       </div>

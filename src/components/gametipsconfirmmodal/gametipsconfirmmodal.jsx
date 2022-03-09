@@ -13,6 +13,9 @@ class Gametipsconfirmmodal extends React.Component {
   constructor(props) {
     super(props);
   }
+  closeModal = ()=>{
+    modalStore.closeModal('Gametipsconfirmmodal')
+  }
   render() {
     const { gameTime, targetScore, coins } = store.GameInfo
     return (

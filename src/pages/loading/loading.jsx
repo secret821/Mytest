@@ -96,7 +96,7 @@ class Loading extends React.Component {
   render() {
     // let curPercentage = this.curPercentage;
     return (
-      <div className="loading md1">
+      <div className="loading">
         <span className="bg174"></span>
         <div className="progressBar">
           <span className="atBottom"></span>

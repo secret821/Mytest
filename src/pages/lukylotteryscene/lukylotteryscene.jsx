@@ -177,7 +177,7 @@ class Lukylotteryscene extends React.Component {
     return (
       <div className="lukylotteryscene">
         <span className="back"></span>
-        <span className="goback" onClick={() => {
+        <span className="goback md20" onClick={() => {
           store.changePage('homePage')
         }}></span>
         <div className="coinboard">
@@ -208,7 +208,7 @@ class Lukylotteryscene extends React.Component {
               }
             </div>
           </div>
-          <div className="lotterybtn" onClick={() => this.doLottery.doTurn()}>
+          <div className="lotterybtn md19" onClick={() => this.doLottery.doTurn()}>
             <span className="group1"></span>
             <span className="tips tc">{prizeCredits}金币/次</span>
           </div>

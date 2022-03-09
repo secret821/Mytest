@@ -181,35 +181,35 @@ class Index extends Component {
           <span className="bird22"></span>
         </div>
         <div
-          className="icon-rule md4"
+          className="icon-rule md7"
           onClick={() => {
             this.goRule()
           }}
         ></div>
         <div
-          className="icon-prize md5"
+          className="icon-prize md8"
           onClick={() => {
             this.goRecord()
           }}
         ></div>
         <div
-          className="icon-kefu md6"
+          className="icon-kefu md5"
           onClick={() => {
             this.goService()
           }}
         ></div>
-        {/* <div className='musicBtn' onClick={this.startMusic}> */}
+        <div className='md6'>
           {musicStart ? (
             <div className="musicOpen" onClick={this.startMusic}></div>
           ) : (
             <div className="musicClose" onClick={this.startMusic}></div>
           )}
-        {/* </div> */}
+        </div>
         <div className="my-credits">
           <span className="credits-count">当前金币：{totalCredits}</span>
         </div>
         <div
-          className="icon-lottery md9"
+          className="icon-lottery md3"
           onClick={() => {
             this.goLottery()
           }}
@@ -217,11 +217,11 @@ class Index extends Component {
           <div className="lottery-icom"></div>
           <p className="cost-num">{prizeCredits}金币/次</p>
         </div>
-        <span className="toGetCoins" onClick={this.goTask}></span>
+        <span className="toGetCoins md4" onClick={this.goTask}></span>
         {ifEnd ? (
           // 活动已结束
           <div
-            className="endbtn"
+            className="endbtn md2"
             onClick={() => {
               this.doEnd()
             }}
@@ -229,7 +229,7 @@ class Index extends Component {
         ) : ifPre ? (
           //未开始
           <div
-            className="prebtn"
+            className="prebtn md2"
             onClick={() => {
               this.doPre()
             }}
@@ -238,7 +238,7 @@ class Index extends Component {
           ) : (
             // 明日再来
             <div
-              className="signedBtn"
+              className="signedBtn md2"
               onClick={() => {
                 this.signedClick()
               }}
@@ -247,7 +247,7 @@ class Index extends Component {
         ) : (
           // 签到
           <div
-            className="startbtn md8"
+            className="startbtn md1"
             onClick={() => {
               this.doStart()
             }}

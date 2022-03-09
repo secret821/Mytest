@@ -13,7 +13,7 @@ export default class Service extends Component {
             window.location.href =
               store.frontVariable.serviceUrl;
           }}></div>
-          <div className="back md7" onClick={()=>{modalStore.closePop('Service')}}></div>
+          <div className="back" onClick={()=>{modalStore.closePop('Service')}}></div>
         </div>
         <div
           className="close"

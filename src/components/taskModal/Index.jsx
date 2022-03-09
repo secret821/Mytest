@@ -105,8 +105,7 @@ class taskModal extends Component {
                 <div
                   className={classnames(
                     `itembtn`,
-                    `${item.state ? "grey" : "gobtn"} ${
-                      item?.completedSize ? "" : `md${10 + index}`}`
+                    `${item.state ? `grey md${13+index}` : `gobtn md${10+index}` }`
                   )}
                   onClick={() => {
                     this.doTask(item)
