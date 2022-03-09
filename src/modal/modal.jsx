@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Sorrymodal from "../components/sorrymodal/sorrymodal";
 import Drawfailmodal from "../components/drawfailmodal/drawfailmodal";
 import Drawsucmodal from "../components/drawsucmodal/drawsucmodal";
 import Gamefailmodal from "../components/gamefailmodal/gamefailmodal";
@@ -15,25 +16,25 @@ import album from "@src/components/Album/album";
 import albumInclude from "@src/components/AlbumInclude/albumInclude";
 import intro from "@src/components/Intro/intro";
 import Rule from "@src/components/rule/rule";
-import getread from "@src/components/getread/getread"
-import getinvite from "@src/components/getinvite/getinvite"
-
+import getread from "@src/components/getread/getread";
+import getinvite from "@src/components/getinvite/getinvite";
 export const cfg = {
-  Rule:Rule,
-  wxcode:wxcode,
-  Service:Service,
-  taskModal:taskModal,
-  album:album,
-  albumInclude:albumInclude,
-  intro:intro,
+  Rule: Rule,
+  wxcode: wxcode,
+  Service: Service,
+  taskModal: taskModal,
+  album: album,
+  albumInclude: albumInclude,
+  intro: intro,
   Gametipsconfirmmodal: Gametipsconfirmmodal,
   Gameovermodal: Gameovermodal,
   Gamefailmodal: Gamefailmodal,
   Drawsucmodal: Drawsucmodal,
   Drawfailmodal: Drawfailmodal,
-  Rule:Rule,
-  getread:getread,
-  getinvite:getinvite
+  Rule: Rule,
+  getread: getread,
+  getinvite: getinvite,
+  Sorrymodal: Sorrymodal
 };
 
 @observer

@@ -14,7 +14,7 @@ class Drawfailmodal extends React.Component {
     super(props);
   }
   closeModal = ()=>{
-    modalStore.closePop('Drawfailmodal')
+    this.closeModal()
   }
   render() {
     return (

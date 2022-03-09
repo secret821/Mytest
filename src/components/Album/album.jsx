@@ -78,7 +78,7 @@ class album extends Component {
           <span className="icons">{credits}</span>
           <span className="coin"></span>
         </div>
-        <span className="btn-albm" onClick={this.showPhoto}></span>
+        <span className={`btn-albm md9dpm_d=${+index + 1}`} onClick={this.showPhoto}></span>
       </div>
     )
   }

@@ -1528,6 +1528,7 @@ var Main = (function () {
     };
     Main.prototype.onAddToStage = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var gameSceneInitResolve;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -1550,7 +1551,13 @@ var Main = (function () {
                         return [4, Tools_1.Tools.getGlobalData()];
                     case 3:
                         _a.sent();
-                        ctrls_1.changeScene(IndexScene_1.default);
+                        this.gameSceneInitPromise = new Promise(function (r) {
+                            gameSceneInitResolve = r;
+                        });
+                        ctrls_1.changeScene(IndexScene_1.default, {
+                            sceneData: 11,
+                            gameSceneInitResolve: gameSceneInitResolve
+                        });
                         return [2];
                 }
             });
@@ -1961,7 +1968,7 @@ exports.ResJson = {
         }
     ],
     // eslint-disable-next-line
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646792325/resource/"
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646797330/resource/"
 };
 
 
@@ -4234,6 +4241,7 @@ var IndexScene = (function (_super) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 _super.prototype.start.call(this);
+                data.gameSceneInitResolve();
                 return [2];
             });
         });
@@ -4340,7 +4348,6 @@ var IndexScene = (function (_super) {
     IndexScene.prototype.onGameInit = function () {
         this.score = 0;
         this.musicStatus = Tools_1.Tools.PAGE.musicStatus;
-        console.log('Tools_1.Tools.PAGE.musicStatus', Tools_1.Tools.PAGE.musicStatus)
         this.recoverGameEles();
         this.onInitGamer();
     };

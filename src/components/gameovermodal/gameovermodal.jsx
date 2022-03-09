@@ -14,7 +14,7 @@ class Gameovermodal extends React.Component {
     super(props);
   }
   closeModal3 = ()=>{
-    modalStore.closeModal('Gameovermodal')
+    this.closeModal()
   }
   render() {
     const {score, credits} = this.props

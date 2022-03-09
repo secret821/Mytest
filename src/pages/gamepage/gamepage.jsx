@@ -17,6 +17,7 @@ import Gameovermodal from '@src/components/gameovermodal/gameovermodal.jsx';
 import Gamefailmodal from '@src/components/gamefailmodal/gamefailmodal.jsx';
 import { showToast } from '@src/utils/utils.js';
 import Rule from '@src/components/rule/rule.jsx';
+import Sorrymodal from "@src/components/sorrymodal/sorrymodal"
 
 const GameEvent = {
   GAME_START: 'GAME_START',
@@ -175,6 +176,9 @@ class Gamepage extends ModalControllerComponent {
       })
       // 游戏次数 -1
       store.reduceFrequency()
+      console.log(this.holdGameScene)
+      await this.holdGameScene.GameScene.gameSceneInitPromise
+      // 存在时序的问题
       GDispatcher.dispatchEvent(GameEvent.GAME_START)
     }
   }
@@ -223,6 +227,10 @@ class Gamepage extends ModalControllerComponent {
       startGameFlag: false
     })
     store.GameInfo.newUsr = false
+    if (data?.ifLimit) {
+      ModalCtrlIns.showModal(Sorrymodal)
+      return
+    }
     if (data && data.credits){
       ModalCtrlIns.showModal(Gameovermodal, {
         credits: data.credits,
@@ -258,11 +266,13 @@ class Gamepage extends ModalControllerComponent {
             })
           }}></span>
         </div>
-        {
-          startGameFlag && <div className="game-scene-container md18">
-            <HoldFruitGameScene gaming={startGameFlag} isNewGuy={newUsr} countDownNum={gameTime}/>
-          </div>
-        }
+        <div className="game-scene-container">
+          <HoldFruitGameScene ref={el => {
+            if (el) {
+              this.holdGameScene = el
+            }
+          }} gaming={startGameFlag} isNewGuy={newUsr} countDownNum={gameTime}/>
+        </div>
       </div>
     );
   }

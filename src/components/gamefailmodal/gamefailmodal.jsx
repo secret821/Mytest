@@ -14,7 +14,7 @@ class Gamefailmodal extends React.Component {
     super(props);
   }
   closeModal4 =()=>{
-    modalStore.closeModal('Gamefailmodal')
+    this.closeModal()
   } 
   render() {
     return (

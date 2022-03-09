@@ -14,7 +14,7 @@ class Drawsucmodal extends React.Component {
     super(props);
   }
   closeModal2 = ()=>{
-    modalStore.closePop('Drawsucmodal')
+    this.closeModal()
   }
   render() {
     const { icon, name } = this.props.prizeInfo
