@@ -26,7 +26,10 @@ class Loading extends React.Component {
   preloadAssetInit = async () => {
     await store.getFrontVariable();
     registerSounds({
-      bgm: store.frontVariable.gameBgm
+      bgm: RES_PATH + 'mp3/bgm.mp3',
+      bell: RES_PATH + 'mp3/bell.mp3',
+      orange: RES_PATH + 'mp3/orange.mp3',
+      boom: RES_PATH + 'mp3/boom.wav',
     })
     await preloadSounds()
     // 游戏基本信息

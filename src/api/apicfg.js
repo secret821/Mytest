@@ -11,8 +11,14 @@ const apiCfg = {
   cardList:`home/cardList.do`,
   join:`home/join.do`,
   GET_PHOTOLIST: `home/landscapePhoto.do`,
-  gameStart: 'game/start.do',
-  gameSubmit: 'game/submit.do',
+  gameStart: {
+    uri: 'game/start.do',
+    withToken: true
+  },
+  gameSubmit: {
+    uri: 'game/submit.do',
+    withToken: true
+  },
   gameIndex: 'game/index.do',
   prizeQuery: 'rule_1.query',
   prizeLottery: {
@@ -22,7 +28,10 @@ const apiCfg = {
   getSceneId: 'gameInvite/createItem.do',
   GET_QR_Content:`/wechat/sceneqrcode/getSceneQrCodeContent`,
   GET_QR_Code:`/customActivity/qrcode/getQrcode`,
-  doAssist: 'gameInvite/doAssist.do',
+  doAssist: {
+    uri: 'gameInvite/doAssist.do',
+    withToken: true
+  },
   queryTaskList: 'home/taskList.do',
   doReadTask: 'home/doTask.do'
 }
