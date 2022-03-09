@@ -17,14 +17,14 @@ class albumInclude extends Component {
   }
 
   render() {
-    const { curIndex,cardsList } = this.props.popData
+    const { curIndex,cardsList } = this.props
     return (
       <div className="albumIncludeModal md15">
         <span className='bgAlbum'></span>
         <span
           className="albumInclude-close"
           onClick={() => {
-            modalStore.closePop("albumInclude")
+            this.closeModal()
           }}
         ></span>
         <SvgaPlayer className='imgSvga2' src={`${RES_PATH}svga/${curIndex}.svga`} loop={false}></SvgaPlayer>

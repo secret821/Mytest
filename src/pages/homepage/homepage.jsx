@@ -16,6 +16,8 @@ import * as actions from "@src/store/action"
 import { onInitShare } from "@src/store/utils.js"
 import { getUrlParam, setUrlParam } from "@lightfish/tools"
 import { showToast } from "@src/utils/utils.js"
+import { ModalCtrlIns } from "@lightfish/reactmodal"
+import album from "@src/components/Album/album.jsx"
 
 @observer
 class Homepage extends React.Component {
@@ -52,7 +54,10 @@ class Homepage extends React.Component {
       this.setState({
         showSignAni: true,
       })
-      modalStore.pushPop("album", { credits: this.state.credits })
+      ModalCtrlIns.showModal(album, { credits: this.state.credits }, {
+        transitionName: 'scale-in-center'
+      })
+      // modalStore.pushPop("album", )
       // this._type = +data?.taskTypeBySignDays;
     }
   }
