@@ -144,6 +144,9 @@ class Lukylotteryscene extends React.Component {
     } else if (!store.indexInfo.followOfficalAccount) {
       showToast('请先关注公众号哦~')
       return false
+    } else if (!store.indexInfo.todaySignStatus){
+      showToast('请先完成今日打卡哦！')
+      return false
     }
     return true
   }
@@ -178,7 +181,7 @@ class Lukylotteryscene extends React.Component {
       7: 4
     } // 当前排序 对应 转盘实际下标
     return (
-      <div className="lukylotteryscene">
+      <div className="lukylotteryscene md22">
         <span className="back"></span>
         <span className="goback" onClick={() => {
           store.changePage('homePage')
@@ -211,7 +214,7 @@ class Lukylotteryscene extends React.Component {
               }
             </div>
           </div>
-          <div className="lotterybtn" onClick={() => this.doLottery.doTurn()}>
+          <div className="lotterybtn md23" onClick={() => this.doLottery.doTurn()}>
             <span className="group1"></span>
             <span className="tips tc">{prizeCredits}金币/次</span>
           </div>

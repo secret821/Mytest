@@ -1486,6 +1486,9 @@ var Main = (function () {
                 self.requestID = window.requestAnimationFrame(loop);
         }
     }
+    Main.prototype.changeGamePageConfig = function (PAGE) {
+        PAGE && (Tools_1.Tools.PAGE = PAGE);
+    };
     Main.prototype.run = function () {
         this._pause = false;
         FYGE.Tween._lastTime = null;
@@ -1958,7 +1961,7 @@ exports.ResJson = {
         }
     ],
     // eslint-disable-next-line
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646730699/resource/"
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646792325/resource/"
 };
 
 
@@ -4337,6 +4340,7 @@ var IndexScene = (function (_super) {
     IndexScene.prototype.onGameInit = function () {
         this.score = 0;
         this.musicStatus = Tools_1.Tools.PAGE.musicStatus;
+        console.log('Tools_1.Tools.PAGE.musicStatus', Tools_1.Tools.PAGE.musicStatus)
         this.recoverGameEles();
         this.onInitGamer();
     };
