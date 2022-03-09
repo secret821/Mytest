@@ -2,11 +2,11 @@ module.exports = {
   "code": null,
   "data": {
     "followOfficalAccount": true,
-    "currentTaskId": 20,
+    "currentTaskId": 10,
     "showAnimate": true,
     "firstJoin": true,
     "totalCredits": 100,
-    "todaySignStatus": true,
+    "todaySignStatus": false,
     "todayTaskWindowStatus": true,
     "currentTaskType": 2,
     "taskCredits": 20,
