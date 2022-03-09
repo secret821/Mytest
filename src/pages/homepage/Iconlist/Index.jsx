@@ -24,8 +24,9 @@ class Index extends Component {
   }
   componentDidMount() {
     store.initRule()
-    config.mute = true
-    soundCtrl.changeMute("bg")
+    config.mute = false
+    soundCtrl.playSound("bg")
+    // soundCtrl.changeMute("bg")
 
     document.addEventListener("visibilitychange", () => {
       let { musicStart } = this.state;
@@ -46,32 +47,6 @@ class Index extends Component {
       }
 
     })
-  }
-
-  audioAutoPlay = (music) => {
-    var self = this
-    //微信自动播放
-    document.addEventListener(
-      "WeixinJSBridgeReady",
-      function () {
-        music.play()
-      },
-      false
-    )
-    document.addEventListener(
-      "YixinJSBridgeReady",
-      function () {
-        music.play()
-      },
-      false
-    )
-
-    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-    function musicInBrowserHandler() {
-      self.musicPlay(true)
-      document.body.removeEventListener("touchstart", musicInBrowserHandler)
-    }
-    document.body.addEventListener("touchstart", musicInBrowserHandler)
   }
 
   //已打卡
@@ -202,15 +177,16 @@ class Index extends Component {
       soundCtrl.playSound("bg")
     } else {
       config.mute = true
-      soundCtrl.changeMute("bg")
+      soundCtrl.pauseSound("bg")
     }
     console.log(this.state.musicStart, "-------music")
   }
 
   render() {
-    const { totalCredits, todaySignStatus, prizeCredits, ifPre, ifEnd ,currentTaskId} =
+    const { totalCredits,userId, todaySignStatus, prizeCredits, ifPre, ifEnd ,currentTaskId} =
       this.props?.data
     const { musicStart } = this.state
+    console.log(totalCredits,'totalCredits---')
     return (
       <div className="iconWrap">
         <div className="index-title">
@@ -255,7 +231,7 @@ class Index extends Component {
           <p className="cost-num">{prizeCredits}金币/次</p>
         </div>
         <span className="toGetCoins md4" onClick={this.goTask}></span>
-        {totalCredits && (
+        {userId && (
           <>
             {ifEnd ? (
               // 活动已结束

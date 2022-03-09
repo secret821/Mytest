@@ -111,7 +111,7 @@ const store = makeAutoObservable({
       if (!followOfficalAccount) {
         modalStore.pushPop("wxcode")
       }
-      if (tagList !== null) {
+      if (tagList !== null && tagList !== '') {
         tagList.map((item, index) => {
           switch (item.code) {
             case "assist":

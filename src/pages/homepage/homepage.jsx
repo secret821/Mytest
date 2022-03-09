@@ -30,6 +30,7 @@ class Homepage extends React.Component {
       cardInfo: [],
       showSignAni: false, // 是否展示印章动画
       // totalCredits:0,
+      
     }
     this.locateRef = React.createRef()
   }
@@ -71,12 +72,14 @@ class Homepage extends React.Component {
       disableHtml()
       scrollTo(parseIntTop-400, 500, document.querySelector('html'))
       enableHtml()
-      ModalCtrlIns.showModal(album, {
-        credits: this.state.credits,
-        cardInfo: this.state.cardInfo
-      }, {
-        transitionName: 'scale-in-center',
-        fixedBody: false
+      setTimeout(()=>{
+        ModalCtrlIns.showModal(album, {
+          credits: this.state.credits,
+          cardInfo: this.state.cardInfo
+        }, {
+          transitionName: 'scale-in-center',
+          fixedBody: false
+        },1000)
       })
       // modalStore.pushPop("album", )
       // this._type = +data?.taskTypeBySignDays;

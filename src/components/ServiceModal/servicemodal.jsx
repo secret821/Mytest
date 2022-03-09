@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import "./style.less"
 import modalStore from "@src/store/modal"
+import store from "@src/store"
 
 export default class Service extends Component {
 
