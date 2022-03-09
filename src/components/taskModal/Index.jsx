@@ -106,7 +106,7 @@ class taskModal extends Component {
                 <div className="itemtitle">
                   {item?.taskName}({item.completeTimes}/{item.allTimes})
                 </div>
-                <div className="itemdesc">{item?.desc || "--"}</div>
+                <div className="itemdesc">{item?.desc || " "}</div>
                 <div
                   className={classnames(
                     `itembtn`,

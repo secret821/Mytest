@@ -6,21 +6,21 @@ const LotteryData = {
   lotteryPrizeList: [],
 
   async onInitLotteryData() {
-    const {success, data} = await API.prizeQuery()
+    const { success, data } = await API.prizeQuery()
     if (success) {
       this.lotteryPrizeList = data
     }
-  }
+  },
 }
 
 const GameIndex = {
   GameInfo: {
-    gameRul:" 2",
+    gameRul: " 2",
     targetScore: 20,
     frequency: 22,
     gameTime: 100,
     newUsr: 1,
-    coins: 22
+    coins: 22,
   },
 
   async setGameInfo() {
@@ -32,7 +32,7 @@ const GameIndex = {
 
   reduceFrequency() {
     this.GameInfo.frequency--
-  }
+  },
 }
 
 const store = makeAutoObservable({
@@ -40,15 +40,15 @@ const store = makeAutoObservable({
   frontVariable: {},
   indexInfo: {},
   // cardInfo:{},
-  curIndex:0,
+  curIndex: 0,
   indexInfo: {
     totalCredits: 0,
     prizeCredits: 20,
     followOfficalAccount: false,
     showAnimate: true,
-    inviteCredits: 20
+    inviteCredits: 20,
   },
-  cardInfo:[],
+  cardInfo: [],
   //前端开发配置
   curPageData: {},
   curPage: "loading",
@@ -56,9 +56,9 @@ const store = makeAutoObservable({
     this.ruleInfo = ruleInfo
   },
   changePage(page, data, callback) {
-    this.curPage = page;
+    this.curPage = page
     this.curPageData = data
-    callback && callback();
+    callback && callback()
   },
   /**
    * 暂不使用
@@ -73,16 +73,16 @@ const store = makeAutoObservable({
 
   /**
    * 扣除疾风
-   * @param {*} num 
+   * @param {*} num
    */
   reduceCredits(num = 0) {
     this.indexInfo.totalCredits -= num
   },
 
-  setCardInfo(cardInfo){
+  setCardInfo(cardInfo) {
     this.cardInfo = cardInfo
   },
-  setCurIndex(curIndex){
+  setCurIndex(curIndex) {
     this.curIndex = curIndex
   },
   async initRule() {
@@ -102,38 +102,54 @@ const store = makeAutoObservable({
     const res = await API.index()
     if (res?.success) {
       this.setIndexInfo(res?.data)
-      const { followOfficalAccount,firstJoin,showAnimate,inviteCredits,readCredits } = res?.data
+      const { followOfficalAccount, firstJoin, tagList } = res?.data
       //数据访问记录接口
-      if(firstJoin){
+      if (firstJoin) {
         await API.accessData()
       }
       //关注公众号弹窗
       if (!followOfficalAccount) {
         modalStore.pushPop("wxcode")
       }
-      if(showAnimate){
-        if(inviteCredits !== ''){
-          modalStore.pushPop('getinvite',{inviteCredits:inviteCredits})
-        }
-        if(readCredits !== ''){
-          modalStore.pushPop('getread',{readCredits:readCredits})
-        }
+      if (tagList !== []) {
+        tagList.map((item, index) => {
+          switch (item.code) {
+            case "assist":
+              modalStore.pushPop("getinvite", { tagList: tagList })
+              break
+            case "read":
+              modalStore.pushPop("getread", { tagList: tagList })
+              break
+          }
+        })
+        // if(tagList)
       }
-
+      // if(showAnimate){
+      //   if(inviteCredits !== ''){
+      //     modalStore.pushPop('getinvite',{inviteCredits:inviteCredits})
+      //   }
+      //   if(readCredits !== ''){
+      //     modalStore.pushPop('getread',{readCredits:readCredits})
+      //   }
+      // }
     }
   },
   //卡片信息
-  async getCardInfo(){
+  async getCardInfo() {
     const res = await API.cardList()
-    if(res?.success){
+    if (res?.success) {
       // this.setState({
-        let cards = res?.data.length? (res?.data.map((item,inedx)=>{return item})):[]
-        this.setCardInfo(cards)
+      let cards = res?.data.length
+        ? res?.data.map((item, inedx) => {
+            return item
+          })
+        : []
+      this.setCardInfo(cards)
       // })
     }
   },
 
   ...GameIndex,
-  ...LotteryData
+  ...LotteryData,
 })
 export default store

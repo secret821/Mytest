@@ -11,7 +11,12 @@
     <script src="//yun.duiba.com.cn/h5/lib/zepto.min.js"></script>
     <script src="//yun.duiba.com.cn/db_games/libs0924/fyge2023y.minSpine.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="//yun.duiba.com.cn/js-libs/vConsole/3.3.4/vconsole.min.js"
+        crossorigin="anonymous"></script>
+
     <script>
+        var vConsole = new VConsole();
+
         function getApp() {
             return {
                 cloud: {},
@@ -26,11 +31,11 @@
         // 当前 skin
         var currSkinId = matched ? matched && matched[1] : 'index'
         CFG.ShareSkinId = 'share'
-        CFG.isShare =  currSkinId === CFG.ShareSkinId
+        CFG.isShare = currSkinId === CFG.ShareSkinId
 
         CFG.shareDomain = location.origin
         CFG.ShareData = {
-            url: CFG.shareDomain + '/projectx/'+CFG.projectId+'/share.html?appID='+CFG.appID,
+            url: CFG.shareDomain + '/projectx/' + CFG.projectId + '/share.html?appID=' + CFG.appID,
             title: '西湖美景打卡',
             content: '平和味道带你去踏青，收集金币抽大奖',
             thumbnail: ''
@@ -53,8 +58,8 @@
 
 <body>
     <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.

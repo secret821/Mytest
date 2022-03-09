@@ -12,8 +12,8 @@ import EventBus from "@duiba/event-bus"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Rule from "@src/components/rule/rule"
 import taskModal from "@src/components/taskModal/Index"
-import { soundCtrl } from '@src/utils/soundCtrl';
-import config from '@src/utils/config';
+import { soundCtrl } from "@src/utils/soundCtrl"
+import config from "@src/utils/config"
 class Index extends Component {
   constructor(props) {
     super(props)
@@ -25,7 +25,7 @@ class Index extends Component {
   componentDidMount() {
     store.initRule()
     config.mute = true
-    soundCtrl.changeMute('bg');
+    soundCtrl.changeMute("bg")
   }
 
   audioAutoPlay = (music) => {
@@ -156,18 +156,22 @@ class Index extends Component {
       return
     }
     // modalStore.pushPop("taskModal")
-    ModalCtrlIns.showModal(taskModal, {}, {
-      transitionName: 'slide-top'
-    })
+    ModalCtrlIns.showModal(
+      taskModal,
+      {},
+      {
+        transitionName: "slide-top",
+      }
+    )
   })
 
   startMusic = async () => {
     this.setState({
-      musicStart: !this.state.musicStart
+      musicStart: !this.state.musicStart,
     })
     config.mute = false
-    soundCtrl.playSound('bg')
-    console.log(this.state.musicStart,'-------music')
+    soundCtrl.playSound("bg")
+    console.log(this.state.musicStart, "-------music")
   }
 
   render() {
@@ -198,7 +202,7 @@ class Index extends Component {
             this.goService()
           }}
         ></div>
-        <div className='md6'>
+        <div className="md6">
           {musicStart ? (
             <div className="musicOpen" onClick={this.startMusic}></div>
           ) : (
@@ -218,40 +222,42 @@ class Index extends Component {
           <p className="cost-num">{prizeCredits}金币/次</p>
         </div>
         <span className="toGetCoins md4" onClick={this.goTask}></span>
-        {ifEnd ? (
-          // 活动已结束
-          <div
-            className="endbtn md2"
-            onClick={() => {
-              this.doEnd()
-            }}
-          ></div>
-        ) : ifPre ? (
-          //未开始
-          <div
-            className="prebtn md2"
-            onClick={() => {
-              this.doPre()
-            }}
-          ></div> ? (
-            !ifPre && !ifEnd && todaySignStatus
-          ) : (
-            // 明日再来
-            <div
-              className="signedBtn md2"
-              onClick={() => {
-                this.signedClick()
-              }}
-            ></div>
-          )
-        ) : (
-          // 签到
-          <div
-            className="startbtn md1"
-            onClick={() => {
-              this.doStart()
-            }}
-          ></div>
+        {totalCredits && (
+          <>
+            {ifEnd ? (
+              // 活动已结束
+              <div
+                className="endbtn md2"
+                onClick={() => {
+                  this.doEnd()
+                }}
+              ></div>
+            ) : ifPre ? (
+              //未开始
+              <div
+                className="prebtn md2"
+                onClick={() => {
+                  this.doPre()
+                }}
+              ></div>
+            ) : !ifPre && !ifEnd && todaySignStatus ? (
+              // 明日再来
+              <div
+                className="signedBtn md2"
+                onClick={() => {
+                  this.signedClick()
+                }}
+              ></div>
+            ) : (
+              // 签到
+              <div
+                className="startbtn md1"
+                onClick={() => {
+                  this.doStart()
+                }}
+              ></div>
+            )}
+          </>
         )}
       </div>
     )

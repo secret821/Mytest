@@ -13,11 +13,33 @@ module.exports = {
     "prizeCredits": 10,
     "ifPre": false,
     "ifEnd": false,
-    "ifPrizeEnd": true,
-    "targetScore": 23754823,
+    "ifPrizeEnd": false,
+    "targetScore": 98576894,
+    "tagList": [
+      {
+        "code": "Ut exercitation",
+        "desc": "id culpa labore fugiat dolore"
+      },
+      {
+        "code": "adipisicing irure in occaecat fugiat",
+        "desc": "reprehenderit sit"
+      },
+      {
+        "code": "tempor dolore officia irure",
+        "desc": "consequat incididunt"
+      },
+      {
+        "code": "id laboris ullamco amet velit",
+        "desc": "Duis in cillum elit"
+      },
+      {
+        "code": "in tempor cillum ea",
+        "desc": "tempor deserunt in adipisicing"
+      }
+    ],
     "readLinkUrl": "http://www.baidu.com",
     "readCredits": 20,
-    "inviteCredits": ''
+    "inviteCredits": 20
   },
   "message": null,
   "success": true

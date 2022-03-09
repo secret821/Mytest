@@ -19,36 +19,41 @@ class album extends Component {
     }
   }
   componentDidMount = async () => {
+    console.log(this.props,'------')
+    // await this.getCards()
     await this.getAlbumList()
-    await this.getCards()
   }
 
   getCards = () => {
-    const { data } = store.cardInfo
+    const { cardInfo } = this.props.popData
+    console.log(cardInfo[0].name,'----cardinfo')
+    // const { data } = store.cardInfo
     this.setState({
-      cardsList: data.length
-        ? data.map((item, inedx) => {
-            return item
-          })
-        : [],
+      cardsList: cardInfo || []
+        // : [],
     })
+    console.log(this.state.cardsList,'......')
   }
 
   showPhoto = _throttle((index, item) => {
     modalStore.closePop("album")
     modalStore.pushPop("albumInclude", {
-      cardsList: this.state.cardsList,
+      cardsList: this.props.popData.cardInfo,
       curIndex: this.state.curIndex,
     })
   })
-  async getAlbumList() {
-    const { success, data } = await API.GET_PHOTOLIST()
-    if (success) {
-      this.setState({ curIndex: data?.checkTime })
+  getAlbumList =async()=> {
+    const res = await API.GET_PHOTOLIST()
+    if (res?.success) {
+      this.setState({ curIndex: parseInt(res?.data) })
     }
   }
   render() {
     const { curIndex, cardsList } = this.state
+    const { cardInfo } = this.props.popData
+    // console.log(cardInfo?.length,'cardInfo---')
+    // console.log(curIndex,'curIndex---')
+    // console.log(cardInfo[curIndex-1].name,'cardInfo[]----')
     const { credits } = this.props.popData
     return (
       <div className="albumModal">
@@ -71,8 +76,8 @@ class album extends Component {
           src={`${RES_PATH}svga/${curIndex}.svga`}
           loop={false}
         ></SvgaPlayer>
-        {cardsList?.length && (
-          <span className="album-name">{cardsList[curIndex - 1].name}一游</span>
+        {curIndex !== 0 && (
+          <span className="album-name">{cardInfo[curIndex-1].name || ''}一游</span>
         )}
         <div className="moneys">
           <span className="icons">{credits}</span>

@@ -16,6 +16,7 @@ import * as actions from "@src/store/action"
 import { onInitShare } from "@src/store/utils.js"
 import { getUrlParam, setUrlParam } from "@lightfish/tools"
 import { showToast } from "@src/utils/utils.js"
+import { Toast } from "@spark/ui"
 
 @observer
 class Homepage extends React.Component {
@@ -43,16 +44,18 @@ class Homepage extends React.Component {
   }
 
   update = async () => {
+    console.info(store.cardInfo,'=====cards')
     const res = await API.join()
     if (res?.success) {
       this.setState({
         credits: res?.data?.credits,
       })
-      store.getIndex()
+      // store.getIndex()
+      await this.setIndex()
       this.setState({
         showSignAni: true,
       })
-      modalStore.pushPop("album", { credits: this.state.credits })
+      modalStore.pushPop("album", { credits: this.state.credits,cardInfo: this.state.cardInfo })
       // this._type = +data?.taskTypeBySignDays;
     }
   }
@@ -78,7 +81,7 @@ class Homepage extends React.Component {
   }
   componentDidMount = async () => {
     // modalStore.pushPop('Drawfailmodal')
-    await store.getIndex()
+    await this.setIndex()
     await this.getCardInfo()
     EventBus.on("UPDATE", this.update, this)
     if (store.indexInfo.followOfficalAccount) {
@@ -87,6 +90,13 @@ class Homepage extends React.Component {
     } else {
       onInitShare(false, false)
     }
+  }
+
+  setIndex = async()=>{
+    await store.getIndex()
+    this.setState({
+      homeInfo:store.indexInfo
+    })
   }
 
   async onDoHelp() {
@@ -126,6 +136,7 @@ class Homepage extends React.Component {
 
   // 已打卡山-展示简介
   showDeatil = _throttle((index) => {
+    console.log(store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
     if (
       +index + 1 <=
       +store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus
@@ -148,7 +159,7 @@ class Homepage extends React.Component {
     return (
       <div className="wrapper-cont">
         <div className="homepage">
-          {totalCredits && <Index data={store.indexInfo}></Index>}
+          {cards.length && <Index data={store.indexInfo}></Index>}
           <div className="locateWrap" ref={this.locateRef}>
             {cardInfo?.map((item, index) => {
               return (
@@ -164,10 +175,10 @@ class Homepage extends React.Component {
                     ""
                   ) : (
                     <div className="signedTag">
-                      {showSignAni &&
+                      {/* {showSignAni &&
                         index + 1 === +homeInfo?.currentTaskId &&
                         homeInfo?.todaySignStatus 
-                        }
+                        } */}
                       <div
                         className={
                           showSignAni &&

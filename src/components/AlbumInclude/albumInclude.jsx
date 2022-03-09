@@ -18,6 +18,8 @@ class albumInclude extends Component {
 
   render() {
     const { curIndex,cardsList } = this.props.popData
+    console.log(cardsList,'cardsList------')
+    console.log(curIndex,'curIndex------')
     return (
       <div className="albumIncludeModal md15">
         <span className='bgAlbum'></span>

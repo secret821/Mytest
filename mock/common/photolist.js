@@ -1,8 +1,6 @@
 module.exports = {
   code: null,
-  data: {
-    checkTime: 1
-  },
+  data: 1,
   message: null,
   success: true
 };
