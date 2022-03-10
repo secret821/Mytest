@@ -13,9 +13,6 @@ class Drawfailmodal extends React.Component {
   constructor(props) {
     super(props);
   }
-  closeModal = ()=>{
-    this.closeModal()
-  }
   render() {
     return (
       <div className="drawfailmodal">
