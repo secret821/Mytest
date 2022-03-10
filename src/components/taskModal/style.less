@@ -5,7 +5,8 @@
   .absNormal(750px, 821px, @bottom: 0, @left:0);
   .taskmodalclose {
     .absNormal(50px, 50px, 30px, 20px);
-    background: url("../../assets/taskModal/close.png") no-repeat top left / 100%
+    background: url("../../assets/taskModal/close.png") no-repeat top left /
+      100%;
   }
   .tasklist {
     .absNormal(750px, 751px, 234px, @left: 0);
@@ -26,17 +27,22 @@
       }
       .itemtitle {
         .textfclaw(32px, #8cddf1, @align: left, @lineH: 1.2);
-        .absNormal(360px, auto, 34px, 190px);
+        .absNormal(350px, auto, 34px, 200px);
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
       .itemdesc {
         .textfclaw(22px, #8cddf1, @align: left, @lineH: 1.2);
-        .absNormal(360px, auto, 78px, 190px);
+        .absNormal(350px, auto, 78px, 200px);
         overflow: hidden;
-        white-space: nowrap;
         text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        /*! autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+        overflow-wrap: break-word;
       }
       .itembtn {
         .absNormal(169px, 64px, 38px, 19px);
