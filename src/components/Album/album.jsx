@@ -54,6 +54,7 @@ class album extends ModalControllerComponent {
     }, {
       queue: true,
       transitionName: 'scale-in-center',
+      fixedBody: false
     })
   })
   getAlbumList =async()=> {

@@ -18,24 +18,30 @@ export const MODAL_INDEX = {
 };
 export function ERROR_MESSSAGE(errorCode) {
   let message = "";
-  switch (errorCode) {
-    // case 999101:
-    //   message = "登录已过期";
-    //   break;
-    case 999002:
-      message = "活动已结束";
-    break;
-    case 500021:
-      message = "没有昨日线下步数";
-      break;
-    case 500022:
-      message = "已经领取过了";
-      break;
-    default:
-      message = "";
-      break;
+  const kv = {
+    100020: '自己不能为自己助力',
+    600023: '您的助力次数已用完',
+    600020: '您已为他助力过啦',
+    600021: '您的好友被助力已达上限'
   }
-  return message;
+  // switch (errorCode) {
+  //   // case 999101:
+  //   //   message = "登录已过期";
+  //   //   break;
+  //   case 999002:
+  //     message = "活动已结束";
+  //   break;
+  //   case 500021:
+  //     message = "没有昨日线下步数";
+  //     break;
+  //   case 500022:
+  //     message = "已经领取过了";
+  //     break;
+  //   default:
+  //     message = "";
+  //     break;
+  // }
+  return kv[errorCode] || '';
 }
 // 首页svga资源组
 // export const SVGA_RES_INDEX = {
