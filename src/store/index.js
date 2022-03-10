@@ -58,6 +58,7 @@ const store = makeAutoObservable({
   changePage(page, data, callback) {
     this.curPage = page
     this.curPageData = data
+    document.querySelector('html').scrollTop = 0
     callback && callback()
   },
   /**
