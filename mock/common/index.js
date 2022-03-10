@@ -36,6 +36,6 @@ module.exports = {
     "readCredits": 20,
     "inviteCredits": 20
   },
-  "message": null,
-  "success": true
+  message: null,
+  success: true,
 }

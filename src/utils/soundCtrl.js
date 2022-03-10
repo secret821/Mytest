@@ -51,7 +51,7 @@ export const soundCtrl = {
         // }
         // console.log("gameSound", gameSounds);
     },
-    playSound(name, loop=false) {
+    playSound(name, loop=true) {
         if (config.mute || !name) {
             return;
         }
@@ -60,8 +60,8 @@ export const soundCtrl = {
         if (!isound) {
             isound = new Howl({
                 src: [(soundurl + soundNames.get(name) + ".mp3")],
-                autoplay: false,
-                loop:false
+                autoplay: true,
+                loop:true
             });
             gameSounds[name] = isound;
         }
@@ -79,15 +79,21 @@ export const soundCtrl = {
             // console.log("声音停止==》",name);
         // }
     },
+    pauseSound(name){
+        let isound = gameSounds[name];
+        isound&&isound.pause();
+    },
     changeMute(name) {
         let mute = config.mute;
         // debugger
         if (mute) {
             for (let key in gameSounds) {
-                this.stopSound(key);
+                // this.stopSound(key);
+                this.pauseSound(key);
             }
         } else {
-            this.stopSound(name);
+            // this.stopSound(name);
+            this.pauseSound(name);
             this.playSound(name);
             // if(name==Enum.SoundType.mapBg){
             //     console.error("播放mapbg,停止playbg");
@@ -105,7 +111,8 @@ export const soundCtrl = {
         if(config.inpage){
             this.playSound(config.nowbgm);
         }else{
-            this.stopSound(config.nowbgm);
+            // this.stopSound(config.nowbgm);
+            this.pauseSound(config.nowbgm);
         }
     }
 }
