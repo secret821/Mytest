@@ -27,7 +27,7 @@ const proxy = {
   'GET /game/submit.do': {
     success: true,
     data: {
-      ifLimit: true
+      ifLimit: false
     }
   },
   'GET /game/index.do': {
@@ -41,7 +41,7 @@ const proxy = {
       coins: 11
     }
   },
-  "GET /rule_1.query": {
+  "GET /ru_1.query": {
     success: true,
     data: Array(8).fill(1).map((_, index) => ({
       icon: `http://qnpic.top/yoona${index+2}.jpg`,

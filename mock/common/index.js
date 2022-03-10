@@ -6,7 +6,7 @@ module.exports = {
     "showAnimate": true,
     "firstJoin": true,
     "totalCredits": 100,
-    "todaySignStatus": false,
+    "todaySignStatus": true,
     "todayTaskWindowStatus": true,
     "currentTaskType": 2,
     "taskCredits": 20,
