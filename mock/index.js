@@ -82,33 +82,51 @@ const proxy = {
     data: 11
   },
   'GET /home/taskList.do': {
-    success: true,
-    data: [
+    "code": null,
+    "data": [
       {
-        code: 'read',	
-        state: 0,
-        taskName: '阅读',
-        completeTimes: 1,	
-        allTimes: 2,
-        reward: '阅读奖励',
+        "desc": "quis",
+        "icon": "mollit",
+        "code": "occaecat",
+        "state": -77685484.66632512,
+        "taskName": "exercitation",
+        "completeTimes": 64959444.97871822,
+        "allTimes": 94664497.99014458,
+        "reward": 56744787.345980406
       },
       {
-        code: 'assist',	
-        state: 0,
-        taskName: '阅读',
-        completeTimes: 1,	
-        allTimes: 2,
-        reward: '阅读奖励',
+        "desc": "tempor dolore nostrud non irure",
+        "icon": "ad mollit dolore nisi",
+        "code": "anim culpa non tempor",
+        "state": 9648522.719964921,
+        "taskName": "amet dolor incididunt",
+        "completeTimes": -38485889.83291119,
+        "allTimes": 72047390.25917467,
+        "reward": 55160697.188619286
       },
       {
-        code: 'game',	
-        state: 0,
-        taskName: '阅读',
-        completeTimes: 1,	
-        allTimes: 2,
-        reward: '阅读奖励',
+        "desc": "in officia amet fugiat id",
+        "icon": "mollit sint ea cillum",
+        "code": "ipsum dolore ut",
+        "state": -49528105.441326484,
+        "taskName": "in officia Lorem proident",
+        "completeTimes": -88498185.55347255,
+        "allTimes": 55095227.97355163,
+        "reward": -40412866.65284405
+      },
+      {
+        "desc": "irure eu quis",
+        "icon": "dolor proident nisi pariatur",
+        "code": "voluptate",
+        "state": 85102378.773601,
+        "taskName": "qui est Lorem dolore magna",
+        "completeTimes": -78114986.19152775,
+        "allTimes": -54693439.91379456,
+        "reward": -83775539.58226663
       }
-    ]
+    ],
+    "message": null,
+    "success": true
   },
   'GET /home/doTask.do': {
     success: true,

@@ -112,7 +112,9 @@ const store = makeAutoObservable({
         modalStore.pushPop("wxcode")
       }
       if (tagList !== null && tagList !== '') {
-        tagList.map((item, index) => {
+        // if()
+        tagList.length&&tagList.map((item, index) => {
+        console.log(tagList,'tagList')
           switch (item.code) {
             case "assist":
               modalStore.pushPop("getinvite", { tagList: item })

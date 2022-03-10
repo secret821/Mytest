@@ -19,11 +19,11 @@ class intro extends Component {
         <span className="intro-close" onClick={()=>{modalStore.closePop('intro')}}></span>
         {/* <img src={`${RES_PATH}cards/${index+1}.png`} className="intro-image" /> */}
         <SvgaPlayer className='intro-image' src={`${RES_PATH}svga/${index+1}.svga`} loop={false}></SvgaPlayer>
-        <span className="intro-title">{cardInfo[index+1]?.name}一游</span>
+        <span className="intro-title">{cardInfo[index]?.name}一游</span>
         <div
           className="intro-content"
           dangerouslySetInnerHTML={{
-            __html: cardInfo[index+1]?.desc
+            __html: cardInfo[index]?.desc
           }}
         ></div>
       </div>

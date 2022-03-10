@@ -22,31 +22,70 @@ class Index extends Component {
       musicStart: true,
     }
   }
-  componentDidMount() {
+  componentDidMount = async () => {
     store.initRule()
-    config.mute = false
-    soundCtrl.playSound("bg")
+    await this.beginMusic()
+    // console.log(this.state.musicStart)
     // soundCtrl.changeMute("bg")
 
     document.addEventListener("visibilitychange", () => {
-      let { musicStart } = this.state;
+      let { musicStart } = this.state
       if (document.hidden) {
         config.mute = true
-        soundCtrl.changeMute('bg');
-        console.log("H5已切换到后台或手机息屏");
+        soundCtrl.changeMute("bg")
+        console.log("H5已切换到后台或手机息屏")
       } else {
         console.error(musicStart)
-        console.log("H5已切换到网页");
+        console.log("H5已切换到网页")
         if (musicStart === true) {
           config.mute = false
-          soundCtrl.changeMute('bg');
+          soundCtrl.changeMute("bg")
         } else {
           config.mute = true
-          soundCtrl.changeMute('bg');
+          soundCtrl.changeMute("bg")
         }
       }
-
     })
+
+    // soundCtrl.changeMute('bg');
+  }
+
+  audioAutoPlay = (music) => {
+    var self = this
+    //微信自动播放
+    document.addEventListener(
+      "WeixinJSBridgeReady",
+      function () {
+        // music.play();
+        config.mute = false
+        soundCtrl.playSound("bg")
+      },
+      false
+    )
+    document.addEventListener(
+      "YixinJSBridgeReady",
+      function () {
+        // music.play();
+        config.mute = false
+        soundCtrl.playSound("bg")
+      },
+      false
+    )
+
+    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+    function musicInBrowserHandler() {
+      // self.musicPlay(true);
+      config.mute = false
+      soundCtrl.playSound("bg")
+      document.body.removeEventListener("touchstart", musicInBrowserHandler)
+    }
+    document.body.addEventListener("touchstart", musicInBrowserHandler)
+  }
+
+  beginMusic = () => {
+    config.mute = false
+    soundCtrl.playSound("bg")
+    this.audioAutoPlay()
   }
 
   //已打卡
@@ -170,7 +209,7 @@ class Index extends Component {
     this.setState({
       musicStart: !this.state.musicStart,
     })
-    console.log(this.state.musicStart,'this.state.musicStart')
+    console.log(this.state.musicStart, "this.state.musicStart")
     const { musicStart } = this.state
     if (!musicStart) {
       config.mute = false
@@ -183,10 +222,17 @@ class Index extends Component {
   }
 
   render() {
-    const { totalCredits,userId, todaySignStatus, prizeCredits, ifPre, ifEnd ,currentTaskId} =
-      this.props?.data
+    const {
+      totalCredits,
+      userId,
+      todaySignStatus,
+      prizeCredits,
+      ifPre,
+      ifEnd,
+      currentTaskId,
+    } = this.props?.data
     const { musicStart } = this.state
-    console.log(totalCredits,'totalCredits---')
+    console.log(musicStart, "musicStart---")
     return (
       <div className="iconWrap">
         <div className="index-title">
@@ -211,69 +257,87 @@ class Index extends Component {
             this.goService()
           }}
         ></div>
-        <div className="md6">
-          {musicStart ? (
-            <div className="musicOpen" onClick={this.startMusic}></div>
-          ) : (
-            <div className="musicClose" onClick={this.startMusic}></div>
-          )}
-        </div>
-        <div className="my-credits">
-          <span className="credits-count">当前金币：{totalCredits}</span>
-        </div>
-        <div
-          className="icon-lottery md3"
-          onClick={() => {
-            this.goLottery()
-          }}
-        >
-          <div className="lottery-icom"></div>
-          <p className="cost-num">{prizeCredits}金币/次</p>
-        </div>
-        <span className="toGetCoins md4" onClick={this.goTask}></span>
-        {userId && (
+        {(userId && (
           <>
-            {ifEnd ? (
-              // 活动已结束
-              <div
-                className="endbtn md2"
-                onClick={() => {
-                  this.doEnd()
-                }}
-              ></div>
-            ) : ifPre ? (
-              //未开始
-              <div
-                className="prebtn md2"
-                onClick={() => {
-                  this.doPre()
-                }}
-              ></div>
-            ) : !ifPre && !ifEnd && todaySignStatus ? (
-              // 明日再来
-              <div
-                className="signedBtn md2"
-                onClick={() => {
-                  this.signedClick()
-                }}
-              ></div>
-            ) : !ifPre && !ifEnd && !todaySignStatus&& currentTaskId!==20 ? (
-              // 签到
-              <div
-                className="startbtn md1"
-                onClick={() => {
-                  this.doStart()
-                }}
-              ></div>
-            ):
+            <div className="md6">
+              {musicStart ? (
+                <div className="musicOpen" onClick={this.startMusic}></div>
+              ) : (
+                <div className="musicClose" onClick={this.startMusic}></div>
+              )}
+            </div>
+            <div className="my-credits">
+              <span className="credits-count">当前金币：{totalCredits}</span>
+            </div>
             <div
-                className="readybtn md2"
-                onClick={() => {
-                  this.ready()
-                }}
-              ></div>}
+              className="icon-lottery md3"
+              onClick={() => {
+                this.goLottery()
+              }}
+            >
+              <div className="lottery-icom"></div>
+              <p className="cost-num">{prizeCredits}金币/次</p>
+            </div>
+            <span className="toGetCoins md4" onClick={this.goTask}></span>
+
+            {
+              currentTaskId === 20 ? (
+                <div
+                  className="readybtn md2"
+                  onClick={() => {
+                    this.ready()
+                  }}
+                ></div>
+              ) : ifEnd ? (
+                // 活动已结束
+                <div
+                  className="endbtn md2"
+                  onClick={() => {
+                    this.doEnd()
+                  }}
+                ></div>
+              ) : ifPre ? (
+                //未开始
+                <div
+                  className="prebtn md2"
+                  onClick={() => {
+                    this.doPre()
+                  }}
+                ></div>
+              ) : !ifPre && !ifEnd && todaySignStatus ? (
+                // 明日再来
+                <div
+                  className="signedBtn md2"
+                  onClick={() => {
+                    this.signedClick()
+                  }}
+                ></div>
+              ) : !ifPre &&
+                !ifEnd &&
+                !todaySignStatus &&
+                currentTaskId !== 20 ? (
+                // 签到
+                <div
+                  className="startbtn md1"
+                  onClick={() => {
+                    this.doStart()
+                  }}
+                ></div>
+              ) : (
+                ""
+              )
+              //  : !ifPre && !ifEnd && todaySignStatus && currentTaskId === 20(
+              //   <div
+              //     className="readybtn md2"
+              //     onClick={() => {
+              //       this.ready()
+              //     }}
+              //   ></div>
+              // )
+            }
           </>
-        )}
+        )) ||
+          ""}
       </div>
     )
   }

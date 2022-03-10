@@ -1,40 +1,28 @@
 module.exports = {
-  "code": null,
-  "data": {
-    "followOfficalAccount": true,
-    "currentTaskId": 10,
-    "showAnimate": true,
-    "firstJoin": true,
-    "totalCredits": 100,
-    "todaySignStatus": false,
-    "todayTaskWindowStatus": true,
-    "currentTaskType": 2,
-    "taskCredits": 20,
-    "prizeCredits": 10,
-    "ifPre": false,
-    "ifEnd": false,
-    "ifPrizeEnd": false,
-    "targetScore": 98576894,
-    "tagList": [
-      {
-        "code": "assist",
-        "coinsReward": 6,
-        "spReward": 8
-      },
-      {
-        "code": "dolore laborum velit eu",
-        "coinsReward": 48191201.31490725,
-        "spReward": 90924548.47262123
-      },
-      {
-        "code": "tempor occaecat esse",
-        "coinsReward": -57602444.34310357,
-        "spReward": -20035009.5563758
-      }
-    ],
-    "readLinkUrl": "http://www.baidu.com",
-    "readCredits": 20,
-    "inviteCredits": 20
+  code: null,
+  data: {
+    currentTaskId: 20,
+    currentTaskType: null,
+    firstFollow: null,
+    firstJoin: false,
+    followOfficalAccount: true,
+    ifEnd: false,
+    ifPre: false,
+    ifPrizeEnd: false,
+    inviteCredits: null,
+    newUsr: 0,
+    prizeCredits: 1,
+    readCredits: null,
+    readLinkUrl: "222",
+    showAnimate: false,
+    signDays: null,
+    tagList: null,
+    targetScore: 100,
+    taskCredits: 100,
+    todaySignStatus: false,
+    todayTaskWindowStatus: false,
+    totalCredits: 129,
+    userId: "1539357",
   },
   message: null,
   success: true,
