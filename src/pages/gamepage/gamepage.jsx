@@ -237,11 +237,11 @@ class Gamepage extends ModalControllerComponent {
     if (data && data.credits){
       ModalCtrlIns.showModal(Gameovermodal, {
         credits: data.credits,
-        score: score,
+        score: data.score,
       })
     } else {
       ModalCtrlIns.showModal(Gamefailmodal, {
-        score: score,
+        score: data.score,
       })
     }
   }

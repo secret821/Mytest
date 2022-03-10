@@ -512,7 +512,7 @@ body {
   background-repeat: no-repeat;
 }
 .taskModal {
-  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646897888238/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
+  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646898751030/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
   position: absolute;
   width: 7.5rem;
   height: 8.21rem;
@@ -1250,8 +1250,8 @@ body {
 .rule .activityRulesActivityRules {
   width: 4.3rem;
   height: 4.2rem;
-  left: 0.7rem;
-  top: 1.43rem;
+  left: 0.8rem;
+  top: 1.45rem;
   position: absolute;
   font-size: 0.28rem;
   color: #000000;
@@ -5250,4 +5250,4 @@ body {
   left: 2.76rem;
 }
 
-/*# sourceMappingURL=main.36e4db84608e181be02a.css.map*/
+/*# sourceMappingURL=main.536ac3bac6df124a0f55.css.map*/

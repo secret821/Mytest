@@ -1538,19 +1538,12 @@ var Main = (function () {
                         console.log("初始化资源配置完成");
                         RES_1.RES.loadSkinConfig(SkinJson_1.SkinJson);
                         console.log("初始化皮肤配置完成");
-                        return [4, RES_1.RES.loadGroup('excellent_icon')];
-                    case 1:
-                        _a.sent();
                         return [4, RES_1.RES.loadGroup("common")];
-                    case 2:
+                    case 1:
                         _a.sent();
                         console.log("通用资源加载完成");
                         if (FYGE.getEnv() == "web" && document.getElementById("__loading__"))
                             document.getElementById("__loading__").style.display = "none";
-                        console.log('getGlobalData');
-                        return [4, Tools_1.Tools.getGlobalData()];
-                    case 3:
-                        _a.sent();
                         this.gameSceneInitPromise = new Promise(function (r) {
                             gameSceneInitResolve = r;
                         });
@@ -1968,7 +1961,7 @@ exports.ResJson = {
         }
     ],
     // eslint-disable-next-line
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646819976/resource/"
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646905329/resource/"
 };
 
 
@@ -4169,7 +4162,7 @@ var GameEles = [
     {
         resource: 'boomSprit.png',
         probability: 10,
-        score: -1,
+        score: 0,
     }
 ];
 var IndexScene = (function (_super) {
@@ -4375,11 +4368,9 @@ var IndexScene = (function (_super) {
     IndexScene.prototype.onGameOver = function () {
         this.GameStatus = 0;
         this.CountDownCont.stopCountDown();
-        setTimeout(() => {
-            Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_OVER, {
-                score: this.score
-            });
-        }, 500)
+        Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_OVER, {
+            score: this.score
+        });
     };
     IndexScene.prototype.onInitGamer = function () {
         if (!this.RobotGameEle) {
@@ -4397,7 +4388,7 @@ var IndexScene = (function (_super) {
         this.gameElesList.push(currGameELe);
         currGameELe.position.set(randomNum(this.axisX[0], this.axisX[1]), layers_1.layers.stageOffsetY);
         if (!currGameELe.pythicCont) {
-            var debug = true;
+            var debug = false;
             if (currResource === 'bellSprit.png') {
                 currGameELe.addPythicCont(new CirclePythicCont(36, 40, 40), debug);
             }
@@ -4455,7 +4446,7 @@ var IndexScene = (function (_super) {
         this.gameElesList.length = 0;
     };
     IndexScene.prototype.playGameEleSounds = function (resource) {
-        if (!this.musicStatus) {
+        if (!this.musicStatus && resource !== 'boomSprit.png') {
             return;
         }
         var kv = {
@@ -4494,7 +4485,7 @@ var IndexScene = (function (_super) {
                 GPool_1.GPool.takeIn(item.resource, item);
                 this.playGameEleSounds(item.resource);
                 this.gameElesList.splice(i, 1);
-                if (item.score == -1) {
+                if (item.score == 0) {
                     console.log('boom', item);
                     this.onGameOver();
                 }

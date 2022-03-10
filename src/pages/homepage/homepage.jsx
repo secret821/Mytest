@@ -162,9 +162,9 @@ class Homepage extends React.Component {
     const { success, data } = await API.doAssist({ assistItemId: shareCode })
     if (success) {
       showToast("恭喜为好友助力成功")
-      if (history) {
-        history.replaceState(null, null, setUrlParam("shareCode", ""))
-      }
+    }
+    if (history) {
+      history.replaceState(null, null, setUrlParam("shareCode", ""))
     }
   }
 
