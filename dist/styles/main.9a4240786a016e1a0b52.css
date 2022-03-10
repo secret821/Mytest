@@ -512,7 +512,7 @@ body {
   background-repeat: no-repeat;
 }
 .taskModal {
-  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646898751030/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
+  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646905877229/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
   position: absolute;
   width: 7.5rem;
   height: 8.21rem;
@@ -574,10 +574,10 @@ body {
   text-align: left;
   font-weight: normal;
   position: absolute;
-  width: 3.6rem;
+  width: 3.5rem;
   height: auto;
   top: 0.34rem;
-  right: 1.9rem;
+  right: 2rem;
   bottom: auto;
   left: auto;
   overflow: hidden;
@@ -592,15 +592,19 @@ body {
   text-align: left;
   font-weight: normal;
   position: absolute;
-  width: 3.6rem;
+  width: 3.5rem;
   height: auto;
   top: 0.78rem;
-  right: 1.9rem;
+  right: 2rem;
   bottom: auto;
   left: auto;
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
 }
 
 .taskModal .tasklist .taskItem .itembtn {
@@ -1412,12 +1416,12 @@ body {
 
 .getinvite .getinvite-name {
   position: absolute;
-  width: 4.94rem;
+  width: 5.94rem;
   height: 0.46rem;
   top: auto;
   right: auto;
   bottom: -2.36rem;
-  left: -1rem;
+  left: -1.43rem;
   font-size: 0.34rem;
   color: #f1f3f3;
   line-height: 0.55rem;
@@ -5250,4 +5254,4 @@ body {
   left: 2.76rem;
 }
 
-/*# sourceMappingURL=main.536ac3bac6df124a0f55.css.map*/
+/*# sourceMappingURL=main.9a4240786a016e1a0b52.css.map*/

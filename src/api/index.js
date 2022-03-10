@@ -4,6 +4,7 @@ import {callApi} from '@spark/api-base'
 import {Toast} from '@spark/ui'
 
 import {isFromShare, newUser} from 'duiba-utils';
+import { showToast } from '@src/utils/utils';
 
 let mergeData = {
 	user_type: newUser ? '0' : '1',
@@ -75,7 +76,7 @@ function generateAPI(apiList) {
 			if (result) {
 				//判断接口错误
 				if (!result.success) {
-					Toast((result.message || '接口错误'));
+					showToast(result.message, result.code);
 				}
 				//返回整个结果
 				return result;
