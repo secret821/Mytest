@@ -89,7 +89,7 @@ class HoldFruitGameScene extends React.Component {
   }
 
   componentWillUnmount() {
-    mute()
+    unmute()
     this.GameScene && this.GameScene.destroy()
     unwatchPageVisibility(this.onPageVisibilityChange)
   }

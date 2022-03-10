@@ -87,7 +87,7 @@ const proxy = {
       {
         "desc": "quis",
         "icon": "mollit",
-        "code": "occaecat",
+        "code": "game",
         "state": -77685484.66632512,
         "taskName": "exercitation",
         "completeTimes": 64959444.97871822,

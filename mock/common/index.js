@@ -15,6 +15,7 @@ module.exports = {
     "ifEnd": false,
     "ifPrizeEnd": false,
     "targetScore": 98576894,
+    userId: 1111,
     "tagList": [
       {
         "code": "assist",

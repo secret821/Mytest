@@ -15,6 +15,8 @@ import { showShareGuide } from "@spark/share"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Sorrymodal from "../sorrymodal/sorrymodal"
 import { RES_PATH } from "../../../sparkrc"
+import { soundCtrl } from "@src/utils/soundCtrl"
+import config from "@src/utils/config"
 
 // const inviteAssistApi = getInviteAssistApi("inviteAssist_1");
 class taskModal extends Component {
