@@ -198,7 +198,7 @@ class Gamepage extends ModalControllerComponent {
     const {isOn, store=false, key="bgm", loop=true} = handle
     store && localStorage.setItem('musicStatus', isOn)
     if (isOn) {
-      console.log('播放音乐')
+      console.log('播放音乐', key)
       playSound(key, { loop })
     } else {
       stopSound(key)
@@ -217,10 +217,11 @@ class Gamepage extends ModalControllerComponent {
   @PromiseAwait
   async onGameOver(e) {
     showLoading()
+    const score = e.data.score
     const {success, data} = await API.gameSubmit({
       startId: this.startId,
-      score: e.data.score,
-      sign: md5(`startId=${this.startId}&score=${e.data.score}&key=posf3usrjjnd9sd4w21ln3p`)
+      score,
+      sign: md5(`startId=${this.startId}&score=${score}&key=posf3usrjjnd9sd4w21ln3p`)
     })
     hideLoading()
     if (!success) return
@@ -232,14 +233,15 @@ class Gamepage extends ModalControllerComponent {
       ModalCtrlIns.showModal(Sorrymodal)
       return
     }
+    console.log(e.data)
     if (data && data.credits){
       ModalCtrlIns.showModal(Gameovermodal, {
         credits: data.credits,
-        score: e.data.score,
+        score: score,
       })
     } else {
       ModalCtrlIns.showModal(Gamefailmodal, {
-        score: e.data.score,
+        score: score,
       })
     }
   }

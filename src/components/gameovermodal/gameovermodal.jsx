@@ -25,8 +25,8 @@ class Gameovermodal extends React.Component {
         <span className="count">{credits}</span>
         <span className="closebtn" onClick={this.closeModal3}></span>
         <span className="confirmbtn md26" onClick={this.closeModal3}></span>
-        <span className="desc tc">恭喜获得{credits}个金币</span>
-        <span className="d tc">游戏得分：{score}分</span>
+        <span className="desc ">恭喜获得{credits}个金币</span>
+        <span className="d ">游戏得分：{score}分</span>
       </div>
     );
   }

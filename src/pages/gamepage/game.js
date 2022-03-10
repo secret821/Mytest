@@ -4375,9 +4375,11 @@ var IndexScene = (function (_super) {
     IndexScene.prototype.onGameOver = function () {
         this.GameStatus = 0;
         this.CountDownCont.stopCountDown();
-        Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_OVER, {
-            score: this.score
-        });
+        setTimeout(() => {
+            Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_OVER, {
+                score: this.score
+            });
+        }, 500)
     };
     IndexScene.prototype.onInitGamer = function () {
         if (!this.RobotGameEle) {
