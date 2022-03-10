@@ -66,7 +66,7 @@ class taskModal extends Component {
       return
     } else {
       if (item.state === 0 && !todaySignStatus) {
-        Toast("请先完成今日打卡哦")
+        Toast("请先完成今日打卡哦！")
         return
       }
       switch (item.code) {
@@ -84,6 +84,8 @@ class taskModal extends Component {
           window.location.href = store.indexInfo.readLinkUrl
           break
         case "game":
+          config.mute = true
+          soundCtrl.pauseSound("bg")
           store.changePage("gamePage")
           break
       }
@@ -107,6 +109,8 @@ class taskModal extends Component {
               'read': 11,
               'game': 12,
             }
+            console.log(item?.desc,'.......')
+
             return (
               <div className="taskItem" key={index}>
                 <div className="itemicon">

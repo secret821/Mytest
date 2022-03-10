@@ -19,6 +19,8 @@ import { showToast } from "@src/utils/utils.js"
 import { Toast } from "@spark/ui"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import album from "@src/components/Album/album.jsx"
+import { soundCtrl } from "@src/utils/soundCtrl"
+import config from "@src/utils/config"
 
 @observer
 class Homepage extends React.Component {
@@ -57,30 +59,52 @@ class Homepage extends React.Component {
       })
       // store.getIndex()
       await this.setIndex()
-      this.setState({
-        showSignAni: true,
-      })
+      // store.indexInfo.currentTaskId ++ 
+      // store.indexInfo.todaySignStatus = true
       const currDaysIndex = store.indexInfo.currentTaskId + 1
       const parseIntTop = parseInt(getComputedStyle(document.querySelector('.locatpos' + currDaysIndex)).top)
-      // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
       function disableHtml() {
         document.querySelector('.wrapper-cont').style.pointerEvents = 'none'
       }
-      function enableHtml() {
-        document.querySelector('.wrapper-cont').style.pointerEvents = 'auto'
-      }
       disableHtml()
+
       scrollTo(parseIntTop-400, 500, document.querySelector('html'))
-      enableHtml()
-      setTimeout(()=>{
-        ModalCtrlIns.showModal(album, {
-          credits: this.state.credits,
-          cardInfo: this.state.cardInfo
-        }, {
-          transitionName: 'scale-in-center',
-          fixedBody: false
-        },1000)
+      await new Promise(r => {
+        setTimeout(r, 500)
       })
+      this.setState({
+        showSignAni: true,
+      }, () => {
+        // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
+        function enableHtml() {
+          document.querySelector('.wrapper-cont').style.pointerEvents = 'auto'
+        }
+        function endPlay(){
+          document.querySelector(".sign_icon_ani").addEventListener("animationend", () => {
+            enableHtml()
+            // console.log("动画结束");
+            ModalCtrlIns.showModal(album, {
+                  credits: this.state.credits,
+                  cardInfo: this.state.cardInfo
+                }, {
+                  transitionName: 'scale-in-center',
+                  fixedBody: false
+                }
+            )
+          })
+        }
+        endPlay.call(this)
+      })
+      
+      // setTimeout(()=>{
+      //   ModalCtrlIns.showModal(album, {
+      //     credits: this.state.credits,
+      //     cardInfo: this.state.cardInfo
+      //   }, {
+      //     transitionName: 'scale-in-center',
+      //     fixedBody: false
+      //   },1000)
+      // })
       // modalStore.pushPop("album", )
       // this._type = +data?.taskTypeBySignDays;
     }
@@ -106,6 +130,7 @@ class Homepage extends React.Component {
     }
   }
   componentDidMount = async () => {
+    // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
     await this.setIndex()
     await this.getCardInfo()
@@ -118,6 +143,10 @@ class Homepage extends React.Component {
     }
   }
 
+  // beginMusic =()=>{
+  //   config.mute = false
+  //   soundCtrl.playSound("bg")
+  // }
   setIndex = async()=>{
     await store.getIndex()
     this.setState({
@@ -198,7 +227,7 @@ class Homepage extends React.Component {
                   }}
                 >
                   {+index + 1 >
-                  +homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus ? (
+                  +homeInfo?.currentTaskId ? (
                     ""
                   ) : (
                     <div className="signedTag">
@@ -208,11 +237,15 @@ class Homepage extends React.Component {
                         } */}
                       <div
                         className={
-                          showSignAni &&
-                          index + 1 === +homeInfo?.currentTaskId &&
-                           homeInfo?.todaySignStatus
+                          (function() {
+                            return showSignAni 
+                            &&
+                            index + 1 === +homeInfo?.currentTaskId &&
+                             homeInfo?.todaySignStatus
                             ? "sign_icon sign_icon_ani"
                             : "sign_icon"
+                          })()
+                          
                         }
                       ></div>
                     </div>

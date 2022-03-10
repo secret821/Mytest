@@ -512,7 +512,7 @@ body {
   background-repeat: no-repeat;
 }
 .taskModal {
-  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646891360323/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
+  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646884924476/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
   position: absolute;
   width: 7.5rem;
   height: 8.21rem;
@@ -5250,8 +5250,4 @@ body {
   left: 2.76rem;
 }
 
-<<<<<<< HEAD:dist/styles/main.893c126ba7a4d24a4f27.css
-/*# sourceMappingURL=main.893c126ba7a4d24a4f27.css.map*/
-=======
 /*# sourceMappingURL=main.7ba7e3edaf78b07de406.css.map*/
->>>>>>> 17cb720a25c8427faef41972b4874f78e5f642d9:dist/styles/main.7ba7e3edaf78b07de406.css
