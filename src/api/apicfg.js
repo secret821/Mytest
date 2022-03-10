@@ -20,7 +20,7 @@ const apiCfg = {
     withToken: true
   },
   gameIndex: 'game/index.do',
-  prizeQuery: 'rule_1.query',
+  prizeQuery: 'ru_1.query',
   prizeLottery: {
     uri: 'prize/join.do',
     withToken: true,
