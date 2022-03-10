@@ -15,7 +15,7 @@ const LotteryData = {
 
 const GameIndex = {
   GameInfo: {
-    gameRul: " 2",
+    gameRule: " 2",
     targetScore: 20,
     frequency: 22,
     gameTime: 100,

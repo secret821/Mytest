@@ -4330,12 +4330,12 @@ var IndexScene = (function (_super) {
                         var stepSprite = UI_1.default.Sp(NewGuyCont, 'step1.png');
                         var step = 1;
                         function showStepImg() {
-                            stepSprite.texture = RES_1.RES.getRes("step" + step + ".png");
-                            step++;
                             if (step > 4) {
                                 NewGuyCont.destroy();
                                 r();
                             }
+                            stepSprite.texture = RES_1.RES.getRes("step" + step + ".png");
+                            step++;
                         }
                         showStepImg();
                         NewGuyCont.addEventListener(FYGE.MouseEvent.CLICK, function () {

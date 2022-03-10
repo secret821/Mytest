@@ -248,7 +248,7 @@ class Gamepage extends ModalControllerComponent {
 
   render() {
     const {startGameFlag} = this.state
-    const { frequency, targetScore, newUsr, gameTime, coins, gameRul } = store.GameInfo
+    const { frequency, targetScore, newUsr, gameTime, coins, gameRule } = store.GameInfo
     return (
       <div className={classnames('main-game-page md15', {gaming: startGameFlag})}>
         <div className="gamepage">
@@ -265,7 +265,7 @@ class Gamepage extends ModalControllerComponent {
           }}></span>
           <span className="rulebtn md25" onClick={() => {
             ModalCtrlIns.showModal(Rule, {
-              ruleInfo: gameRul
+              ruleInfo: gameRule
             })
           }}></span>
         </div>
