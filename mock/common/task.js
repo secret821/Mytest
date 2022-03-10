@@ -43,7 +43,7 @@ module.exports = {
         },
         {
           buttonText: "2",
-          code: "answer",
+          code: "game",
           completedSize: 0,
           desc: "22222222222222222222222222222222",
           extra: null,
@@ -80,7 +80,7 @@ module.exports = {
         },
         {
           buttonText: "2",
-          code: "browse_1",
+          code: "read",
           completedSize: 0,
           desc: "222222222222222222222222222",
           extra: null,

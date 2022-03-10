@@ -33,11 +33,11 @@ const proxy = {
   'GET /game/index.do': {
     success: true,
     data: {
-      gameRul:" 2",
+      gameRule:" 2",
       targetScore: 20,
       frequency: 22,
       gameTime: 100,
-      newUsr: 0,
+      newUsr: 1,
       coins: 11
     }
   },
@@ -87,7 +87,7 @@ const proxy = {
       {
         "desc": "quisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquis",
         "icon": "mollit",
-        "code": "occaecat",
+        "code": "game",
         "state": -77685484.66632512,
         "taskName": "exercitation",
         "completeTimes": 64959444.97871822,
