@@ -4,6 +4,8 @@ import { miniDoShare } from '@src/utils/share'
 import { getDomain } from '@spark/dbdomain'
 import API from '@src/api'
 
+Weixin.debugMode = true
+
 async function WeiXinIntShare(cb) {
   await start([Weixin], function (success) {
       console.log("share result:----", success)
@@ -45,6 +47,7 @@ function getAuthUrl() {
     WeiXinIntShare()
   )
   console.info('1111')
+  let baseInviteUrl = ''
   try {
     const resList = await Promise.all(
       promiseList
@@ -52,7 +55,7 @@ function getAuthUrl() {
     console.info('2222')
     // CFG.shareDomain = isResolve(resList[0]) ? resList[0].value : location.origin
     CFG.shareDomain = resList[0] || location.origin
-    let baseInviteUrl = CFG.ShareData.url.replace(/(https{0,1}:\/\/[^\/]*)/g, CFG.shareDomain)
+    baseInviteUrl = CFG.ShareData.url.replace(/(https{0,1}:\/\/[^\/]*)/g, CFG.shareDomain)
     if (isJumpToShare) {
       baseInviteUrl = baseInviteUrl.replace(/\/([^\/]*)\.html/g, `/share.html`)
     } else {
@@ -63,14 +66,17 @@ function getAuthUrl() {
       baseInviteUrl = setUrlParam('sceneId', code, baseInviteUrl)
     }
     baseInviteUrl = getAuthUrl() + encodeURIComponent(baseInviteUrl)
-    console.info('分享连接========', baseInviteUrl)
     Object.assign(CFG.ShareData, {
       url: baseInviteUrl
     })
   } catch(e) {
     console.error(e)
   }
+  console.info('分享连接========', baseInviteUrl)
+  console.info('分享配置========', CFG.ShareData)
+  // eslint-desable-next-line 这次就先这样吧
+  CFG.ShareData.thumbnail = 'https://yun.duiba.com.cn/aurora/assets/2d6a1386d49779555d2181269041fd3d726c8315.png'
   updateShare(CFG.ShareData)
   // 初始化页面分享
-  miniDoShare(CFG.ShareData)
+  // miniDoShare(CFG.ShareData)
 }

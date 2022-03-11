@@ -219,6 +219,8 @@ class Lukylotteryscene extends React.Component {
             <span className="tips">{prizeCredits}金币/次</span>
           </div>
         </div>
+        <div className="lottery-rule-cont">
+        </div>
       </div>
     );
   }
