@@ -17,8 +17,8 @@ class Drawfailmodal extends React.Component {
     return (
       <div className="drawfailmodal">
         <span className="back"></span>
-        <span className="closebtn md22" onClick={this.closeModal}></span>
-        <span className="good" onClick={this.closeModal}></span>
+        <span className="closebtn" onClick={this.closeModal}></span>
+        <span className="good md22" onClick={this.closeModal}></span>
         <span className="tips" style={{
           whiteSpace: `pre-wrap`
         }}>{`本次没有中奖哦\n再接再厉吧～`}</span>

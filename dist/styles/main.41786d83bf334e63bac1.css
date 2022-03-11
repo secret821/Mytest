@@ -41,7 +41,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/SorryModal/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/SorryModal/back.png") no-repeat top left / 100% 100%;
 }
 
 .sorrymodal .confirm {
@@ -50,7 +50,7 @@ body {
   left: 2.06rem;
   top: 5.9rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/SorryModal/confirm.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/SorryModal/confirm.png") no-repeat top left / 100% 100%;
 }
 
 .sorrymodal .desc {
@@ -88,7 +88,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/DrawFailModal/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/DrawFailModal/back.png") no-repeat top left / 100% 100%;
 }
 
 .drawfailmodal .closebtn {
@@ -97,7 +97,7 @@ body {
   left: 3.21rem;
   top: 8.03rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/common/closebtn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/common/closebtn.png") no-repeat top left / 100% 100%;
 }
 
 .drawfailmodal .good {
@@ -106,7 +106,7 @@ body {
   left: 2.06rem;
   top: 5.9rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/DrawFailModal/Good.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/DrawFailModal/Good.png") no-repeat top left / 100% 100%;
 }
 
 .drawfailmodal .tips {
@@ -133,7 +133,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/DrawSucModal/组2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/DrawSucModal/组2.png") no-repeat top left / 100% 100%;
 }
 
 .drawsucmodal .closebtn {
@@ -142,7 +142,7 @@ body {
   left: 3.21rem;
   top: 8.03rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/common/closebtn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/common/closebtn.png") no-repeat top left / 100% 100%;
 }
 
 .drawsucmodal .confirmbtn {
@@ -151,7 +151,7 @@ body {
   left: 2.06rem;
   top: 5.9rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/DrawSucModal/confirm-btn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/DrawSucModal/confirm-btn.png") no-repeat top left / 100% 100%;
 }
 
 .drawsucmodal .prizename {
@@ -206,7 +206,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GameFailModal/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GameFailModal/back.png") no-repeat top left / 100% 100%;
 }
 
 .gamefailmodal .closebtn {
@@ -215,7 +215,7 @@ body {
   left: 3.21rem;
   top: 8.03rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/common/closebtn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/common/closebtn.png") no-repeat top left / 100% 100%;
 }
 
 .gamefailmodal .confirmbtn {
@@ -224,7 +224,7 @@ body {
   left: 2.06rem;
   top: 5.73rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GameFailModal/confirm-btn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GameFailModal/confirm-btn.png") no-repeat top left / 100% 100%;
 }
 
 .gamefailmodal .t2 {
@@ -255,7 +255,7 @@ body {
   left: 2.66rem;
   top: 3.97rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GameFailModal/xixi.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GameFailModal/xixi.png") no-repeat top left / 100% 100%;
 }
 .gameovermodal {
   width: 6.59rem;
@@ -271,7 +271,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GameOverModal/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GameOverModal/back.png") no-repeat top left / 100% 100%;
 }
 
 .gameovermodal .coin {
@@ -280,7 +280,7 @@ body {
   left: 3.57rem;
   top: 4.43rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GameOverModal/coin.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GameOverModal/coin.png") no-repeat top left / 100% 100%;
 }
 
 .gameovermodal .count {
@@ -301,7 +301,7 @@ body {
   left: 3.21rem;
   top: 8.03rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/common/closebtn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/common/closebtn.png") no-repeat top left / 100% 100%;
 }
 
 .gameovermodal .confirmbtn {
@@ -310,7 +310,7 @@ body {
   left: 2.06rem;
   top: 5.66rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GameOverModal/confirm-btn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GameOverModal/confirm-btn.png") no-repeat top left / 100% 100%;
 }
 
 .gameovermodal .desc {
@@ -360,7 +360,7 @@ body {
   left: 0.54rem;
   top: 3.53rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GametipsConfirmModal/confirm-btn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GametipsConfirmModal/confirm-btn.png") no-repeat top left / 100% 100%;
 }
 .modal-hoc-bg {
   position: fixed;
@@ -528,7 +528,7 @@ body {
   background-repeat: no-repeat;
 }
 .taskModal {
-  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646982543125/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
+  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646985044274/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
   position: absolute;
   width: 7.5rem;
   height: 8.21rem;
@@ -1256,7 +1256,7 @@ body {
   height: 7rem;
   position: absolute;
   right: 0.7rem;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/rule/活动规则.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/rule/活动规则.png") no-repeat top left / 100% 100%;
 }
 
 .rule .redBtn {
@@ -1265,7 +1265,7 @@ body {
   left: 2.66rem;
   top: 6.9rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/rule/关闭_m.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/rule/关闭_m.png") no-repeat top left / 100% 100%;
 }
 
 .rule .activityRulesActivityRules {
@@ -1482,7 +1482,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/loading/bg174.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/loading/bg174.png") no-repeat top left / 100% 100%;
 }
 
 .loading .progressBar {
@@ -1501,7 +1501,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/loading/底部173.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/loading/底部173.png") no-repeat top left / 100% 100%;
 }
 
 .loading .progressBar .loadingBg {
@@ -1519,7 +1519,7 @@ body {
   position: relative;
   width: 5.16rem;
   height: 100%;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/loading/上面.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/loading/上面.png") no-repeat top left / 100% 100%;
   border-radius: 0.06rem;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -1601,7 +1601,7 @@ body {
   left: 0.42rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-all.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-all.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .bgalls .top {
@@ -1610,7 +1610,7 @@ body {
   left: 0;
   top: 0.49rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/top.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/top.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .bgalls .liu {
@@ -1619,7 +1619,7 @@ body {
   position: absolute;
   top: 1rem;
   left: 0.17rem;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/柳条.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/柳条.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: left top;
   transform-origin: left top;
   -webkit-animation: move 6s linear infinite;
@@ -1632,7 +1632,7 @@ body {
   position: absolute;
   top: 3rem;
   right: 1.1rem;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/柳条2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/柳条2.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: right top;
   transform-origin: right top;
   -webkit-animation: move 6s linear infinite;
@@ -1727,7 +1727,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-longjing.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-longjing.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .longjingwencha .yanzilongjing {
@@ -1736,7 +1736,7 @@ body {
   left: -4rem;
   top: 3.8rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi-longjing.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi-longjing.png") no-repeat top left / 100% 100%;
   z-index: 8;
   -webkit-animation: yanFly infinite linear 2s;
   animation: yanFly infinite linear 2s;
@@ -1756,7 +1756,7 @@ body {
   left: 0.6rem;
   top: 0.7rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/风筝线.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/风筝线.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: right bottom;
   transform-origin: right bottom;
   -webkit-animation: flyBird2 infinite 7s linear;
@@ -1770,7 +1770,7 @@ body {
   left: 0;
   top: 0.34rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-liuliang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-liuliang.png") no-repeat top left / 100% 100%;
 }
 
 @-webkit-keyframes flyBird2 {
@@ -1899,7 +1899,7 @@ body {
   left: 2.73rem;
   top: 0.93rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun1-yuhuang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun1-yuhuang.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
   z-index: 2;
@@ -1911,7 +1911,7 @@ body {
   left: 1.74rem;
   top: 1.72rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shan-hou.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shan-hou.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .yuhuangfeiyun .yun2yuhuang {
@@ -1920,7 +1920,7 @@ body {
   left: 0;
   top: 2.27rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun2-yuhuang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun2-yuhuang.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
   z-index: 2;
@@ -1932,7 +1932,7 @@ body {
   left: 1.72rem;
   top: 0.9rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shan-qian.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shan-qian.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .yuhuangfeiyun .yunyouyuhuang {
@@ -1941,7 +1941,7 @@ body {
   left: 4.12rem;
   top: 2.11rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-youyuhuang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-youyuhuang.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
   z-index: 2;
@@ -1953,7 +1953,7 @@ body {
   left: 2.31rem;
   top: 3.39rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun3-yuhuang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun3-yuhuang.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
   z-index: 2;
@@ -1965,7 +1965,7 @@ body {
   left: 3.94rem;
   top: 5.32rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/ship-yuhuang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/ship-yuhuang.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .yuhuangfeiyun .liushuyuhuang {
@@ -1974,7 +1974,7 @@ body {
   left: 3.93rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/liushu-yuhuang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/liushu-yuhuang.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: right top;
   transform-origin: right top;
   -webkit-animation: move 6s linear infinite;
@@ -2069,7 +2069,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/人.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/人.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .nanpingwanzhong .yun {
@@ -2078,7 +2078,7 @@ body {
   left: -0.2rem;
   top: 2.85rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -2089,7 +2089,7 @@ body {
   left: 0.48rem;
   top: 3.05rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/clock.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/clock.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: top;
   transform-origin: top;
   -webkit-animation: clockMove infinite 6s linear;
@@ -2102,7 +2102,7 @@ body {
   left: 1.46rem;
   top: 1.95rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/dayan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/dayan.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .nanpingwanzhong .house {
@@ -2111,7 +2111,7 @@ body {
   left: 0;
   top: 1.76rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/house.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/house.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .nanpingwanzhong .shipnanping {
@@ -2120,7 +2120,7 @@ body {
   left: 1.13rem;
   top: 5.44rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/ship-nanping.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/ship-nanping.png") no-repeat top left / 100% 100%;
   -webkit-animation: shipman infinite linear 3s;
   animation: shipman infinite linear 3s;
 }
@@ -2247,7 +2247,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-huanglong.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-huanglong.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .huanglongtucui .shiphuanglong {
@@ -2256,7 +2256,7 @@ body {
   left: 1.17rem;
   top: 5.06rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/ship-huanglong.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/ship-huanglong.png") no-repeat top left / 100% 100%;
   -webkit-animation: linear shipMove3 9s infinite;
   animation: linear shipMove3 9s infinite;
 }
@@ -2267,7 +2267,7 @@ body {
   left: 0;
   top: 4.08rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/liuye.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/liuye.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: left top;
   transform-origin: left top;
   -webkit-animation: move 6s linear infinite;
@@ -2288,7 +2288,7 @@ body {
   left: 0.45rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-wushan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-wushan.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .wushantianfeng .wushansvga {
@@ -2313,7 +2313,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-hupao.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-hupao.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .jiuxiyanshu {
@@ -2330,7 +2330,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-jiuquan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-jiuquan.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .ruandunhuanbi {
@@ -2347,7 +2347,7 @@ body {
   left: 0.15rem;
   top: 1.36rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-huanbi.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-huanbi.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .ruandunhuanbi .yanziyou {
@@ -2356,7 +2356,7 @@ body {
   left: 5.38rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi-you.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi-you.png") no-repeat top left / 100% 100%;
   -webkit-animation: BirdMove22 2s linear infinite;
   animation: BirdMove22 2s linear infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2369,7 +2369,7 @@ body {
   left: 0;
   top: 2.68rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi-zuo.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi-zuo.png") no-repeat top left / 100% 100%;
   -webkit-animation: BirdMove22 2s linear infinite;
   animation: BirdMove22 2s linear infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2382,7 +2382,7 @@ body {
   left: 1.33rem;
   top: 1.11rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi-white.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi-white.png") no-repeat top left / 100% 100%;
 }
 
 @-webkit-keyframes BirdMove22 {
@@ -2423,7 +2423,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-pinghu.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-pinghu.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .pinghuqiuyue .light {
@@ -2432,7 +2432,7 @@ body {
   left: 0.09rem;
   top: 1.2rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/light.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/light.png") no-repeat top left / 100% 100%;
   -webkit-animation: lightMove 3s linear infinite normal;
   animation: lightMove 3s linear infinite normal;
 }
@@ -2515,7 +2515,7 @@ body {
   left: 0;
   top: 0.08rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-duanqiao.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-duanqiao.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .duanqiaocanxue .snow {
@@ -2540,7 +2540,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg_guiyu.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg_guiyu.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .manlongguiyu .swallowguiyu {
@@ -2549,7 +2549,7 @@ body {
   right: -0.5rem;
   top: 8.08rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/swallow-guiyu.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/swallow-guiyu.png") no-repeat top left / 100% 100%;
   -webkit-animation: yanFly2 infinite linear 2s;
   animation: yanFly2 infinite linear 2s;
   z-index: 2;
@@ -2569,7 +2569,7 @@ body {
   left: 2.4rem;
   top: 4.4rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/ship-guiyu.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/ship-guiyu.png") no-repeat top left / 100% 100%;
   -webkit-animation: shipMove24 infinite linear 4s;
   animation: shipMove24 infinite linear 4s;
 }
@@ -2624,7 +2624,7 @@ body {
   left: 0;
   top: 1.26rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg_shudi.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg_shudi.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .sudichunwan .ship {
@@ -2633,7 +2633,7 @@ body {
   left: 2.29rem;
   top: 3.06rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/ship.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/ship.png") no-repeat top left / 100% 100%;
   -webkit-animation: shipMove infinite 9s linear;
   animation: shipMove infinite 9s linear;
 }
@@ -2644,7 +2644,7 @@ body {
   left: 0.17rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/swallow.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/swallow.png") no-repeat top left / 100% 100%;
   -webkit-animation: BirdMove 2s linear 1;
   animation: BirdMove 2s linear 1;
   -webkit-animation-fill-mode: forwards;
@@ -2657,7 +2657,7 @@ body {
   left: 0;
   top: 3.83rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/kite.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/kite.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: left bottom;
   transform-origin: left bottom;
   -webkit-animation: flyBird infinite 7s linear;
@@ -2840,7 +2840,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shan.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .yunxizhujing .zhuzihou {
@@ -2849,7 +2849,7 @@ body {
   left: 1.77rem;
   top: 1.33rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/zhuzi-hou.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/zhuzi-hou.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .yunxizhujing .yuntop_1 {
@@ -2858,7 +2858,7 @@ body {
   left: 0;
   top: 1.52rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-top.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-top.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -2869,7 +2869,7 @@ body {
   left: 0;
   top: 0.86rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/zhuzi-qian.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/zhuzi-qian.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .yunxizhujing .yun2 {
@@ -2878,7 +2878,7 @@ body {
   left: -0.2rem;
   top: 3.6rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun2.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -2897,7 +2897,7 @@ body {
   left: 0.09rem;
   top: 1.91rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-santan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-santan.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .santanyingyue .yanzizuo_1 {
@@ -2906,7 +2906,7 @@ body {
   left: 0.4rem;
   top: 1.04rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi-zuo.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi-zuo.png") no-repeat top left / 100% 100%;
   -webkit-animation: BirdMove22 4s linear infinite;
   animation: BirdMove22 4s linear infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2919,7 +2919,7 @@ body {
   left: 1.78rem;
   top: 1.17rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi-you.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi-you.png") no-repeat top left / 100% 100%;
   -webkit-animation: BirdMove22 4s linear infinite;
   animation: BirdMove22 4s linear infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2932,7 +2932,7 @@ body {
   left: 0.91rem;
   top: -0.1rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yanzi1.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yanzi1.png") no-repeat top left / 100% 100%;
   -webkit-animation: BirdMove22 4s linear infinite;
   animation: BirdMove22 4s linear infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2953,7 +2953,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-huagang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-huagang.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .huagangguanyu .fish {
@@ -2970,7 +2970,7 @@ body {
   left: -0.2rem;
   top: 2.92rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-huagang.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-huagang.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -2989,7 +2989,7 @@ body {
   left: 0;
   top: 4.12rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun2.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .leifengxizhao .yun_1 {
@@ -2998,7 +2998,7 @@ body {
   left: 0;
   top: 3.29rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .leifengxizhao .bgleifeng {
@@ -3007,7 +3007,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-leifeng.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-leifeng.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .leifengxizhao .shipleifeng {
@@ -3016,7 +3016,7 @@ body {
   left: 4.49rem;
   top: 8.12rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/ship-leifeng.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/ship-leifeng.png") no-repeat top left / 100% 100%;
   -webkit-animation: shipMove2 infinite 9s linear;
   animation: shipMove2 infinite 9s linear;
 }
@@ -3027,7 +3027,7 @@ body {
   left: 5.01rem;
   top: 7.79rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shuye.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shuye.png") no-repeat top left / 100% 100%;
   -webkit-transform-origin: right top;
   transform-origin: right top;
   -webkit-animation: move 6s linear infinite;
@@ -3040,7 +3040,7 @@ body {
   left: 2.07rem;
   top: 3.23rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/dayan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/dayan.png") no-repeat top left / 100% 100%;
   -webkit-animation: dayanmove infinite linear 5s;
   animation: dayanmove infinite linear 5s;
 }
@@ -3161,7 +3161,7 @@ body {
   left: 0.99rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shan1.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shan1.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .shuangfengchayun .yun1 {
@@ -3170,7 +3170,7 @@ body {
   left: 1.85rem;
   top: 0.8rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun1.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun1.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -3181,7 +3181,7 @@ body {
   left: 3.12rem;
   top: 0.28rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shan2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shan2.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .shuangfengchayun .yun2_2 {
@@ -3190,7 +3190,7 @@ body {
   left: 3.18rem;
   top: 2.07rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun2_2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun2_2.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -3201,7 +3201,7 @@ body {
   left: 1.01rem;
   top: 2.59rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/shan3.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/shan3.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .shuangfengchayun .yun3 {
@@ -3210,7 +3210,7 @@ body {
   left: 0;
   top: 2.96rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun3.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun3.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -3221,7 +3221,7 @@ body {
   left: 2.28rem;
   top: 4.27rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun4.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun4.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s;
   animation: yunMove infinite 9s;
 }
@@ -3232,7 +3232,7 @@ body {
   left: 2.1rem;
   top: 0.52rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yan.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yan.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .quyuanfenghe {
@@ -3249,7 +3249,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/组103.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/组103.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .quyuanfenghe .zu1033 {
@@ -3258,7 +3258,7 @@ body {
   left: 1.42rem;
   top: 2.09rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/组 1033.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/组 1033.png") no-repeat top left / 100% 100%;
   z-index: 1;
 }
 
@@ -3328,7 +3328,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/bg-liuxia.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/bg-liuxia.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .baoshiliuxia .yunliuxiayou {
@@ -3337,7 +3337,7 @@ body {
   left: 4.36rem;
   top: 2.65rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-liuxia-you.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-liuxia-you.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
   z-index: 2;
@@ -3349,7 +3349,7 @@ body {
   position: absolute;
   left: 4.5rem;
   top: 3rem;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/鸟.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/鸟.png") no-repeat top left / 100% 100%;
   -webkit-animation: birdFlyMove infinite linear 3s;
   animation: birdFlyMove infinite linear 3s;
 }
@@ -3360,7 +3360,7 @@ body {
   left: 0;
   top: 4.45rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-liuxia-zuo.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-liuxia-zuo.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
   z-index: 2;
@@ -3408,7 +3408,7 @@ body {
   left: 0;
   top: 2.32rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-zuo.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-zuo.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -3419,7 +3419,7 @@ body {
   left: 0;
   top: 1.28rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/m-zuo.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/m-zuo.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .button .mhou {
@@ -3428,7 +3428,7 @@ body {
   left: 4.6rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/m-hou.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/m-hou.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .button .yunyou {
@@ -3437,7 +3437,7 @@ body {
   left: 4.38rem;
   top: 1.06rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/yun-you.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/yun-you.png") no-repeat top left / 100% 100%;
   -webkit-animation: yunMove infinite 9s linear;
   animation: yunMove infinite 9s linear;
 }
@@ -3448,7 +3448,7 @@ body {
   left: 2.7rem;
   top: 0.61rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/m-qian.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/m-qian.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles {
@@ -3466,7 +3466,7 @@ body {
   left: 1.06rem;
   top: 9.12rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/1.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/1.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._2 {
@@ -3475,7 +3475,7 @@ body {
   left: 5.23rem;
   top: 12.42rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/2.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/2.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._3 {
@@ -3484,7 +3484,7 @@ body {
   left: 0.23rem;
   top: 14.44rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/3.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/3.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._4 {
@@ -3493,7 +3493,7 @@ body {
   left: 6.26rem;
   top: 17.08rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/4.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/4.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._5 {
@@ -3502,7 +3502,7 @@ body {
   left: 0.14rem;
   top: 20.45rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/5.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/5.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._6 {
@@ -3511,7 +3511,7 @@ body {
   left: 5.94rem;
   top: 21.53rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/6.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/6.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._7 {
@@ -3520,7 +3520,7 @@ body {
   left: 0;
   top: 25.89rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/7.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/7.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._8 {
@@ -3529,7 +3529,7 @@ body {
   left: 4.35rem;
   top: 28.04rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/8.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/8.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._9 {
@@ -3538,7 +3538,7 @@ body {
   left: 0.08rem;
   top: 31.8rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/9.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/9.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._10 {
@@ -3547,7 +3547,7 @@ body {
   left: 2.18rem;
   top: 36.37rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/10.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/10.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._11 {
@@ -3556,7 +3556,7 @@ body {
   left: 6.32rem;
   top: 40.41rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/11.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/11.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._12 {
@@ -3565,7 +3565,7 @@ body {
   left: 0.29rem;
   top: 41.88rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/12.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/12.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._13 {
@@ -3574,7 +3574,7 @@ body {
   left: 5.45rem;
   top: 45.31rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/13.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/13.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._14 {
@@ -3583,7 +3583,7 @@ body {
   left: 0.08rem;
   top: 49.07rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/14.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/14.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._15 {
@@ -3592,7 +3592,7 @@ body {
   left: 6.42rem;
   top: 51.38rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/15.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/15.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._16 {
@@ -3601,7 +3601,7 @@ body {
   left: 0.38rem;
   top: 56.75rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/16.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/16.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._17 {
@@ -3610,7 +3610,7 @@ body {
   left: 3.94rem;
   top: 59.43rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/17.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/17.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._18 {
@@ -3619,7 +3619,7 @@ body {
   left: 0.2rem;
   top: 61.14rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/18.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/18.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._19 {
@@ -3628,7 +3628,7 @@ body {
   left: 6.17rem;
   top: 64.88rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/19.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/19.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .titles ._20 {
@@ -3637,7 +3637,7 @@ body {
   left: 0.48rem;
   top: 69.27rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/homePage/20.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/homePage/20.png") no-repeat top left / 100% 100%;
 }
 
 .homepage .locatpos1 {
@@ -5005,7 +5005,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GamePage/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GamePage/back.png") no-repeat top left / 100% 100%;
 }
 
 .gamepage .groupcont {
@@ -5022,7 +5022,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GamePage/group-back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GamePage/group-back.png") no-repeat top left / 100% 100%;
 }
 
 .gamepage .groupcont .titledesc {
@@ -5054,7 +5054,7 @@ body {
   left: 1.67rem;
   top: 7.17rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GamePage/start-btn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GamePage/start-btn.png") no-repeat top left / 100% 100%;
 }
 
 .gamepage .groupcont .lucky {
@@ -5063,7 +5063,7 @@ body {
   left: 1.91rem;
   top: 3.07rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GamePage/lucky.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GamePage/lucky.png") no-repeat top left / 100% 100%;
 }
 
 .gamepage .goback {
@@ -5072,7 +5072,7 @@ body {
   left: 0;
   top: 2.29rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GamePage/go-back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GamePage/go-back.png") no-repeat top left / 100% 100%;
 }
 
 .gamepage .rulebtn {
@@ -5081,7 +5081,7 @@ body {
   left: 5.95rem;
   top: 2.29rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/GamePage/rule-btn.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/GamePage/rule-btn.png") no-repeat top left / 100% 100%;
 }
 .lukylotteryscene {
   width: 7.5rem;
@@ -5092,13 +5092,22 @@ body {
   overflow: hidden;
 }
 
+.lukylotteryscene .lottery-rule-cont {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/extra-rule-cont.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  left: 0.55rem;
+  top: 11.1rem;
+  width: 6.4rem;
+  height: 2.26rem;
+}
+
 .lukylotteryscene .back {
   width: 7.5rem;
   height: 16.24rem;
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/LukyLotteryScene/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/back.png") no-repeat top left / 100% 100%;
 }
 
 .lukylotteryscene .goback {
@@ -5107,7 +5116,7 @@ body {
   left: 0;
   top: 2.29rem;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/LukyLotteryScene/go-back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/go-back.png") no-repeat top left / 100% 100%;
 }
 
 .lukylotteryscene .coinboard {
@@ -5124,7 +5133,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/LukyLotteryScene/coin-board-back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/coin-board-back.png") no-repeat top left / 100% 100%;
 }
 
 .lukylotteryscene .coinboard .num {
@@ -5152,7 +5161,7 @@ body {
   left: 0.46rem;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/LukyLotteryScene/lottery-header.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/lottery-header.png") no-repeat top left / 100% 100%;
 }
 
 .lukylotteryscene .lotterymaincontainer .nineLatticeCont {
@@ -5216,7 +5225,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/LukyLotteryScene/lottery-back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/lottery-back.png") no-repeat top left / 100% 100%;
 }
 
 .lukylotteryscene .lotterymaincontainer .lotterybtn {
@@ -5233,7 +5242,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/LukyLotteryScene/组1.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/LukyLotteryScene/组1.png") no-repeat top left / 100% 100%;
 }
 
 .lukylotteryscene .lotterymaincontainer .lotterybtn .tips {
@@ -5261,7 +5270,7 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646973328416/outShare/back.png") no-repeat top left / 100% 100%;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1646984006037/outShare/back.png") no-repeat top left / 100% 100%;
 }
 
 .outshare .QR_code {
@@ -5272,4 +5281,4 @@ body {
   left: 2.76rem;
 }
 
-/*# sourceMappingURL=main.8a9d0515516c1ea96ea4.css.map*/
+/*# sourceMappingURL=main.41786d83bf334e63bac1.css.map*/
