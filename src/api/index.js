@@ -41,6 +41,8 @@ function getRequestParams(value) {
 	}
 }
 
+const reqDataCenter = {}
+// fromCache
 
 function generateAPI(apiList) {
 	const api = {};
@@ -49,6 +51,9 @@ function generateAPI(apiList) {
 
 		const {method, uri, headers: mHeaders, withToken, secret, secretKey, contentType} = getRequestParams(value);
 		api[key] = async (params = {}, headers) => {
+			if (params.fromCache && reqDataCenter[uri]) {
+				return reqDataCenter[uri]
+			}
 			let token;
 			if (withToken) {
 				try {
@@ -78,6 +83,7 @@ function generateAPI(apiList) {
 				if (!result.success) {
 					showToast(result.message, result.code);
 				}
+				reqDataCenter[uri] = result
 				//返回整个结果
 				return result;
 			}

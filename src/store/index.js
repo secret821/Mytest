@@ -102,8 +102,8 @@ const store = makeAutoObservable({
     console.log("前端开发配置", data)
   },
   //首页
-  async getIndex() {
-    const res = await API.index()
+  async getIndex(params) {
+    const res = await API.index(params)
     if (res?.success) {
       this.setIndexInfo(res?.data)
       const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data

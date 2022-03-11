@@ -32,7 +32,6 @@ class Homepage extends React.Component {
       cardInfo: [],
       showSignAni: false, // 是否展示印章动画
       // totalCredits:0,
-      
     }
     this.locateRef = React.createRef()
   }
@@ -51,51 +50,62 @@ class Homepage extends React.Component {
   }
 
   update = _throttle(async () => {
-    console.info(store.cardInfo,'=====cards')
+    console.info(store.cardInfo, "=====cards")
     const res = await API.join()
     if (res?.success) {
       this.setState({
         credits: res?.data?.credits,
       })
       // store.getIndex()
-      await this.setIndex()
-      // store.indexInfo.currentTaskId ++ 
-      // store.indexInfo.todaySignStatus = true
+      // await this.setIndex()
+      store.indexInfo.currentTaskId++
+      store.indexInfo.todaySignStatus = true
       const currDaysIndex = store.indexInfo.currentTaskId + 1
-      const parseIntTop = parseInt(getComputedStyle(document.querySelector('.locatpos' + currDaysIndex)).top)
+      const parseIntTop = parseInt(
+        getComputedStyle(document.querySelector(".locatpos" + currDaysIndex))
+          .top
+      )
       function disableHtml() {
-        document.querySelector('.wrapper-cont').style.pointerEvents = 'none'
+        document.querySelector(".wrapper-cont").style.pointerEvents = "none"
+      }
+
+      function enableHtml() {
+        document.querySelector(".wrapper-cont").style.pointerEvents = "auto"
       }
       disableHtml()
 
-      scrollTo(parseIntTop-400, 500, document.querySelector('html'))
-      await new Promise(r => {
+      scrollTo(parseIntTop - 400, 500, document.querySelector("html"))
+      await new Promise((r) => {
         setTimeout(r, 500)
       })
-      this.setState({
-        showSignAni: true,
-      }, () => {
-        // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
-        function enableHtml() {
-          document.querySelector('.wrapper-cont').style.pointerEvents = 'auto'
+      this.setState(
+        {
+          showSignAni: true,
+        },
+        () => {
+          // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
+          // window.onload = function () {
+            document
+              .querySelector(".sign_icon_ani")
+              ?.addEventListener("animationend", () => {
+                enableHtml()
+                // console.log("动画结束");
+                ModalCtrlIns.showModal(
+                  album,
+                  {
+                    credits: this.state.credits,
+                    cardInfo: this.state.cardInfo,
+                  },
+                  {
+                    transitionName: "scale-in-center",
+                    fixedBody: false,
+                  }
+                )
+              })
+          // }
         }
-        function endPlay(){
-          document.querySelector(".sign_icon_ani").addEventListener("animationend", () => {
-            enableHtml()
-            // console.log("动画结束");
-            ModalCtrlIns.showModal(album, {
-                  credits: this.state.credits,
-                  cardInfo: this.state.cardInfo
-                }, {
-                  transitionName: 'scale-in-center',
-                  fixedBody: false
-                }
-            )
-          })
-        }
-        endPlay.call(this)
-      })
-      
+      )
+
       // setTimeout(()=>{
       //   ModalCtrlIns.showModal(album, {
       //     credits: this.state.credits,
@@ -147,10 +157,12 @@ class Homepage extends React.Component {
   //   config.mute = false
   //   soundCtrl.playSound("bg")
   // }
-  setIndex = async()=>{
-    await store.getIndex()
+  setIndex = async () => {
+    await store.getIndex({
+      fromCache: this.props.fromLoading
+    })
     this.setState({
-      homeInfo:store.indexInfo
+      homeInfo: store.indexInfo,
     })
   }
 
@@ -193,10 +205,7 @@ class Homepage extends React.Component {
   showDeatil = _throttle((index) => {
     const { ifend } = store?.indexInfo
     // console.log( +index + 1 <=store.indexInfo?.currentTaskId,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
-    if (
-      +index + 1 <=
-      +store.indexInfo?.currentTaskId
-    ) {
+    if (+index + 1 <= +store.indexInfo?.currentTaskId) {
       // store.dispatch(actions.changeSelectIndex(index));
       modalStore.pushPop("intro", {
         cardInfo: this.state.cardInfo,
@@ -220,14 +229,13 @@ class Homepage extends React.Component {
             {cardInfo?.map((item, index) => {
               return (
                 <div
-                  className={`locatpos${+index + 1} md9dpm_d=${+index+1}`}
+                  className={`locatpos${+index + 1}`}
                   key={index}
                   onClick={() => {
                     this.showDeatil(index)
                   }}
                 >
-                  {+index + 1 >
-                  +homeInfo?.currentTaskId ? (
+                  {+index + 1 > +homeInfo?.currentTaskId ? (
                     ""
                   ) : (
                     <div className="signedTag">
@@ -236,17 +244,13 @@ class Homepage extends React.Component {
                         homeInfo?.todaySignStatus 
                         } */}
                       <div
-                        className={
-                          (function() {
-                            return showSignAni 
-                            &&
+                        className={(function () {
+                          return showSignAni &&
                             index + 1 === +homeInfo?.currentTaskId &&
-                             homeInfo?.todaySignStatus
+                            homeInfo?.todaySignStatus
                             ? "sign_icon sign_icon_ani"
                             : "sign_icon"
-                          })()
-                          
-                        }
+                        })()}
                       ></div>
                     </div>
                   )}

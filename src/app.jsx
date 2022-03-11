@@ -36,7 +36,7 @@ class App extends Component {
             <Outshare />
           ) : (function() {
             const Scene = pageMap[curPage]
-            return <Scene  {...curPageData} />
+            return <Scene  {...curPageData}  />
           })()
         }
         <Modal />

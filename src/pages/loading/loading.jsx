@@ -24,6 +24,7 @@ class Loading extends React.Component {
     this.preloadAssetInit()
   }
   preloadAssetInit = async () => {
+    this.onLoadingProgress(0.1)
     await store.getFrontVariable();
     registerSounds({
       bgm: RES_PATH + 'mp3/bgm.mp3',
@@ -36,6 +37,7 @@ class Loading extends React.Component {
     await store.setGameInfo()
     await store.onInitLotteryData()
     this.onLoadingProgress(0.3)
+    await store.getIndex()
     await preloadAsset(assetList.preLoadImg, 3).then(() => {
       //预加载资源完成
       setTimeout(() => {
@@ -84,7 +86,9 @@ class Loading extends React.Component {
       if (curPercentage >= percentage) {
         clearInterval(this.intervalId)
         percentage == 100 &&
-          store.changePage('homePage') //跳转页面
+          store.changePage('homePage', {
+            fromLoading: true
+          }) //跳转页面
         return
       }
       curPercentage += 1
