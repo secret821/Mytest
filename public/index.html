@@ -28,6 +28,7 @@
         var CFG = CFG || {};
         CFG.projectId = location.pathname.split('/')[2] || '1';
         var matched = location.pathname.match(/\/([^\/]*).html/)
+        CFG.ShareDebug = false
         // 当前 skin
         var currSkinId = matched ? matched && matched[1] : 'index'
         CFG.ShareSkinId = 'share'
