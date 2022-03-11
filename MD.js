@@ -16,4 +16,19 @@ const mdList = Array(29).fill(1).map((_,index) => {
     logClick: [4,5,6,7,8,9,10,11,12, 16,23].includes(ci)
   }
 })
+
+const mdList2 = Array(20).fill(1).map((_,index) => {
+  const ci = index + 1
+  return {
+    ele: `.md9-${ci}`,
+    data: {
+      dpm: `${appId}.110.9.1`,
+      dcm,
+      dom: ci
+    },
+    logExposure: true,
+    logClick: true
+  }
+})
+md.registerBuriedPoints(mdList2)
 md.registerBuriedPoints(mdList)

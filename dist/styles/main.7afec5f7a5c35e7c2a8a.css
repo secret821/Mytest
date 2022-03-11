@@ -244,9 +244,9 @@ body {
   left: 2.71rem;
   top: 3.11rem;
   position: absolute;
+  font-size: 0.25rem;
   line-height: 0.2rem;
   color: #fea72e;
-  font-size: 0.2rem;
 }
 
 .gamefailmodal .xixi {
@@ -528,7 +528,7 @@ body {
   background-repeat: no-repeat;
 }
 .taskModal {
-  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646979064804/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
+  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646980264404/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
   position: absolute;
   width: 7.5rem;
   height: 8.21rem;
@@ -5272,4 +5272,4 @@ body {
   left: 2.76rem;
 }
 
-/*# sourceMappingURL=main.48f39dbc3d074d843d85.css.map*/
+/*# sourceMappingURL=main.7afec5f7a5c35e7c2a8a.css.map*/
