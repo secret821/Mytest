@@ -216,7 +216,7 @@ class Lukylotteryscene extends React.Component {
           </div>
           <div className="lotterybtn md19" onClick={() => this.doLottery.doTurn()}>
             <span className="group1"></span>
-            <span className="tips tc">{prizeCredits}金币/次</span>
+            <span className="tips">{prizeCredits}金币/次</span>
           </div>
         </div>
       </div>

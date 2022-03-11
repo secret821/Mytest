@@ -143,6 +143,11 @@ class Gamepage extends ModalControllerComponent {
 
   componentDidMount() {
     this.initEvents()
+
+    // ModalCtrlIns.showModal(Sorrymodal, {
+    //   credits: 200,
+    //   score: 200,
+    // })
   }
 
   componentWillUnmount() {
@@ -256,7 +261,7 @@ class Gamepage extends ModalControllerComponent {
           <div className="groupcont">
             <span className="groupback"></span>
             <span className="titledesc">{`目标分数：${targetScore}分\n闯关成功获得${coins}个金币`}</span>
-            <span className="smalltips tc">剩余次数：{frequency}次</span>
+            <span className="smalltips tsc">剩余次数：{frequency}次</span>
             <span className="startbtn md23" onClick={this.onGameStart}></span>
             <span className="lucky"></span>
           </div>
