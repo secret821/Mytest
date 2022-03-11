@@ -13,7 +13,7 @@ const mdList = Array(29).fill(1).map((_,index) => {
       dcm,
     },
     logExposure: true,
-    logClick: [4,5,6,7,8,9,10,11,12, 16,23].includes(ci)
+    logClick: true
   }
 })
 

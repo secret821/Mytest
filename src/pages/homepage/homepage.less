@@ -1,6 +1,11 @@
 @import "../../res.less";
 
 
+.sign_icon {
+  opacity: 0;
+  animation-fill-mode: forwards !important;
+}
+
 
 #share_guide_layer {
   .bg {
@@ -1404,6 +1409,7 @@
         top: 0px;
         left: 0px;
         // animation: sign_icon_ani 0.8s infinite;
+        opacity: 1;
         &.sign_icon_ani {
           animation: sign_icon_ani 0.8s;
         }

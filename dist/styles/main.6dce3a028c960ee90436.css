@@ -528,7 +528,7 @@ body {
   background-repeat: no-repeat;
 }
 .taskModal {
-  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646980264404/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
+  background: url(//yun.duiba.com.cn/spark/v2/temp_base/1646987787041/images/src/assets/taskModal/taskbg.png) no-repeat top left / 100% 100%;
   position: absolute;
   width: 7.5rem;
   height: 8.21rem;
@@ -1566,6 +1566,12 @@ body {
     transform: translateX(0);
   }
 }
+.sign_icon {
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards !important;
+  animation-fill-mode: forwards !important;
+}
+
 #share_guide_layer .bg {
   width: 5rem;
 }
@@ -3675,6 +3681,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 1;
 }
 
 .homepage .locatpos1 .signedTag .sign_icon.sign_icon_ani {
@@ -5272,4 +5279,4 @@ body {
   left: 2.76rem;
 }
 
-/*# sourceMappingURL=main.7afec5f7a5c35e7c2a8a.css.map*/
+/*# sourceMappingURL=main.6dce3a028c960ee90436.css.map*/

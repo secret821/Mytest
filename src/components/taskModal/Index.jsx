@@ -107,12 +107,12 @@ class taskModal extends Component {
         <div className="tasklist">
           {taskList.map((item, index) => {
             const mdKv = {
-              'assist': 10,
-              'read': 11,
-              'game': 12,
+              'assist': [14, 15],
+              'read': [12, 13],
+              'game': [10, 11],
             }
             console.log(item?.desc,'.......')
-
+            
             return (
               <div className="taskItem" key={index}>
                 <div className="itemicon">
@@ -125,7 +125,7 @@ class taskModal extends Component {
                 <div
                   className={classnames(
                     `itembtn`,
-                    `${item.state ? `grey md${13+index}` : `gobtn md${10+index}` }`
+                    `${item.state ? `grey md${mdKv[item.code][1]}` : `gobtn md${mdKv[item.code][0]}` }`
                   )}
                   onClick={() => {
                     this.doTask(item)
