@@ -79,9 +79,9 @@ class taskModal extends Component {
         case "read":
           if (item.state === 0) {
             const {success, data} =  await API.doReadTask()
-            if (data?.ifLimit) {
-              ModalCtrlIns.showModal(Sorrymodal)
-            }
+            // if (data?.ifLimit) {
+            //   ModalCtrlIns.showModal(Sorrymodal)
+            // }
           }
           window.location.href = store.indexInfo.readLinkUrl
           break

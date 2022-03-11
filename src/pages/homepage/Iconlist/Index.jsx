@@ -19,7 +19,7 @@ class Index extends Component {
     super(props)
     this.state = {
       credits: 0,
-      musicStart: true,
+      musicStart: null,
     }
   }
   componentDidMount = async () => {
@@ -37,7 +37,7 @@ class Index extends Component {
       } else {
         console.error(musicStart)
         console.log("H5已切换到网页")
-        if (musicStart === true) {
+        if (musicStart === true && indexMusicStatus) {
           config.mute = false
           soundCtrl.changeMute("bg")
         } else {
@@ -50,13 +50,29 @@ class Index extends Component {
     // soundCtrl.changeMute('bg');
   }
 
+  componentDidUpdate() {
+    const { musicStart } = this.state
+    if (musicStart) {
+      localStorage.setItem("indexMusicStatus", true)
+    } else {
+      localStorage.setItem("indexMusicStatus", false)
+    }
+    // // if()
+    // const indexMusicStatus = localStorage.getItem('indexMusicStatus')
+    // console.log(typeof(indexMusicStatus),'indexMusicStatus====---')
+    // if(indexMusicStatus == 'true'){
+    //   this.store = true
+    // }else{
+    //   this.store = false
+    // }
+  }
+
   audioAutoPlay = (music) => {
     var self = this
     //微信自动播放
     document.addEventListener(
       "WeixinJSBridgeReady",
       function () {
-        // music.play();
         config.mute = false
         soundCtrl.playSound("bg")
       },
@@ -65,7 +81,6 @@ class Index extends Component {
     document.addEventListener(
       "YixinJSBridgeReady",
       function () {
-        // music.play();
         config.mute = false
         soundCtrl.playSound("bg")
       },
@@ -82,11 +97,39 @@ class Index extends Component {
     document.body.addEventListener("touchstart", musicInBrowserHandler)
   }
 
-  beginMusic = () => {
-    config.mute = false
-    soundCtrl.playSound("bg")
-    this.audioAutoPlay()
+  beginMusic = async() => {
+    // 开启
+    const indexMusicStatus = localStorage.getItem("indexMusicStatus")
+    if (typeof(indexMusicStatus) == 'string') {
+      await this.setState({
+        musicStart: indexMusicStatus,
+      })
+    } else {
+      console.log('第一次')
+      if (typeof(indexMusicStatus) !== "boolean") {
+        await this.setState({
+          musicStart: true,
+        })
+      } else {
+        await this.setState({
+          musicStart: indexMusicStatus,
+        })
+      }
+    }
+    console.log(this.state.musicStart,'this.state.musicStart___????')
+    if (this.state.musicStart == 'true' || this.state.musicStart == true) {
+      // config.mute = false
+      // soundCtrl.playSound("bg")
+      this.audioAutoPlay()
+    } else {
+      config.mute = true
+      soundCtrl.pauseSound("bg")
+    }
   }
+
+  // setNum = ()=>{
+
+  // }
 
   //已打卡
   signedClick = _throttle(() => {
@@ -134,6 +177,7 @@ class Index extends Component {
     EventBus.fire("UPDATE")
   }
 
+  //大转盘
   goLottery = _throttle(() => {
     const { ifPre, ifEnd } = this.props?.data
     if (ifPre) {
@@ -144,6 +188,8 @@ class Index extends Component {
       Toast("活动已结束")
       return
     }
+    config.mute = true
+    soundCtrl.pauseSound("bg")
     store.changePage("lottery")
   })
 
@@ -206,10 +252,10 @@ class Index extends Component {
   })
 
   startMusic = async () => {
+    // const indexMusicStatus = localStorage.getItem("indexMusicStatus")
     this.setState({
       musicStart: !this.state.musicStart,
     })
-    console.log(this.state.musicStart, "this.state.musicStart")
     const { musicStart } = this.state
     if (!musicStart) {
       config.mute = false
@@ -218,7 +264,6 @@ class Index extends Component {
       config.mute = true
       soundCtrl.pauseSound("bg")
     }
-    console.log(this.state.musicStart, "-------music")
   }
 
   render() {
@@ -260,7 +305,7 @@ class Index extends Component {
         {(userId && (
           <>
             <div className="md6">
-              {musicStart ? (
+              {musicStart  == 'true' || musicStart == true ? (
                 <div className="musicOpen" onClick={this.startMusic}></div>
               ) : (
                 <div className="musicClose" onClick={this.startMusic}></div>

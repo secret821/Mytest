@@ -192,10 +192,10 @@ class Homepage extends React.Component {
   // 已打卡山-展示简介
   showDeatil = _throttle((index) => {
     const { ifend } = store?.indexInfo
-    // console.log(store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
+    console.log( +index + 1 <=store.indexInfo?.currentTaskId,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
     if (
       +index + 1 <=
-      +store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus
+      +store.indexInfo?.currentTaskId
     ) {
       // store.dispatch(actions.changeSelectIndex(index));
       modalStore.pushPop("intro", {
@@ -220,7 +220,7 @@ class Homepage extends React.Component {
             {cardInfo?.map((item, index) => {
               return (
                 <div
-                  className={`locatpos${+index + 1}`}
+                  className={`locatpos${+index + 1} md9${+index}`}
                   key={index}
                   onClick={() => {
                     this.showDeatil(index)

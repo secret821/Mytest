@@ -85,7 +85,7 @@ const proxy = {
     "code": null,
     "data": [
       {
-        "desc": "quisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquisquis",
+        "desc": "好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的好的",
         "icon": "mollit",
         "code": "game",
         "state": -77685484.66632512,

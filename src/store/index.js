@@ -1,6 +1,9 @@
 import { makeAutoObservable } from "mobx"
 import API from "../api/index"
 import modalStore from "@src/store/modal"
+import { ModalCtrlIns } from "@lightfish/reactmodal"
+import Sorrymodal from "@src/components/sorrymodal/sorrymodal"
+
 
 const LotteryData = {
   lotteryPrizeList: [],
@@ -58,7 +61,7 @@ const store = makeAutoObservable({
   changePage(page, data, callback) {
     this.curPage = page
     this.curPageData = data
-    document.querySelector('html').scrollTop = 0
+    document.querySelector("html").scrollTop = 0
     callback && callback()
   },
   /**
@@ -103,28 +106,32 @@ const store = makeAutoObservable({
     const res = await API.index()
     if (res?.success) {
       this.setIndexInfo(res?.data)
-      const { followOfficalAccount, firstJoin, tagList } = res?.data
+      const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data
       //数据访问记录接口
-      if (firstJoin) {
+      if (newUser === 1) {
         await API.accessData()
       }
       //关注公众号弹窗
       if (!followOfficalAccount) {
         modalStore.pushPop("wxcode")
       }
-      if (tagList !== null && tagList !== '') {
-        // if()
-        tagList.length&&tagList.map((item, index) => {
-        console.log(tagList,'tagList')
-          switch (item.code) {
-            case "assist":
-              modalStore.pushPop("getinvite", { tagList: item })
-              break
-            case "read":
-              modalStore.pushPop("getread", { tagList: item })
-              break
-          }
-        })
+      if (ifLimit) {
+        ModalCtrlIns.showModal(Sorrymodal)
+      } else {
+        if (tagList !== null && tagList !== "") {
+          tagList.length &&
+            tagList.map((item, index) => {
+              console.log(tagList, "tagList")
+              switch (item.code) {
+                case "assist":
+                  modalStore.pushPop("getinvite", { tagList: item })
+                  break
+                case "read":
+                  modalStore.pushPop("getread", { tagList: item })
+                  break
+              }
+            })
+        }
       }
       // if(showAnimate){
       //   if(inviteCredits !== ''){

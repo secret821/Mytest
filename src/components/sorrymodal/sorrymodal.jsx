@@ -16,7 +16,7 @@ class Sorrymodal extends React.Component {
   render() {
     return (
       <div className="sorrymodal ">
-        <span className="back"></span>
+        <span className="back" onClick={this.closeModal}></span>
         <span className="confirm md28" onClick={this.closeModal}></span>
         <span className="desc tc">{`您的金币今日\n已达上限`}</span>
       </div>
