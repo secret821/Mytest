@@ -22,8 +22,8 @@ class Gamefailmodal extends React.Component {
         <span className="back"></span>
         <span className="closebtn" onClick={this.closeModal4}></span>
         <span className="confirmbtn md27" onClick={this.closeModal4}></span>
-        <span className="t2 tc">- 闯关失败 再接再厉 -</span>
-        <span className="t1 tc">游戏得分：{this.props.score}分</span>
+        <span className="t2 ">- 闯关失败 再接再厉 -</span>
+        <span className="t1 ">游戏得分：{this.props.score}分</span>
         <span className="xixi"></span>
       </div>
     );
