@@ -71,7 +71,7 @@ function generateAPI(apiList) {
 			const result = await callApi(uri, params, method, mergedHeaders, false, secret, secretKey, contentType)
 				.catch(e => {
 					//捕获网络异常
-					Toast((e.message || '网络异常') + '');
+					Toast('网络开小差了，稍后再试');
 				});
 			if (result) {
 				//判断接口错误

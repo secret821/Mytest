@@ -192,7 +192,7 @@ class Homepage extends React.Component {
   // 已打卡山-展示简介
   showDeatil = _throttle((index) => {
     const { ifend } = store?.indexInfo
-    console.log( +index + 1 <=store.indexInfo?.currentTaskId,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
+    // console.log( +index + 1 <=store.indexInfo?.currentTaskId,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
     if (
       +index + 1 <=
       +store.indexInfo?.currentTaskId
@@ -211,7 +211,7 @@ class Homepage extends React.Component {
     const { cards, cardInfo, showSignAni } = this.state
     const { totalCredits } = store.indexInfo
     const homeInfo = store.indexInfo
-    console.log(homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus, "homeInfo?.todaySignStatus------=====")
+    // console.log(homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus, "homeInfo?.todaySignStatus------=====")
     return (
       <div className="wrapper-cont">
         <div className="homepage">

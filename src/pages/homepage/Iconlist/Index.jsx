@@ -269,11 +269,11 @@ class Index extends Component {
   render() {
     const {
       totalCredits,
-      userId,
       todaySignStatus,
       prizeCredits,
       ifPre,
       ifEnd,
+      lastDay,
       currentTaskId,
     } = this.props?.data
     const { musicStart } = this.state
@@ -302,7 +302,7 @@ class Index extends Component {
             this.goService()
           }}
         ></div>
-        {(userId && (
+        {(currentTaskId !== '' && (
           <>
             <div className="md6">
               {musicStart  == 'true' || musicStart == true ? (
@@ -326,7 +326,7 @@ class Index extends Component {
             <span className="toGetCoins md4" onClick={this.goTask}></span>
 
             {
-              currentTaskId === 20 ? (
+              currentTaskId === 20 || (lastDay&&todaySignStatus) ? (
                 <div
                   className="readybtn md2"
                   onClick={() => {
