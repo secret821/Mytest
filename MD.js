@@ -4,7 +4,7 @@ const {appID: appId, projectId} = window['CFG']
 const dcm = '202.' + projectId + '.0.0';
 
 md.prepare({appId})
-const mdList = Array(23).fill(1).map((_,index) => {
+const mdList = Array(29).fill(1).map((_,index) => {
   const ci = index + 1
   return {
     ele: `.md${ci}`,
