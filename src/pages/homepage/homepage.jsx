@@ -60,10 +60,10 @@ class Homepage extends React.Component {
       // await this.setIndex()
       store.indexInfo.currentTaskId++
       store.indexInfo.todaySignStatus = true
-      const currDaysIndex = store.indexInfo.currentTaskId + 1
+      const currDaysIndex = store.indexInfo.currentTaskId
       const parseIntTop = parseInt(
         getComputedStyle(document.querySelector(".locatpos" + currDaysIndex))
-          .top
+          ?.top
       )
       function disableHtml() {
         document.querySelector(".wrapper-cont").style.pointerEvents = "none"
