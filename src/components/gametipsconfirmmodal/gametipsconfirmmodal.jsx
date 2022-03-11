@@ -20,7 +20,7 @@ class Gametipsconfirmmodal extends React.Component {
     const { gameTime, targetScore, coins } = store.GameInfo
     return (
       <div className="gametipsconfirmmodal">
-        <span className="desc tc">{`在${gameTime}秒内游戏分数达到${targetScore}分\n即挑战成功\n可获得${coins}个金币！`}</span>
+        <span className="desc tsc">{`在${gameTime}秒内游戏分数达到${targetScore}分\n即挑战成功\n可获得${coins}个金币！`}</span>
         <span className="confirmbtn" onClick={() => {
           this.closeModal()
           this.props.onConfirm()

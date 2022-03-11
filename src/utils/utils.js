@@ -37,7 +37,7 @@ export {
  */
 /**  */
 function showToast(message, errCode) {
-  Toast(message || ERROR_MESSSAGE(errCode) || "网络异常，请稍后再试~", 2000, {hideOthers:true});
+  Toast(ERROR_MESSSAGE(errCode) || message || "网络异常，请稍后再试~", 2000, {hideOthers:true});
 }
 
 /**

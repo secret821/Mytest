@@ -78,8 +78,9 @@ const proxy = {
     "data":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAAA9ElEQVR42u3aSw7DIAxFUe8g+98lO6AfjGMQaTsrL7ooqpB7MgKMQ2L1l1YMBoP9l1m04x0pr84chGmxw0e4dZ7/zEGYIGtD3CKtMwVh2qz3Yfdgr7VcYHdgQ4pOv58yOWxnlqqmIT9fV1ywzVluvqK/PRnB9mdeEvcWWRomyjxu8y1+4wHTY+04wmXvxOPPOUNgOuwsg2tddmCqLCdns7yoYXJsKKXMzt02JgBMjS0eeaJCLgaTZOMpRIx+rG6YIss776J2gimz/D7Oq+UK02fp7fkwE2BSbDjVH6+rTA7bmi0P//sWfPnZEmxjxkd3MNje7AHBF+7396cjdQAAAABJRU5ErkJggg=="
   },
   'GET /gameInvite/doAssist.do': {
-    success: true,
-    data: 11
+    success: false,
+    data: 11,
+    code: 600021
   },
   'GET /home/taskList.do': {
     "code": null,

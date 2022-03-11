@@ -22,12 +22,15 @@ class Drawsucmodal extends React.Component {
       <div className="drawsucmodal">
         <span className="inGroup2"></span>
         <span className="closebtn" onClick={this.closeModal2}></span>
-        <span className="confirmbtn md21" onClick={this.closeModal2}></span>
+        <span className="confirmbtn md21" onClick={() => {
+          this.closeModal()
+          window.location.href = CFG.recordUrl
+        }}></span>
         <span className="prizename lineClamp1">{name}</span>
         <div className="prize-img" style={{
           backgroundImage: `url(${icon})`
         }}></div>
-        <span className="tips tc">*奖品可在【我的奖品】中查看</span>
+        <span className="tips tsc">*奖品可在【我的奖品】中查看*</span>
       </div>
     );
   }
