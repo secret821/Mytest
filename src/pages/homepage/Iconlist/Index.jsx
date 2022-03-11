@@ -195,9 +195,13 @@ class Index extends Component {
 
   //奖品
   goRecord = _throttle(() => {
-    const { ifPre } = this.props?.data
+    const { ifPre,ifPrizeEnd } = this.props?.data
     if (ifPre) {
       Toast("活动未开始")
+      return
+    }
+    if(!ifPrizeEnd){
+      Toast("活动已结束")
       return
     }
     window.location.href = CFG.recordUrl
@@ -241,7 +245,7 @@ class Index extends Component {
       Toast("活动已结束")
       return
     }
-    // modalStore.pushPop("taskModal")
+    // modalStore.pushPop("taskModal",{transitionName: "slide-top"})
     ModalCtrlIns.showModal(
       taskModal,
       {},

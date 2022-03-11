@@ -74,7 +74,7 @@ function getAuthUrl() {
   }
   console.info('分享连接========', baseInviteUrl)
   console.info('分享配置========', CFG.ShareData)
-  // eslint-desable-next-line 这次就先这样吧
+  // eslint-disable-next-line
   CFG.ShareData.thumbnail = 'https://yun.duiba.com.cn/aurora/assets/2d6a1386d49779555d2181269041fd3d726c8315.png'
   updateShare(CFG.ShareData)
   // 初始化页面分享

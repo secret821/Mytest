@@ -57,10 +57,10 @@ class Homepage extends React.Component {
         credits: res?.data?.credits,
       })
       // store.getIndex()
-      await this.setIndex()
+      // await this.setIndex()
       store.indexInfo.currentTaskId++
-      // store.indexInfo.todaySignStatus = true
-      // const currDaysIndex = store.indexInfo.currentTaskId + 1
+      store.indexInfo.todaySignStatus = true
+      const currDaysIndex = store.indexInfo.currentTaskId + 1
       const parseIntTop = parseInt(
         getComputedStyle(document.querySelector(".locatpos" + currDaysIndex))
           .top
@@ -158,7 +158,9 @@ class Homepage extends React.Component {
   //   soundCtrl.playSound("bg")
   // }
   setIndex = async () => {
-    await store.getIndex()
+    await store.getIndex({
+      fromCache: this.props.fromLoading
+    })
     this.setState({
       homeInfo: store.indexInfo,
     })
