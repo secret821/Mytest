@@ -220,7 +220,7 @@ class Homepage extends React.Component {
             {cardInfo?.map((item, index) => {
               return (
                 <div
-                  className={`locatpos${+index + 1} md9${+index}`}
+                  className={`locatpos${+index + 1} md9dpm_d=${+index+1}`}
                   key={index}
                   onClick={() => {
                     this.showDeatil(index)
