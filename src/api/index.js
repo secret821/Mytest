@@ -54,7 +54,7 @@ function generateAPI(apiList) {
 				try {
 					token = await getPxToken();
 				} catch (e) {
-					Toast('星速台token获取失败');
+					Toast('网络开小差了，稍后再试');
 					return {
 						success: false
 					}

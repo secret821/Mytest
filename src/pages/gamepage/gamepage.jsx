@@ -255,7 +255,7 @@ class Gamepage extends ModalControllerComponent {
     const {startGameFlag} = this.state
     const { frequency, targetScore, newUsr, gameTime, coins, gameRule } = store.GameInfo
     return (
-      <div className={classnames('main-game-page md15', {gaming: startGameFlag})}>
+      <div className={classnames('main-game-page', {gaming: startGameFlag})}>
         <div className="gamepage">
           <span className="back"></span>
           <div className="groupcont">
