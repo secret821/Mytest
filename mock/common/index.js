@@ -1,7 +1,7 @@
 module.exports = {
   code: null,
   data: {
-    currentTaskId: 0,
+    currentTaskId: 2,
     currentTaskType: null,
     firstFollow: null,
     firstJoin: false,
@@ -23,7 +23,7 @@ module.exports = {
     taskCredits: 100,
     todaySignStatus: false,
     todayTaskWindowStatus: false,
-    totalCredits: 0,
+    totalCredits: 180,
   },
   message: null,
   success: true,

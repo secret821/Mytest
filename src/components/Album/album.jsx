@@ -96,10 +96,8 @@ class album extends ModalControllerComponent {
           <span className="icons">{credits}</span>
           <span className="coin"></span>
         </div>
-        {/* md9dpm_d=${+index + 1} */}
-        <span className={`btn-albm `} onClick={this.showPhoto}></span>
-      </div>
-    )
+        <span className={`btn-albm md9dpm_d=${+index + 1}`} onClick={this.showPhoto}></span>
+      </div>)
   }
 }
 
