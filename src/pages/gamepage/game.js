@@ -4375,7 +4375,7 @@ var IndexScene = (function (_super) {
     IndexScene.prototype.onInitGamer = function () {
         if (!this.RobotGameEle) {
             this.RobotGameEle = this.addChild(new GameEleSprit('robotGamer.png'));
-            this.RobotGameEle.addPythicCont(new RectPythicCont(50, 190, 100, 60), true);
+            this.RobotGameEle.addPythicCont(new RectPythicCont(50, 190, 100, 60), false);
         }
         this.RobotGameEle.position.set(375 - this.RobotGameEle.width / 2, 1100);
     };
