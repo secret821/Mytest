@@ -82,3 +82,47 @@ function getAuthUrl() {
   // 初始化页面分享
   // miniDoShare(CFG.ShareData)
 }
+
+
+var cubic = function cubic(value) {
+  return Math.pow(value, 3);
+};
+
+var easeInOutCubic = function easeInOutCubic(value) {
+  return value < 0.5 ? cubic(value * 2) / 2 : 1 - cubic((1 - value) * 2) / 2;
+};
+/**
+ * 滚动到指定位置
+ * @param num
+ * @param t
+ * @param dom
+ * @param attr
+ */
+
+
+function scrollTo() {
+  var num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var dom = arguments.length > 2 ? arguments[2] : undefined;
+  var attr = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'scrollTop';
+  var el = dom || document.documentElement;
+  var beginTime = Date.now();
+  var beginValue = el[attr];
+
+  var rAF = window.requestAnimationFrame || function (func) {
+    return setTimeout(func, 16);
+  };
+
+  var frameFunc = function frameFunc() {
+    var progress = (Date.now() - beginTime) / t;
+
+    if (progress < 1) {
+      el[attr] = beginValue - (beginValue - num) * easeInOutCubic(progress);
+      rAF(frameFunc);
+    } else {
+      el[attr] = num;
+    }
+  };
+
+  rAF(frameFunc);
+}
