@@ -1961,7 +1961,7 @@ exports.ResJson = {
         }
     ],
     // eslint-disable-next-line
-    "path": "https://yun.duiba.com.cn/db_games/activity/template/1646905329/resource/"
+    "path": "https://yun.duiba.com.cn/db_games/activity/template/1647225387/resource/"
 };
 
 
@@ -3946,6 +3946,9 @@ var CountDownBoard = (function (_super) {
         this._countDownText.position.set(135, 30);
         this._countDownText.text = this._initCountDownNum + '';
     };
+    CountDownBoard.prototype.initCountDownNum = function () {
+        this._countDownText.text = this._initCountDownNum + '';
+    };
     CountDownBoard.prototype.restart = function () {
         this.stopCountDown();
         this.countDown = this._initCountDownNum;
@@ -4343,6 +4346,7 @@ var IndexScene = (function (_super) {
         this.musicStatus = Tools_1.Tools.PAGE.musicStatus;
         this.recoverGameEles();
         this.onInitGamer();
+        this.CountDownCont.initCountDownNum();
     };
     IndexScene.prototype.onGameStart = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -4365,12 +4369,16 @@ var IndexScene = (function (_super) {
             });
         });
     };
-    IndexScene.prototype.onGameOver = function () {
+    IndexScene.prototype.onGameOver = function (isDelay) {
+        var _this = this;
+        if (isDelay === void 0) { isDelay = false; }
         this.GameStatus = 0;
         this.CountDownCont.stopCountDown();
-        Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_OVER, {
-            score: this.score
-        });
+        setTimeout(function () {
+            Main_1.GDispatcher.dispatchEvent(GameEvent.GAME_OVER, {
+                score: _this.score
+            });
+        }, isDelay ? 500 : 0);
     };
     IndexScene.prototype.onInitGamer = function () {
         if (!this.RobotGameEle) {
@@ -4384,9 +4392,9 @@ var IndexScene = (function (_super) {
         var curr = this.currGameEleResource;
         var currResource = curr.resource;
         var currGameELe = GPool_1.GPool.takeOut(currResource) || this.addChild(new GameEleSprit(currResource, curr.score));
+        currGameELe.position.set(randomNum(this.axisX[0], this.axisX[1]), layers_1.layers.stageOffsetY - 100);
         currGameELe.visible = true;
         this.gameElesList.push(currGameELe);
-        currGameELe.position.set(randomNum(this.axisX[0], this.axisX[1]), layers_1.layers.stageOffsetY);
         if (!currGameELe.pythicCont) {
             var debug = false;
             if (currResource === 'bellSprit.png') {
@@ -4487,7 +4495,7 @@ var IndexScene = (function (_super) {
                 this.gameElesList.splice(i, 1);
                 if (item.score == 0) {
                     console.log('boom', item);
-                    this.onGameOver();
+                    this.onGameOver(true);
                 }
                 this.score += item.score;
             }

@@ -72,6 +72,7 @@ function generateAPI(apiList) {
 			}
 
 			params = {...params, ...mergeData};
+			console.info('params:', token, withToken, params)
 
 			const result = await callApi(uri, params, method, mergedHeaders, false, secret, secretKey, contentType)
 				.catch(e => {

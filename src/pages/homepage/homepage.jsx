@@ -63,7 +63,7 @@ class Homepage extends React.Component {
       const currDaysIndex = store.indexInfo.currentTaskId
       const parseIntTop = parseInt(
         getComputedStyle(document.querySelector(".locatpos" + currDaysIndex))
-          .top
+          ?.top
       )
       function disableHtml() {
         document.querySelector(".wrapper-cont").style.pointerEvents = "none"
@@ -172,7 +172,7 @@ class Homepage extends React.Component {
 
   async onDoHelp() {
     const shareCode = getUrlParam("shareCode")
-    if (!shareCode) {
+    if (!shareCode || shareCode === '#') {
       return
     }
     const { success, data } = await API.doAssist({ assistItemId: shareCode })
