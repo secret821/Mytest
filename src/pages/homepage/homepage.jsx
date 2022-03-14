@@ -168,7 +168,7 @@ class Homepage extends React.Component {
 
   async onDoHelp() {
     const shareCode = getUrlParam("shareCode")
-    if (!shareCode) {
+    if (!shareCode || shareCode === '#') {
       return
     }
     const { success, data } = await API.doAssist({ assistItemId: shareCode })
