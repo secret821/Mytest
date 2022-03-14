@@ -171,7 +171,7 @@ class Homepage extends React.Component {
   }
 
   async onDoHelp() {
-    const shareCode = getUrlParam("shareCode")
+    const shareCode = getUrlParam("shareCode").replace('#', '')
     if (!shareCode || shareCode === '#') {
       return
     }
