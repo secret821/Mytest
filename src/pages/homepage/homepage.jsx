@@ -143,6 +143,7 @@ class Homepage extends React.Component {
   componentDidMount = async () => {
     // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
+    console.info('componentDidMount')
     await this.setIndex()
     await this.getCardInfo()
     // await this.addPushBack()

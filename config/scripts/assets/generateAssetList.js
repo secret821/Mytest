@@ -11,7 +11,7 @@ const path = require('path')
 
 
 /*请先配置：预加载的资源文件夹名称，或者设置预加载、异步加载资源路径*/
-const preloadFolder = ['loading']; //在/src/assets文件夹下，请设置需要预加载的资源文件目录，默认值预加载为loading文件夹， 其他均为异步加载
+const preloadFolder = ['loading', 'homePage', 'homeSvga']; //在/src/assets文件夹下，请设置需要预加载的资源文件目录，默认值预加载为loading文件夹， 其他均为异步加载
 const initAssetList = {   //初始化预设资源处理
     preLoadImg:[],  //设置预加载图片，例如：["loading/bg174.png","loading/上面.png","loading/底部173.png"]
     asyncLoadImg:[]  //设置异步加载图片
