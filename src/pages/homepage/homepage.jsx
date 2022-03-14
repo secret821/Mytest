@@ -217,7 +217,7 @@ class Homepage extends React.Component {
         index: index,
       })
     } else {
-      Toast("该建筑未解锁")
+      Toast("该景点未解锁")
     }
   })
 
