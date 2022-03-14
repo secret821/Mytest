@@ -12,6 +12,7 @@ import {removeClass, addClass, PromiseAwait} from '@lightfish/tools'
 import Drawfailmodal from '@src/components/drawfailmodal/drawfailmodal.jsx';
 import Drawsucmodal from '@src/components/drawsucmodal/drawsucmodal.jsx';
 import { ModalCtrlIns } from '@lightfish/reactmodal';
+import Reconfirmmodal from '@src/components/reconfirmmodal/reconfirmmodal.jsx';
 
 @observer
 class Lukylotteryscene extends React.Component {
@@ -170,6 +171,14 @@ class Lukylotteryscene extends React.Component {
     }
   }
 
+  onDoLottery = () => {
+    ModalCtrlIns.showModal(Reconfirmmodal, {
+      onConfirm:() => {
+        this.doLottery.doTurn()
+      }
+    })
+  }
+
   render() {
     const { lotteryPrizeList } = store
     const { totalCredits, prizeCredits } = store.indexInfo
@@ -214,7 +223,7 @@ class Lukylotteryscene extends React.Component {
               }
             </div>
           </div>
-          <div className="lotterybtn md19" onClick={() => this.doLottery.doTurn()}>
+          <div className="lotterybtn md19" onClick={this.onDoLottery}>
             <span className="group1"></span>
             <span className="tips">{prizeCredits}金币/次</span>
           </div>
