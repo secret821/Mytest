@@ -30,7 +30,9 @@ class App extends Component {
   }
 
   watchPageVisibilityCallBack() {
-    store.getIndex()
+    setTimeout(() => {
+      store.getIndex()
+    }, 500)
   }
 
   componentWillUnmount() {
