@@ -55,7 +55,9 @@ function getAuthUrl() {
     console.info('2222')
     // CFG.shareDomain = isResolve(resList[0]) ? resList[0].value : location.origin
     CFG.shareDomain = resList[0] || location.origin
-    baseInviteUrl = CFG.ShareData.url.replace(/(https{0,1}:\/\/[^\/]*)/g, CFG.shareDomain)
+    // 跳转地址 默认是分享落地页面
+    baseInviteUrl = CFG.shareDomain + '/projectx/' + CFG.projectId + '/share.html?appID=' + CFG.appID
+    baseInviteUrl = baseInviteUrl.replace(/(https{0,1}:\/\/[^\/]*)/g, CFG.shareDomain)
     if (isJumpToShare) {
       baseInviteUrl = baseInviteUrl.replace(/\/([^\/]*)\.html/g, `/share.html`)
     } else {
