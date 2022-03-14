@@ -60,7 +60,7 @@ class Homepage extends React.Component {
       // await this.setIndex()
       store.indexInfo.currentTaskId++
       store.indexInfo.todaySignStatus = true
-      const currDaysIndex = store.indexInfo.currentTaskId + 1
+      const currDaysIndex = store.indexInfo.currentTaskId
       const parseIntTop = parseInt(
         getComputedStyle(document.querySelector(".locatpos" + currDaysIndex))
           .top
@@ -144,6 +144,7 @@ class Homepage extends React.Component {
     // modalStore.pushPop('Drawfailmodal')
     await this.setIndex()
     await this.getCardInfo()
+    // await this.addPushBack()
     EventBus.on("UPDATE", this.update, this)
     if (store.indexInfo.followOfficalAccount) {
       onInitShare()
@@ -152,24 +153,9 @@ class Homepage extends React.Component {
       onInitShare(false, false)
     }
 
-    $(function () {
-      function pushHistory() {
-        var state = {
-          title: "title",
-          url: "#"
-        };
-        window.history.pushState(state, "title", "#");
-      }
-      pushHistory();
-      window.addEventListener("popstate", function (e) {
-        // alert("我监听到了浏览器的返回按钮事件啦");
-        location.reload();
-        console.log('刷新首页接口')
-        // 根据自己的需求实现自己的功能
-      }, false);
-    });
-
   }
+
+
 
   // beginMusic =()=>{
   //   config.mute = false

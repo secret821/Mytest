@@ -13,7 +13,30 @@
     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
     <script type="text/javascript" src="//yun.duiba.com.cn/js-libs/vConsole/3.3.4/vconsole.min.js"
         crossorigin="anonymous"></script>
-
+    <script>
+        $(function () {
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+            pushHistory();
+            // window.addEventListener("popstate", function (e) {
+            //     console.info('刷新首页接口')
+            //     // alert("我监听到了浏览器的返回按钮事件啦");
+            //     location.reload();
+            //     // 根据自己的需求实现自己的功能
+            // }, false);
+            document.addEventListener("visibilitychange", function () {
+                console.log(document.hidden)
+                if (!document.hidden) {
+                    location.reload();
+                }
+            })
+        });
+    </script>
     <script>
         // var vConsole = new VConsole();
 
@@ -38,8 +61,8 @@
         CFG.shareDomain = location.origin
         CFG.ShareData = {
             url: CFG.shareDomain + '/projectx/' + CFG.projectId + '/share.html?appID=' + CFG.appID,
-            title: '西湖美景打卡',
-            content: '平和味道带你去踏青，收集金币抽大奖',
+            title: '西湖美景打卡，海量好礼等你来拿！',
+            content: '平和味道带你去踏青，收集金币抽大奖～',
             thumbnail: ''
         }
 
@@ -51,11 +74,13 @@
             return search.length ? matched && matched[2] : null;
         }
 
+
         CFG.appID = '${APPID}';
         if (!getUrlParam("appID")) {
             // alert("【警告】检测到活动url中没有appID参数\n缺少该参数会导致埋点、分享、app信息获取错误。")
         }
     </script>
+
 </head>
 
 <body>
