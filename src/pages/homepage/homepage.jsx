@@ -144,6 +144,7 @@ class Homepage extends React.Component {
     // modalStore.pushPop('Drawfailmodal')
     await this.setIndex()
     await this.getCardInfo()
+    // await this.addPushBack()
     EventBus.on("UPDATE", this.update, this)
     if (store.indexInfo.followOfficalAccount) {
       onInitShare()
@@ -151,7 +152,10 @@ class Homepage extends React.Component {
     } else {
       onInitShare(false, false)
     }
+
   }
+
+
 
   // beginMusic =()=>{
   //   config.mute = false
