@@ -13,6 +13,7 @@ import HomePage from "@src/pages/homepage/homepage";
 import Gamepage from "./pages/gamepage/gamepage";
 import Lukylotteryscene from "./pages/lukylotteryscene/lukylotteryscene";
 import Outshare from "./pages/outshare/outshare";
+import { unwatchPageVisibility, watchPageVisibility } from "@spark/utils";
 
 
 const pageMap = {
@@ -25,8 +26,17 @@ const pageMap = {
 class App extends Component {
   async componentDidMount(){
     //获取前端开发配置，依据项目需要，酌情添加 ！！！
-     
+    watchPageVisibility(this.watchPageVisibilityCallBack)
   }
+
+  watchPageVisibilityCallBack() {
+    store.getIndex()
+  }
+
+  componentWillUnmount() {
+    unwatchPageVisibility(this.watchPageVisibilityCallBack)
+  }
+
   render() {
     let { curPage, curPageData } = store;
     return (
