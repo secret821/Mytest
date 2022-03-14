@@ -21,6 +21,7 @@ import { ModalCtrlIns } from "@lightfish/reactmodal"
 import album from "@src/components/Album/album.jsx"
 import { soundCtrl } from "@src/utils/soundCtrl"
 import config from "@src/utils/config"
+import { isAndroid } from "@spark/utils"
 
 @observer
 class Homepage extends React.Component {
@@ -74,7 +75,7 @@ class Homepage extends React.Component {
       }
       disableHtml()
 
-      scrollTo(parseIntTop - 400, 500, document.querySelector("html"))
+      scrollTo(parseIntTop - 400, 500, isAndroid ? document.body : document.querySelector("html"))
       await new Promise((r) => {
         setTimeout(r, 500)
       })
@@ -216,7 +217,7 @@ class Homepage extends React.Component {
         index: index,
       })
     } else {
-      Toast("该建筑未解锁")
+      Toast("该景点未解锁")
     }
   })
 
