@@ -173,6 +173,7 @@ class Lukylotteryscene extends React.Component {
 
   onDoLottery = () => {
     ModalCtrlIns.showModal(Reconfirmmodal, {
+      needCoins: store.indexInfo.prizeCredits,
       onConfirm:() => {
         this.doLottery.doTurn()
       }

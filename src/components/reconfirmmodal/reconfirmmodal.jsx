@@ -25,7 +25,7 @@ class Reconfirmmodal extends React.Component {
           }}></span>
           <span className="closebtn_1" onClick={this.closeModal}></span>
         </div>
-        <span className="desc">{'确认消耗1500个金币\n抽奖吗？'}</span>
+        <span className="desc">{`确认消耗${this.props.needCoins}个金币\n抽奖吗？`}</span>
       </div>
     );
   }
