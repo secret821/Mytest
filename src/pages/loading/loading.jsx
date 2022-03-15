@@ -106,7 +106,7 @@ class Loading extends React.Component {
       <div className="loading">
         <span className="bg174"></span>
         <div className="progressBar">
-          <span className="atBottom"></span>
+          {/* <span className="atBottom"></span> */}
           <span className="loadingBg">
             <span className="above" ref={(el) => (this.progressBar = el)}>
               <span className="inLoad">{this.state.curPercentage}%</span>

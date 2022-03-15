@@ -3,6 +3,7 @@ import API from "../api/index"
 import modalStore from "@src/store/modal"
 import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Sorrymodal from "@src/components/sorrymodal/sorrymodal"
+import { throttle } from "@lightfish/tools"
 
 
 const LotteryData = {
@@ -102,9 +103,10 @@ const store = makeAutoObservable({
     console.log("前端开发配置", data)
   },
   //首页
-  async getIndex(params) {
+  getIndex: throttle(async function (params)  {
     const res = await API.index(params)
     if (res?.success) {
+      console.log(this)
       this.setIndexInfo(res?.data)
       const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data
       //数据访问记录接口
@@ -142,7 +144,7 @@ const store = makeAutoObservable({
       //   }
       // }
     }
-  },
+  }, 1000),
   //卡片信息
   async getCardInfo() {
     const res = await API.cardList()

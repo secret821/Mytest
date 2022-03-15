@@ -90,8 +90,14 @@ function loadOneImg(url) {
             console.warn('load', url, err);
             resolve(false)
         };
-        img.crossOrigin = 'Anonymous'
+        // img.crossOrigin = 'Anonymous'
         img.src = url;
+        document.body.appendChild(img)
+        img.style.width = 0
+        img.style.height = 0
+        img.style.postion = 'absolute'
+        img.style.left = 0
+        img.style.top = 0
     })
 }
 

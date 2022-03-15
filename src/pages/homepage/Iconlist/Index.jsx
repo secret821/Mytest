@@ -251,6 +251,7 @@ class Index extends Component {
       {},
       {
         transitionName: "slide-top",
+        center: false
       }
     )
   })

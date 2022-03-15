@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Reconfirmmodal from "../components/reconfirmmodal/reconfirmmodal";
 import Sorrymodal from "../components/sorrymodal/sorrymodal";
 import Drawfailmodal from "../components/drawfailmodal/drawfailmodal";
 import Drawsucmodal from "../components/drawsucmodal/drawsucmodal";
@@ -34,7 +35,8 @@ export const cfg = {
   Rule: Rule,
   getread: getread,
   getinvite: getinvite,
-  Sorrymodal: Sorrymodal
+  Sorrymodal: Sorrymodal,
+  Reconfirmmodal: Reconfirmmodal
 };
 
 @observer
