@@ -67,7 +67,8 @@ class Loading extends React.Component {
    * @param {*} percentage
    */
   setProgress = (percentage) => {
-    this.progressBar.style.transform = `translateX(${percentage - 100}%)`
+    // this.progressBar.style.transform = `translateX(${percentage - 100}%)`
+    this.progressBar.style.width = `${percentage}%`
     if (percentage == 100) {
       setTimeout(() => {
         this.props.changePage && store.changePage(this.props.changePage) //跳转页面
@@ -85,10 +86,10 @@ class Loading extends React.Component {
     this.intervalId = setInterval(() => {
       if (curPercentage >= percentage) {
         clearInterval(this.intervalId)
-        percentage == 100 &&
-          store.changePage('homePage', {
-            fromLoading: true
-          }) //跳转页面
+        // percentage == 100 &&
+        //   store.changePage('homePage', {
+        //     fromLoading: true
+        //   }) //跳转页面
         return
       }
       curPercentage += 1
@@ -96,7 +97,8 @@ class Loading extends React.Component {
       this.setState({
         curPercentage: curPercentage,
       })
-      this.progressBar.style.transform = `translateX(${curPercentage - 100}%)`
+      // this.progressBar.style.transform = `translateX(${curPercentage - 100}%)`
+      this.progressBar.style.width = `${curPercentage}%`
     }, 10)
   }
 
@@ -106,9 +108,9 @@ class Loading extends React.Component {
       <div className="loading">
         <span className="bg174"></span>
         <div className="progressBar">
-          <span className="atBottom"></span>
           <span className="loadingBg">
             <span className="above" ref={(el) => (this.progressBar = el)}>
+              <span className="atBottom"></span>
               <span className="inLoad">{this.state.curPercentage}%</span>
             </span>
           </span>
