@@ -1,0 +1,62 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><title>平和带你去踏青</title><script src="//yun.duiba.com.cn/spark/v2/spark.base.fz.wxpollyfill.js"></script><script src="//yun.duiba.com.cn/js-libs/rem/1.1.3/rem.min.js"></script><script src="//yun.duiba.com.cn/h5/lib/zepto.min.js"></script><script src="//yun.duiba.com.cn/db_games/libs0924/fyge2023y.minSpine.js" crossorigin="anonymous"></script><script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script><script src="//yun.duiba.com.cn/js-libs/vConsole/3.3.4/vconsole.min.js" crossorigin="anonymous"></script><script>// $(function () {
+//     function pushHistory() {
+//         var state = {
+//             title: "title",
+//             url: "#"
+//         };
+//         window.history.pushState(state, "title", "#");
+//     }
+//     pushHistory();
+//     // window.addEventListener("popstate", function (e) {
+//     //     console.info('刷新首页接口')
+//     //     // alert("我监听到了浏览器的返回按钮事件啦");
+//     //     location.reload();
+//     //     // 根据自己的需求实现自己的功能
+//     // }, false);
+//     document.addEventListener("visibilitychange", function () {
+//         console.log(document.hidden)
+//         if (!document.hidden) {
+//             // store.getIndex()
+//             location.reload();
+//         }
+//     })
+// });
+"use strict";</script><script>"use strict";
+
+var vConsole = new VConsole();
+
+function getApp() {
+  return {
+    cloud: {},
+    cloudName: "clientTemplate2C",
+    requestType: "mock"
+  };
+}
+
+var CFG = CFG || {};
+CFG.projectId = location.pathname.split('/')[2] || '1';
+var matched = location.pathname.match(/\/([^\/]*).html/);
+CFG.ShareDebug = false; // 当前 skin
+
+var currSkinId = matched ? matched && matched[1] : 'index';
+CFG.ShareSkinId = 'share';
+CFG.isShare = currSkinId === CFG.ShareSkinId;
+CFG.recordUrl = "f239ae08e.html";
+CFG.shareDomain = location.origin;
+CFG.ShareData = {
+  url: CFG.shareDomain + '/projectx/' + CFG.projectId + '/share.html?appID=' + CFG.appID,
+  title: '西湖美景打卡，海量好礼等你来拿！',
+  content: '平和味道带你去踏青，收集金币抽大奖～',
+  thumbnail: ''
+};
+
+function getUrlParam(name) {
+  var search = window.location.search;
+  var matched = search.slice(1).match(new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i'));
+  return search.length ? matched && matched[2] : null;
+}
+
+CFG.appID = '${APPID}';
+
+if (!getUrlParam("appID")) {// alert("【警告】检测到活动url中没有appID参数\n缺少该参数会导致埋点、分享、app信息获取错误。")
+}</script><link href="//yun.duiba.com.cn/spark/v2/temp_base/1647334992569/styles/main.5030f9432543ac454e6f.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script src="//yun.duiba.com.cn/spark/v2/temp_base/1647334992569/js/runtime-main.dcb0a951.js" crossorigin="anonymous"></script><script src="//yun.duiba.com.cn/spark/v2/temp_base/1647334992569/js/vendors.b7654707.js" crossorigin="anonymous"></script><script src="//yun.duiba.com.cn/spark/v2/temp_base/1647334992569/js/main.4e270607.js" crossorigin="anonymous"></script></body></html>
