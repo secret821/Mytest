@@ -23,36 +23,39 @@
     left: 113px;
     top: 717px;
     position: absolute;
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 6px;
     .atBottom {
-      width: 534px;
-      height: 46px;
-      left: 0px;
-      top: 0px;
+      width: 327px;
+      height: 25px;
+      left: 6px;
+      top: -24px;
       position: absolute;
       .sparkBg("loading/底部173.png");
     }
     .loadingBg{
       width: 526px;
       height: 23px;
-      left: 4px;
-      top: 18px;
+      // left: 4px;
+      // top: 18px;
       overflow: hidden;
       position: absolute;
-      border-radius: 30px;
+      border-radius: 20px;
+      border: 4px solid #e0b770;
     }
     .above {
       display: block;
       position: relative;
-      width: 516px;
+      width: 523px;
       height: 100%;
+      top: 0px;
       // animation: loading 1.6s linear 1;
-      .sparkBg("loading/上面.png");
-      border-radius: 6px;
+      // .sparkBg("loading/上面.png");
+      border-radius: 15px;
       justify-content: center;
       display: flex;
       transform: translateX(-100%);
+      background-image: linear-gradient(90deg, #78baca, #2f8ea4);
       .inLoad {
         // width: 117px;
         // height: 46px;
