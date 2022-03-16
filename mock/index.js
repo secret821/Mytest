@@ -45,7 +45,8 @@ const proxy = {
     success: true,
     data: Array(8).fill(1).map((_, index) => ({
       icon: `http://qnpic.top/yoona${index+2}.jpg`,
-      name: 'yoona'+(index +2),
+      // name: 'yoona'+(index +2),
+      name: '东东东东东东东东东东东东',
       prizeId: 'thanks'
     }))
   },
