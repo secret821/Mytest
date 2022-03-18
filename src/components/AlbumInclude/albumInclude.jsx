@@ -7,7 +7,8 @@ import { Toast } from "@spark/ui"
 import modalStore from "@src/store/modal"
 import { RES_PATH } from "../../../sparkrc"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
-
+import { ModalCtrlIns } from "@lightfish/reactmodal"
+import taskModal from "../taskModal/Index"
 
 class albumInclude extends Component {
   constructor(props) {
@@ -26,6 +27,14 @@ class albumInclude extends Component {
           className="albumInclude-close"
           onClick={() => {
             this.closeModal()
+            ModalCtrlIns.showModal(
+              taskModal,
+              {},
+              {
+                transitionName: "slide-top",
+                center: false
+              }
+            )
           }}
         ></span>
         <SvgaPlayer className='imgSvga2' src={`${RES_PATH}svga/${curIndex}.svga`} loop={false}></SvgaPlayer>

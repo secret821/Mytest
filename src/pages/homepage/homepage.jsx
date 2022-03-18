@@ -8,7 +8,7 @@ import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./homepage.less"
 import Index from "./Iconlist/Index.jsx"
-import { _throttle } from "@src/utils/utils"
+import { rise, submit, _throttle } from "@src/utils/utils"
 import EventBus from "@duiba/event-bus"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
 import { SVGA_RES_INDEX } from "@src/utils/constants"
@@ -143,7 +143,10 @@ class Homepage extends React.Component {
   componentDidMount = async () => {
     // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
-    console.info('componentDidMount')
+    await rise()
+    // await submit()
+    await console.log('rise()',rise())
+    await console.log('submit()',submit())
     await this.setIndex()
     await this.getCardInfo()
     // await this.addPushBack()
