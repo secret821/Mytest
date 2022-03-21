@@ -11,8 +11,8 @@
     <script src="//yun.duiba.com.cn/h5/lib/zepto.min.js"></script>
     <script src="//yun.duiba.com.cn/db_games/libs0924/fyge2023y.minSpine.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-    <script type="text/javascript" src="//yun.duiba.com.cn/js-libs/vConsole/3.3.4/vconsole.min.js"
-        crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="//yun.duiba.com.cn/js-libs/vConsole/3.3.4/vconsole.min.js"
+        crossorigin="anonymous"></script> -->
     <script>
 
     </script>
@@ -88,7 +88,7 @@
         productNumber: 'YD00462183948397',
         onload: function (instance) {
             wm = instance
-            console.log(wm,'wm----')
+            // console.log(wm,'wm----')
         }
     });
 
@@ -104,9 +104,10 @@
     // 处理点赞业务
     function rise() {
         // 调用SDK的getToken接口，通过接口回调的方式获取token
-        wm && wm.getToken('YOUR_BUSINESS_ID', function (token) {
+        wm && wm.getToken('a379c4c86f564607863501411d16af04', function (token) {
             // 提交点赞业务请求
             submit(token);
+            // console.log(token,'00000..........__')
         });
     }
 

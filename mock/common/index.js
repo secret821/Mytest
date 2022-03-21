@@ -18,7 +18,19 @@ module.exports = {
     readLinkUrl: "https://mp.weixin.qq.com/s/3ghKXpz31F3e-9we61pvfg",
     showAnimate: false,
     signDays: null,
-    tagList: null,
+    tagList: [
+      {
+        "code": "assist",
+        "desc": "id culpa labore fugiat dolore"
+      },
+      {
+        "code": "adipisicing irure in occaecat fugiat",
+        "desc": "reprehenderit sit"
+      },
+      {
+        "code": "tempor dolore officia irure",
+        "desc": "consequat incididunt"
+      }],
     targetScore: 10,
     taskCredits: 100,
     todaySignStatus: false,

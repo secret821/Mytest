@@ -422,7 +422,7 @@ function submit(token) {
 function rise() {
   // 调用SDK的getToken接口，通过接口回调的方式获取token
   wm &&
-    wm.getToken("YOUR_BUSINESS_ID", function (token) {
+    wm.getToken("a379c4c86f564607863501411d16af04", function (token) {
       // 提交点赞业务请求
       submit(token)
     })

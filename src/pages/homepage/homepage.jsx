@@ -149,8 +149,7 @@ class Homepage extends React.Component {
   componentDidMount = async () => {
     // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
-    await rise()
-    // await submit()
+    // await rise()
     await registerSounds({
       bgm: RES_PATH + "mp3/bgm.mp3",
       bell: RES_PATH + "mp3/bell.mp3",
