@@ -105,7 +105,7 @@ const store = makeAutoObservable({
   //首页
   getIndex: throttle(async function (params)  {
     const res = await API.index(params)
-    if (res?.success) {
+    if (res?.success && this.curPage !== 'loading') {
       console.log(this)
       this.setIndexInfo(res?.data)
       const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data
