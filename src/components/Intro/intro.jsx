@@ -27,6 +27,7 @@ class intro extends Component {
                 {
                   transitionName: "slide-top",
                   center: false,
+                  fixedBody: false
                 }
               )
             modalStore.closePop("intro")

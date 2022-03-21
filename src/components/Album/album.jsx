@@ -79,7 +79,8 @@ class album extends ModalControllerComponent {
               {},
               {
                 transitionName: "slide-top",
-                center: false
+                center: false,
+                fixedBody: false
               }
             )
           }}
