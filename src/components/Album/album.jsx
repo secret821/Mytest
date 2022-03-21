@@ -9,6 +9,7 @@ import { RES_PATH } from "../../../sparkrc"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
 import { ModalControllerComponent, ModalCtrlIns } from "@lightfish/reactmodal"
 import albumInclude from "../AlbumInclude/albumInclude"
+import taskModal from "../taskModal/Index"
 
 // const lockSrc =
 //   "//yun.duiba.com.cn/aurora/assets/cebd52aec5eff0fa453b4798ceb7c4476dc92627.png";
@@ -73,6 +74,14 @@ class album extends ModalControllerComponent {
           className="album-close"
           onClick={() => {
             this.closeModal()
+            ModalCtrlIns.showModal(
+              taskModal,
+              {},
+              {
+                transitionName: "slide-top",
+                center: false
+              }
+            )
           }}
         ></span>
         <span className="head">

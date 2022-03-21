@@ -8,7 +8,7 @@ import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./homepage.less"
 import Index from "./Iconlist/Index.jsx"
-import { _throttle } from "@src/utils/utils"
+import { rise, submit, _throttle } from "@src/utils/utils"
 import EventBus from "@duiba/event-bus"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
 import { SVGA_RES_INDEX } from "@src/utils/constants"
@@ -22,6 +22,12 @@ import album from "@src/components/Album/album.jsx"
 import { soundCtrl } from "@src/utils/soundCtrl"
 import config from "@src/utils/config"
 import { isAndroid } from "@spark/utils"
+import { preloadAsset } from "@src/utils/preload1.3.js"
+import assetList from "@src/assetList.json"
+import assetLists from "@src/assetLists.json"
+import { registerSounds, preloadSounds } from "@spark/utils"
+
+
 
 @observer
 class Homepage extends React.Component {
@@ -143,7 +149,14 @@ class Homepage extends React.Component {
   componentDidMount = async () => {
     // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
-    console.info('componentDidMount')
+    await rise()
+    // await submit()
+    await registerSounds({
+      bgm: RES_PATH + "mp3/bgm.mp3",
+      bell: RES_PATH + "mp3/bell.mp3",
+      orange: RES_PATH + "mp3/orange.mp3",
+      boom: RES_PATH + "mp3/boom.wav",
+    })
     await this.setIndex()
     await this.getCardInfo()
     // await this.addPushBack()
@@ -154,6 +167,8 @@ class Homepage extends React.Component {
     } else {
       onInitShare(false, false)
     }
+    await preloadAsset(assetLists.preLoadImg, 3)
+    await preloadAsset(assetList.asyncLoadImg, 1)
 
   }
 

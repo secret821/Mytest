@@ -14,32 +14,10 @@
     <script type="text/javascript" src="//yun.duiba.com.cn/js-libs/vConsole/3.3.4/vconsole.min.js"
         crossorigin="anonymous"></script>
     <script>
-        // $(function () {
-        //     function pushHistory() {
-        //         var state = {
-        //             title: "title",
-        //             url: "#"
-        //         };
-        //         window.history.pushState(state, "title", "#");
-        //     }
-        //     pushHistory();
-        //     // window.addEventListener("popstate", function (e) {
-        //     //     console.info('刷新首页接口')
-        //     //     // alert("我监听到了浏览器的返回按钮事件啦");
-        //     //     location.reload();
-        //     //     // 根据自己的需求实现自己的功能
-        //     // }, false);
-        //     document.addEventListener("visibilitychange", function () {
-        //         console.log(document.hidden)
-        //         if (!document.hidden) {
-        //             // store.getIndex()
-        //             location.reload();
-        //         }
-        //     })
-        // });
+
     </script>
     <script>
-        var vConsole = new VConsole();
+        // var vConsole = new VConsole();
 
         function getApp() {
             return {
@@ -100,6 +78,59 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+<!-- 网易易盾POC风控测试 -->
+<script type="text/javascript" src="https://acstatic-dun.126.net/tool.min.js?t=201903281201"></script>
+<script type="text/javascript">
+    var wm = null;
+    // 初始化SDK，只需初始化一次
+    // auto使用默认值，即自动化模式
+    initWatchman({
+        productNumber: 'YD00462183948397',
+        onload: function (instance) {
+            wm = instance
+            console.log(wm,'wm----')
+        }
+    });
 
+    function submit(token) {
+        var data = {
+            "token": token
+        };
+        $.post("rise.do", data, function (data) {
+            // 处理点赞的响应
+        });
+    }
+
+    // 处理点赞业务
+    function rise() {
+        // 调用SDK的getToken接口，通过接口回调的方式获取token
+        wm && wm.getToken('YOUR_BUSINESS_ID', function (token) {
+            // 提交点赞业务请求
+            submit(token);
+        });
+    }
+
+
+    // 同盾POC风控测试 
+    (function () {
+        window._fmOpt = {
+            partner: 'hzduiba',//合作方名称
+            appName: 'hzduiba_web',//应用名称
+            token: 'hzduiba' + "-" + new Date().getTime() + "-" + Math.random().toString(16).substr(2),//请求标识	
+            success: function (data) {
+                // 在成功完成采集后，success回调中可以获取到blackbox，在获取到blackbox后传输过程中请进行url编码
+                console.log('blackbox: ', data)
+            },
+            // eslint-disable-next-line
+            fpHost: "https://fp.tongdun.net"
+        };
+        var fm = document.createElement('script'); fm.type = 'text/javascript';
+        fm.async = true;
+        // eslint-disable-next-line
+        fm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +
+            'static.tongdun.net/v3/fm.js?ver=0.1&t=' + (new Date().getTime() / 3600000).toFixed(0);
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fm, s);
+    })();
+</script>
 
 </html>

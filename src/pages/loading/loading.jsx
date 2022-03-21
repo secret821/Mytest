@@ -8,7 +8,7 @@ import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./loading.less"
 import { preloadAsset } from "@src/utils/preload1.3.js"
-import assetList from "@src/assetList.json"
+import assetLists from "@src/assetLists.json"
 import { registerSounds, preloadSounds } from "@spark/utils"
 @observer
 class Loading extends React.Component {
@@ -24,29 +24,29 @@ class Loading extends React.Component {
     this.preloadAssetInit()
   }
   preloadAssetInit = async () => {
-    this.onLoadingProgress(0.1)
-    await store.getFrontVariable();
-    registerSounds({
-      bgm: RES_PATH + 'mp3/bgm.mp3',
-      bell: RES_PATH + 'mp3/bell.mp3',
-      orange: RES_PATH + 'mp3/orange.mp3',
-      boom: RES_PATH + 'mp3/boom.wav',
-    })
+    this.onLoadingProgress(0.2)
+    await store.getFrontVariable()
+    // registerSounds({
+    //   bgm: RES_PATH + "mp3/bgm.mp3",
+    //   bell: RES_PATH + "mp3/bell.mp3",
+    //   orange: RES_PATH + "mp3/orange.mp3",
+    //   boom: RES_PATH + "mp3/boom.wav",
+    // })
     await preloadSounds()
     // 游戏基本信息
+    this.onLoadingProgress(0.6)
     await store.setGameInfo()
     await store.onInitLotteryData()
-    this.onLoadingProgress(0.3)
     await store.getIndex()
-    await preloadAsset(assetList.preLoadImg, 3).then(() => {
-      //预加载资源完成
-      setTimeout(() => {
-        //异步加载资源开始
-        preloadAsset(assetList.asyncLoadImg, 1)
-      }, 5000)
-    })
+    await preloadAsset(assetLists.preImg, 3)
+    // .then(() => {
+    //预加载资源完成
+    // setTimeout(() => {
+    //   //异步加载资源开始
+    //   preloadAsset(assetList.asyncLoadImg, 1)
+    // }, 5000)
+    // })
     this.onLoadingProgress(1)
-
   }
   /**
    * 资源加载进度回调
@@ -86,10 +86,10 @@ class Loading extends React.Component {
     this.intervalId = setInterval(() => {
       if (curPercentage >= percentage) {
         clearInterval(this.intervalId)
-        // percentage == 100 &&
-        //   store.changePage('homePage', {
-        //     fromLoading: true
-        //   }) //跳转页面
+        percentage == 100 &&
+          store.changePage("homePage", {
+            fromLoading: true,
+          }) //跳转页面
         return
       }
       curPercentage += 1
@@ -104,6 +104,8 @@ class Loading extends React.Component {
 
   render() {
     // let curPercentage = this.curPercentage;
+    // const percentage = Math.floor(progress * 100)
+    const { curPercentage } = this.state
     return (
       <div className="loading">
         <span className="bg174"></span>
@@ -111,7 +113,9 @@ class Loading extends React.Component {
           <span className="loadingBg">
             <span className="above" ref={(el) => (this.progressBar = el)}>
               <span className="atBottom"></span>
-              <span className="inLoad">{this.state.curPercentage}%</span>
+              {curPercentage > 0 && (
+                <span className="inLoad">{this.state.curPercentage}%</span>
+              )}
             </span>
           </span>
         </div>
