@@ -107,6 +107,7 @@
         wm && wm.getToken('a379c4c86f564607863501411d16af04', function (token) {
             // 提交点赞业务请求
             submit(token);
+            debugger
             // console.log(token,'00000..........__')
         });
     }
@@ -120,7 +121,9 @@
             token: 'hzduiba' + "-" + new Date().getTime() + "-" + Math.random().toString(16).substr(2),//请求标识	
             success: function (data) {
                 // 在成功完成采集后，success回调中可以获取到blackbox，在获取到blackbox后传输过程中请进行url编码
-                console.log('blackbox: ', data)
+                // console.log('blackbox: ', data)
+                CFG.blackbox = data
+                // console.log(CFG.blackbox,'CFG.blackbox')
             },
             // eslint-disable-next-line
             fpHost: "https://fp.tongdun.net"

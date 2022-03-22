@@ -412,7 +412,6 @@ function submit(token) {
   var data = {
     token: token,
   }
-  console.log(token,'token+++++++++')
   $.post("rise.do", data, function (data) {
     // 处理点赞的响应
   })
@@ -423,6 +422,7 @@ function rise() {
   // 调用SDK的getToken接口，通过接口回调的方式获取token
   wm &&
     wm.getToken("a379c4c86f564607863501411d16af04", function (token) {
+      CFG.isToken = token
       // 提交点赞业务请求
       submit(token)
     })

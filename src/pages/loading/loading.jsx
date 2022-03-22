@@ -35,9 +35,9 @@ class Loading extends React.Component {
     await preloadSounds()
     // 游戏基本信息
     this.onLoadingProgress(0.6)
-    await store.setGameInfo()
-    await store.onInitLotteryData()
     await store.getIndex()
+    await store.onInitLotteryData()
+    await store.setGameInfo()
     await preloadAsset(assetLists.preImg, 3)
     // .then(() => {
     //预加载资源完成

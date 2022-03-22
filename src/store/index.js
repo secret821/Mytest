@@ -10,6 +10,7 @@ const LotteryData = {
   lotteryPrizeList: [],
 
   async onInitLotteryData() {
+    if (!store?.indexInfo?.followOfficalAccount) return
     const { success, data } = await API.prizeQuery()
     if (success) {
       this.lotteryPrizeList = data
@@ -28,6 +29,7 @@ const GameIndex = {
   },
 
   async setGameInfo() {
+    if (!store?.indexInfo?.followOfficalAccount) return
     const { success, data } = await API.gameIndex()
     if (success) {
       this.GameInfo = data
@@ -114,9 +116,9 @@ const store = makeAutoObservable({
         await API.accessData()
       }
       //关注公众号弹窗
-      if (!followOfficalAccount) {
-        modalStore.pushPop("wxcode")
-      }
+      // if (!followOfficalAccount) {
+      //   modalStore.pushPop("wxcode")
+      // }
       if (ifLimit) {
         ModalCtrlIns.showModal(Sorrymodal)
       } else {
@@ -147,6 +149,7 @@ const store = makeAutoObservable({
   }, 1000),
   //卡片信息
   async getCardInfo() {
+    if (!store?.indexInfo?.followOfficalAccount) return
     const res = await API.cardList()
     if (res?.success) {
       // this.setState({

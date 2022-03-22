@@ -27,8 +27,6 @@ import assetList from "@src/assetList.json"
 import assetLists from "@src/assetLists.json"
 import { registerSounds, preloadSounds } from "@spark/utils"
 
-
-
 @observer
 class Homepage extends React.Component {
   constructor(props) {
@@ -57,8 +55,12 @@ class Homepage extends React.Component {
   }
 
   update = _throttle(async () => {
-    console.info(store.cardInfo, "=====cards")
-    const res = await API.join()
+    const res = await API.join({
+      //网易sdk产生的token
+      netEaseToken: CFG.isToken,
+      //同盾sdk产生的值
+      blackBox: CFG.blackbox,
+    })
     if (res?.success) {
       this.setState({
         credits: res?.data?.credits,
@@ -81,7 +83,11 @@ class Homepage extends React.Component {
       }
       disableHtml()
 
-      scrollTo(parseIntTop - 400, 500, isAndroid ? document.body : document.querySelector("html"))
+      scrollTo(
+        parseIntTop - 400,
+        500,
+        isAndroid ? document.body : document.querySelector("html")
+      )
       await new Promise((r) => {
         setTimeout(r, 500)
       })
@@ -92,23 +98,23 @@ class Homepage extends React.Component {
         () => {
           // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
           // window.onload = function () {
-            document
-              .querySelector(".sign_icon_ani")
-              ?.addEventListener("animationend", () => {
-                enableHtml()
-                // console.log("动画结束");
-                ModalCtrlIns.showModal(
-                  album,
-                  {
-                    credits: this.state.credits,
-                    cardInfo: this.state.cardInfo,
-                  },
-                  {
-                    transitionName: "scale-in-center",
-                    fixedBody: false,
-                  }
-                )
-              })
+          document
+            .querySelector(".sign_icon_ani")
+            ?.addEventListener("animationend", () => {
+              enableHtml()
+              // console.log("动画结束");
+              ModalCtrlIns.showModal(
+                album,
+                {
+                  credits: this.state.credits,
+                  cardInfo: this.state.cardInfo,
+                },
+                {
+                  transitionName: "scale-in-center",
+                  fixedBody: false,
+                }
+              )
+            })
           // }
         }
       )
@@ -149,7 +155,9 @@ class Homepage extends React.Component {
   componentDidMount = async () => {
     // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
-    // await rise()
+    console.log(CFG.blackbox, "CFG.blackbox---------<<<<<<<")
+    // 网易易盾POC风控测试
+    await rise()
     await registerSounds({
       bgm: RES_PATH + "mp3/bgm.mp3",
       bell: RES_PATH + "mp3/bell.mp3",
@@ -168,7 +176,6 @@ class Homepage extends React.Component {
     }
     await preloadAsset(assetLists.preLoadImg, 3)
     await preloadAsset(assetList.asyncLoadImg, 1)
-
   }
 
 
@@ -179,7 +186,7 @@ class Homepage extends React.Component {
   // }
   setIndex = async () => {
     await store.getIndex({
-      fromCache: this.props.fromLoading
+      fromCache: this.props.fromLoading,
     })
     this.setState({
       homeInfo: store.indexInfo,
@@ -187,8 +194,8 @@ class Homepage extends React.Component {
   }
 
   async onDoHelp() {
-    const shareCode = getUrlParam("shareCode").replace('#', '')
-    if (!shareCode || shareCode === '#') {
+    const shareCode = getUrlParam("shareCode").replace("#", "")
+    if (!shareCode || shareCode === "#") {
       return
     }
     const { success, data } = await API.doAssist({ assistItemId: shareCode })
