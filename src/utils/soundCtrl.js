@@ -85,7 +85,6 @@ export const soundCtrl = {
     },
     changeMute(name) {
         let mute = config.mute;
-        // debugger
         if (mute) {
             for (let key in gameSounds) {
                 // this.stopSound(key);

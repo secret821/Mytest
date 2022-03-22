@@ -5,7 +5,7 @@ module.exports = {
     currentTaskType: null,
     firstFollow: null,
     firstJoin: false,
-    followOfficalAccount: false,
+    followOfficalAccount: true,
     ifEnd: false,
     ifLimit: false,
     ifPre: false,

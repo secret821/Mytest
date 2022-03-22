@@ -32,7 +32,8 @@ class albumInclude extends Component {
               {},
               {
                 transitionName: "slide-top",
-                center: false
+                center: false,
+                fixedBody: false
               }
             )
           }}

@@ -55,12 +55,7 @@ class Homepage extends React.Component {
   }
 
   update = _throttle(async () => {
-    const res = await API.join({
-      //网易sdk产生的token
-      netEaseToken: CFG.isToken,
-      //同盾sdk产生的值
-      blackBox: CFG.blackbox,
-    })
+    const res = await API.join()
     if (res?.success) {
       this.setState({
         credits: res?.data?.credits,
@@ -155,9 +150,6 @@ class Homepage extends React.Component {
   componentDidMount = async () => {
     // await this.beginMusic()
     // modalStore.pushPop('Drawfailmodal')
-    console.log(CFG.blackbox, "CFG.blackbox---------<<<<<<<")
-    // 网易易盾POC风控测试
-    await rise()
     await registerSounds({
       bgm: RES_PATH + "mp3/bgm.mp3",
       bell: RES_PATH + "mp3/bell.mp3",

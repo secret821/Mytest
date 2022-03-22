@@ -107,18 +107,17 @@ const store = makeAutoObservable({
   //首页
   getIndex: throttle(async function (params)  {
     const res = await API.index(params)
+    this.setIndexInfo(res?.data)
     if (res?.success && this.curPage !== 'loading') {
-      console.log(this)
-      this.setIndexInfo(res?.data)
       const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data
       //数据访问记录接口
       if (newUser === 1) {
         await API.accessData()
       }
       //关注公众号弹窗
-      // if (!followOfficalAccount) {
-      //   modalStore.pushPop("wxcode")
-      // }
+      if (!followOfficalAccount) {
+        modalStore.pushPop("wxcode")
+      }
       if (ifLimit) {
         ModalCtrlIns.showModal(Sorrymodal)
       } else {
