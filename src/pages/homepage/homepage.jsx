@@ -62,6 +62,7 @@ class Homepage extends React.Component {
       })
       // store.getIndex()
       // await this.setIndex()
+      store.indexInfo.totalCredits += res?.data?.credits
       store.indexInfo.currentTaskId++
       store.indexInfo.todaySignStatus = true
       const currDaysIndex = store.indexInfo.currentTaskId
