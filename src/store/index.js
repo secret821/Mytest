@@ -46,13 +46,13 @@ const store = makeAutoObservable({
   indexInfo: {},
   // cardInfo:{},
   curIndex: 0,
-  indexInfo: {
-    totalCredits: 0,
-    prizeCredits: 20,
-    followOfficalAccount: false,
-    showAnimate: true,
-    inviteCredits: 20,
-  },
+  // indexInfo: {
+  //   totalCredits: 0,
+  //   prizeCredits: 20,
+  //   followOfficalAccount: false,
+  //   showAnimate: true,
+  //   inviteCredits: 20,
+  // },
   cardInfo: [],
   //前端开发配置
   curPageData: {},
@@ -150,14 +150,12 @@ const store = makeAutoObservable({
     if (!store?.indexInfo?.followOfficalAccount) return
     const res = await API.cardList()
     if (res?.success) {
-      // this.setState({
       let cards = res.data?.length
         ? res?.data.map((item, inedx) => {
             return item
           })
         : []
       this.setCardInfo(cards)
-      // })
     }
   },
 
