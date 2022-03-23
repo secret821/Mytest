@@ -8,7 +8,7 @@ import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./homepage.less"
 import Index from "./Iconlist/Index.jsx"
-import { rise, submit, _throttle } from "@src/utils/utils"
+import { _throttle } from "@src/utils/utils"
 import EventBus from "@duiba/event-bus"
 import { SvgaPlayer, loadSvga } from "@spark/animation"
 import { SVGA_RES_INDEX } from "@src/utils/constants"
@@ -92,26 +92,26 @@ class Homepage extends React.Component {
           showSignAni: true,
         },
         () => {
-          // parseInt(document.querySelector('.locatpos' + currDaysIndex).style.top)
-          // window.onload = function () {
-          document
-            .querySelector(".sign_icon_ani")
-            ?.addEventListener("animationend", () => {
-              enableHtml()
-              // console.log("动画结束");
-              ModalCtrlIns.showModal(
-                album,
-                {
-                  credits: this.state.credits,
-                  cardInfo: this.state.cardInfo,
-                },
-                {
-                  transitionName: "scale-in-center",
-                  fixedBody: false,
-                }
-              )
-            })
-          // }
+          setTimeout(() => {
+            enableHtml()
+            // console.log("动画结束");
+            ModalCtrlIns.showModal(
+              album,
+              {
+                credits: this.state.credits,
+                cardInfo: this.state.cardInfo,
+              },
+              {
+                transitionName: "scale-in-center",
+                fixedBody: false,
+              }
+            )
+          },800)
+          // document
+          //   .querySelector(".sign_icon_ani")
+          //   ?.addEventListener("animationend", () => {
+              
+          //   })
         }
       )
 

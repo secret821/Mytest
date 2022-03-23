@@ -7,7 +7,7 @@ import store from "../../store/index"
 import modalStore from "@src/store/modal"
 import API from "../../api"
 import "./lukylotteryscene.less"
-import { showToast,rise, submit, _throttle } from "@src/utils/utils.js"
+import { showToast, _throttle } from "@src/utils/utils.js"
 import { removeClass, addClass, PromiseAwait } from "@lightfish/tools"
 import Drawfailmodal from "@src/components/drawfailmodal/drawfailmodal.jsx"
 import Drawsucmodal from "@src/components/drawsucmodal/drawsucmodal.jsx"
@@ -157,21 +157,23 @@ class Lukylotteryscene extends React.Component {
     return true
   }
 
-  componentDidMount = async()=>{
-        // 网易易盾POC风控测试
-        await rise()
-  }
+  // componentDidMount = async()=>{
+  //       // 网易易盾POC风控测试
+  //       await rise()
+  // }
 
   @PromiseAwait
   async onRealLottery() {
     console.log(CFG.isToken,'CFG.isToken======')
     console.log(CFG.blackbox,'CFG.blackbox=====')
-    const { success, data } = await API.prizeLottery({
-      //网易sdk产生的token
-      netEaseToken: CFG.isToken,
-      //同盾sdk产生的值
-      blackBox: CFG.blackbox,
-    })
+    const { success, data } = await API.prizeLottery(
+    //   {
+    //   //网易sdk产生的token
+    //   netEaseToken: CFG.isToken,
+    //   //同盾sdk产生的值
+    //   blackBox: CFG.blackbox,
+    // }
+    )
     if (success) {
       store.reduceCredits(store.indexInfo.prizeCredits)
       const i = this.prizeHandledList.findIndex(

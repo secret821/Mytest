@@ -75,7 +75,7 @@ const store = makeAutoObservable({
   },
   //首页数据
   setIndexInfo(indexInfo) {
-    this.indexInfo = indexInfo
+    indexInfo && (this.indexInfo = indexInfo)
   },
 
   /**
