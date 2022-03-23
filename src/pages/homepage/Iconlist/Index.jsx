@@ -37,7 +37,7 @@ class Index extends Component {
       } else {
         console.error(musicStart)
         console.log("H5已切换到网页")
-        if (musicStart === true && indexMusicStatus) {
+        if (musicStart === true && localStorage.getItem('indexMusicStatus')) {
           config.mute = false
           soundCtrl.changeMute("bg")
         } else {

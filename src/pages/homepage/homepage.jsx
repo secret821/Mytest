@@ -65,7 +65,7 @@ class Homepage extends React.Component {
       store.indexInfo.totalCredits += res?.data?.credits
       store.indexInfo.currentTaskId++
       store.indexInfo.todaySignStatus = true
-      const currDaysIndex = store.indexInfo.currentTaskId
+      const currDaysIndex = store.indexInfo?.currentTaskId
       const parseIntTop = parseInt(
         getComputedStyle(document.querySelector(".locatpos" + currDaysIndex))
           ?.top
@@ -161,7 +161,7 @@ class Homepage extends React.Component {
     await this.getCardInfo()
     // await this.addPushBack()
     EventBus.on("UPDATE", this.update, this)
-    if (store.indexInfo.followOfficalAccount) {
+    if (store.indexInfo?.followOfficalAccount) {
       onInitShare()
       this.onDoHelp()
     } else {
@@ -238,8 +238,8 @@ class Homepage extends React.Component {
 
   render() {
     const { cards, cardInfo, showSignAni } = this.state
-    const { totalCredits } = store.indexInfo
-    const homeInfo = store.indexInfo
+    const { totalCredits } = store?.indexInfo
+    const homeInfo = store?.indexInfo
     // console.log(homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus, "homeInfo?.todaySignStatus------=====")
     return (
       <div className="wrapper-cont">
