@@ -106,8 +106,8 @@ const store = makeAutoObservable({
   //首页
   getIndex: throttle(async function (params) {
     const res = await API.index(params)
+    this.setIndexInfo(res?.data)
     if (res?.success && this.curPage !== "loading") {
-      this.setIndexInfo(res?.data)
       const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data
       //数据访问记录接口
       if (newUser === 1) {
