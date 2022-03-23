@@ -11,8 +11,6 @@ import { ModalControllerComponent, ModalCtrlIns } from "@lightfish/reactmodal"
 import albumInclude from "../AlbumInclude/albumInclude"
 import taskModal from "../taskModal/Index"
 
-// const lockSrc =
-//   "//yun.duiba.com.cn/aurora/assets/cebd52aec5eff0fa453b4798ceb7c4476dc92627.png";
 class album extends ModalControllerComponent {
   constructor(props) {
     super(props)
@@ -27,28 +25,12 @@ class album extends ModalControllerComponent {
   }
 
   componentDidMount = async () => {
-    console.log(this.props,'------')
-    // await this.getCards()
     await this.getAlbumList()
   }
 
-  // getCards = () => {
-  //   const { cardInfo } = this.props
-  //   // console.log(cardInfo[0].name,'----cardinfo')
-  //   // const { data } = store.cardInfo
-  //   this.setState({
-  //     cardsList: cardInfo || []
-  //       // : [],
-  //   })
-  //   console.log(this.state.cardsList,'......')
-  // }
 
   showPhoto = _throttle((index, item) => {
     this.closeModal(null, false)
-    // modalStore.pushPop("albumInclude", {
-    //   cardsList: this.state.cardsList,
-    //   curIndex: this.state.curIndex,
-    // })
     ModalCtrlIns.showModal(albumInclude, {
       cardsList: this.props.cardInfo,
       curIndex: this.state.curIndex,
@@ -93,7 +75,6 @@ class album extends ModalControllerComponent {
             <p>功</p>
           </div>
         </span>
-        {/* <img src={`${RES_PATH}cards/${curIndex}.png`} /> */}
         <SvgaPlayer
           className="imgSvga"
           src={`${RES_PATH}svga/${curIndex}.svga`}

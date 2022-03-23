@@ -116,7 +116,6 @@ class taskModal extends Component {
               return mdKv[code] || [233,233]
             }
             console.log(item?.desc,'.......')
-            
             return (
               <div className="taskItem" key={index}>
                 <div className="itemicon">

@@ -5,7 +5,6 @@ import { ModalCtrlIns } from "@lightfish/reactmodal"
 import Sorrymodal from "@src/components/sorrymodal/sorrymodal"
 import { throttle } from "@lightfish/tools"
 
-
 const LotteryData = {
   lotteryPrizeList: [],
 
@@ -105,10 +104,10 @@ const store = makeAutoObservable({
     console.log("前端开发配置", data)
   },
   //首页
-  getIndex: throttle(async function (params)  {
+  getIndex: throttle(async function (params) {
     const res = await API.index(params)
-    this.setIndexInfo(res?.data)
-    if (res?.success && this.curPage !== 'loading') {
+    if (res?.success && this.curPage !== "loading") {
+      this.setIndexInfo(res?.data)
       const { followOfficalAccount, newUser, tagList, ifLimit } = res?.data
       //数据访问记录接口
       if (newUser === 1) {
@@ -152,7 +151,7 @@ const store = makeAutoObservable({
     const res = await API.cardList()
     if (res?.success) {
       // this.setState({
-      let cards = res?.data.length
+      let cards = res.data?.length
         ? res?.data.map((item, inedx) => {
             return item
           })

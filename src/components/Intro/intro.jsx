@@ -51,11 +51,4 @@ class intro extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     signReward: state.signReward,
-//     cardInfo: state.cardInfo,
-//     selectIndex: state.selectIndex
-//   };
-// };
 export default intro

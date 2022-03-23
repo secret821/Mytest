@@ -29,15 +29,14 @@ class Index extends Component {
     // soundCtrl.changeMute("bg")
 
     document.addEventListener("visibilitychange", () => {
-      let { musicStart } = this.state
+      // let { musicStart } = this.state
+      console.log(this.state.musicStart,'---------<<<<<')
       if (document.hidden) {
         config.mute = true
         soundCtrl.changeMute("bg")
         console.log("H5已切换到后台或手机息屏")
       } else {
-        console.error(musicStart)
-        console.log("H5已切换到网页")
-        if (musicStart === true && localStorage.getItem('indexMusicStatus')) {
+        if (this.state.musicStart == "true" && localStorage.getItem('indexMusicStatus')=='true') {
           config.mute = false
           soundCtrl.changeMute("bg")
         } else {
@@ -127,10 +126,6 @@ class Index extends Component {
     }
   }
 
-  // setNum = ()=>{
-
-  // }
-
   //已打卡
   signedClick = _throttle(() => {
     Toast("今日已打卡，请明天再来吧")
@@ -166,14 +161,6 @@ class Index extends Component {
   })
 
   getStart = async () => {
-    // const res = await API.join()
-    // if(res?.success){
-    //   this.setState({
-    //     credits:res?.data?.credits
-    //   })
-    //   store.getIndex()
-    //   modalStore.pushPop('album',{credits:this.state.credits})
-    // }
     EventBus.fire("UPDATE")
   }
 
@@ -214,7 +201,6 @@ class Index extends Component {
       Toast("活动未开始")
       return
     }
-    // modalStore.pushPop("Rule")
     ModalCtrlIns.showModal(Rule, {
       ruleInfo: store.ruleInfo,
     })
@@ -245,7 +231,6 @@ class Index extends Component {
       Toast("活动已结束")
       return
     }
-    // modalStore.pushPop("taskModal",{transitionName: "slide-top"})
     ModalCtrlIns.showModal(
       taskModal,
       {},
@@ -257,7 +242,6 @@ class Index extends Component {
   })
 
   startMusic = async () => {
-    // const indexMusicStatus = localStorage.getItem("indexMusicStatus")
     this.setState({
       musicStart: !this.state.musicStart,
     })

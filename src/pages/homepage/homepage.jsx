@@ -171,12 +171,6 @@ class Homepage extends React.Component {
     await preloadAsset(assetList.asyncLoadImg, 1)
   }
 
-
-
-  // beginMusic =()=>{
-  //   config.mute = false
-  //   soundCtrl.playSound("bg")
-  // }
   setIndex = async () => {
     await store.getIndex({
       fromCache: this.props.fromLoading,
@@ -213,17 +207,18 @@ class Homepage extends React.Component {
       store.setCardInfo(res)
     }
   }
-  getAllCoin() {
-    const { totalCredits } = store?.indexInfo
-    console.log(totalCredits, "totalCredits-------")
-    this.setState({
-      totalCredits: totalCredits,
-    })
-  }
+  
+  // getAllCoin() {
+  //   // const { totalCredits } = store?.indexInfo
+  //   // console.log(totalCredits, "totalCredits-------")
+  //   this.setState({
+  //     totalCredits: store?.indexInfo?.totalCredits,
+  //   })
+  // }
 
   // 已打卡山-展示简介
   showDeatil = _throttle((index) => {
-    const { ifend } = store?.indexInfo
+    // const { ifend } = store?.indexInfo
     // console.log( +index + 1 <=store.indexInfo?.currentTaskId,'store.indexInfo?.currentTaskId - !+store.indexInfo?.todaySignStatus--')
     if (+index + 1 <= +store.indexInfo?.currentTaskId) {
       // store.dispatch(actions.changeSelectIndex(index));
@@ -238,7 +233,7 @@ class Homepage extends React.Component {
 
   render() {
     const { cards, cardInfo, showSignAni } = this.state
-    const { totalCredits } = store?.indexInfo
+    // const { totalCredits } = store?.indexInfo
     const homeInfo = store?.indexInfo
     // console.log(homeInfo?.currentTaskId - !+homeInfo?.todaySignStatus, "homeInfo?.todaySignStatus------=====")
     return (
