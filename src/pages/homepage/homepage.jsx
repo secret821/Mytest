@@ -106,11 +106,11 @@ class Homepage extends React.Component {
                 fixedBody: false,
               }
             )
-          },800)
+          }, 800)
           // document
           //   .querySelector(".sign_icon_ani")
           //   ?.addEventListener("animationend", () => {
-              
+
           //   })
         }
       )
@@ -185,10 +185,19 @@ class Homepage extends React.Component {
     if (!shareCode || shareCode === "#") {
       return
     }
-    const { success, data } = await API.doAssist({ assistItemId: shareCode })
+    const { success, data, code } = await API.doAssist({
+      assistItemId: shareCode,
+    })
     if (success) {
       showToast("恭喜为好友助力成功")
-    }
+    } 
+    // else {
+    //   if (code == "600023") {
+    //     showToast("抱歉，新关注用户才可以助力成功")
+    //   } else if (code == "600021") {
+    //     showToast("抱歉，您的好友今日被助力已达上限")
+    //   }
+    // }
     if (history) {
       history.replaceState(null, null, setUrlParam("shareCode", ""))
     }
@@ -207,7 +216,7 @@ class Homepage extends React.Component {
       store.setCardInfo(res)
     }
   }
-  
+
   // getAllCoin() {
   //   // const { totalCredits } = store?.indexInfo
   //   // console.log(totalCredits, "totalCredits-------")

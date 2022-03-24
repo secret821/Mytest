@@ -44,7 +44,6 @@ const store = makeAutoObservable({
   ruleInfo: "",
   frontVariable: {},
   indexInfo: {},
-  // cardInfo:{},
   curIndex: 0,
   // indexInfo: {
   //   totalCredits: 0,

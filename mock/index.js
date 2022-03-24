@@ -81,7 +81,7 @@ const proxy = {
   'GET /gameInvite/doAssist.do': {
     success: false,
     data: 11,
-    code: 600021
+    code: 600023
   },
   'GET /home/taskList.do': {
     "code": null,
