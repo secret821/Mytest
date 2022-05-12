@@ -10,5 +10,5 @@ module.exports ={
   "IMAGE_Q2": 0.8,
   "RES_PATH": "/src/assets/",
   "RES_PATH_PROD": "//yun.duiba.com.cn/spark/v2/temp_base/1647935357426",
-  "JS_PATH_PROD": "https://yun.duiba.com.cn/spark/v2/temp_base/1648101285543/js"
+  "JS_PATH_PROD": "https://yun.duiba.com.cn/spark/v2/temp_base/1649730609877/js"
 }
