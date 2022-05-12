@@ -1,0 +1,54 @@
+.Ed_PopBgCenter {
+    position: fixed;
+    width: 750px;
+    height: 1624px;
+    left: calc(50% - 375px);
+    top: calc(50% - 812px);
+}
+
+.Ed_PopBgNoCenter {
+    position: fixed;
+    width: 750px;
+    height: 1624px;
+    left: 0;
+    top: 0;
+}
+
+.Ed_zoom {
+    transform-origin: center !important;
+    animation: Ed_zoom 0.5s linear 0s 1;
+    -webkit-animation: Ed_zoom 0.5s linear 0s 1;
+}
+
+@keyframes Ed_zoom {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1)
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.Ed_push {
+    bottom: 0px !important;
+    animation: Ed_push 0.4s linear ;
+    -webkit-animation: Ed_push 0.4s linear ;
+}
+
+@keyframes Ed_push {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
