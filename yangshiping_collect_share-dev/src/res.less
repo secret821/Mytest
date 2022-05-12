@@ -1,0 +1,24 @@
+@RES_PATH: '/src/assets/';
+
+.sparkBg(@value) {
+  background: url("@{RES_PATH}@{value}") no-repeat top left / 100% 100%;
+}
+// 绝对定位的缩写函数
+.absNormal(@w: auto, @h: auto, @top: auto, @right: auto, @bottom: auto, @left: auto) {
+  position: absolute;
+  width: @w;
+  height: @h;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+// 文字样式
+.textfclaw(@fz: 24px, @color: #333, @lineH: normal, @align: center, @weight: normal) {
+  font-size: @fz;
+  color: @color;
+  line-height: @lineH;
+  text-align: @align;
+  font-weight: @weight;
+}

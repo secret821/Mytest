@@ -1,0 +1,139 @@
+@import "@src/styles/common.less";
+.turnLottery {
+  .absNormal(550px, 557px, 534px, 97px);
+//   .webp("//yun.duiba.com.cn/spark/assets/1b6c41f1d2dea5923b1f02b618e84496b7deae61.png");
+  .lottery-num {
+    .textfclaw(28px, #5c3f17, @align: center, @lineH: 44px);
+    .absNormal(210px, 44px, 108px, @left: 270px);
+  }
+  .turnlotteryclose {
+    .absNormal(49px, 49px, 135px, 36px);
+    .webp("//yun.duiba.com.cn/spark/assets/758cca7ce824a838a87badd9e9c9ba9640a0d8de.png");
+  }
+  .pointer {
+    .absNormal(99px, 167px, 170px, @left: 222px);
+    .webp("//yun.duiba.com.cn/spark/assets/b757a13c5e11d38ae6c2fc283c4dc47dd8ece07f.png");
+  }
+  .todayFreeTimes1 {
+    width: 318px;
+    height: 35px;
+    left: 0px;
+    right: 0px;
+    top: 102px;
+    margin: 0 auto;
+    position: absolute;
+    font-size: 34px;
+    line-height: 35px;
+    white-space: nowrap;
+    color: #f8cd84;
+  }
+  .mytimes {
+    .textfclaw(22px, #fff5df, @align: center, @lineH: 1);
+    text-shadow: 0 -2px 2px #ec312e,
+      /*上*/
+      2px -2px 2px #ec312e,
+      /*右上*/
+      2px 0 2px #ec312e,
+      /*右*/
+      2px 2px 2px #ec312e,
+      /*右下*/
+      0 2px 2px #ec312e,
+      /*下*/
+      -2px 2px 2px #ec312e,
+      /*左下*/
+      -2px 0 2px #ec312e,
+      /*左*/
+      -2px -2px 2px #ec312e;
+    /*左上*/
+    .absNormal(550px, 30px, 584px, @left: 0)
+  }
+}
+.sichuanturn {
+  .absNormal(615px, 696px, 0, @left: 0);
+  // top: 149px;
+  .turntable {
+    width: 615px !important;
+    height: 615px !important;
+    left: 273px;
+    top: 232px;
+  }
+  .prize-dialog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0px;
+    right: 0px;
+    top: 0px;
+    margin: 0 auto;
+    text-align: center;
+    // width: 100%;
+    // height: 100%;
+    .prizeimage {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .prize-name {
+    font-size: 18px;
+    text-align: center;
+    color: #f13022;
+  //   width: 100%;
+  //   text-overflow:ellipsis;
+	// overflow: hidden;
+  //   white-space:nowrap;
+    line-height: 1;
+  }
+  .prize {
+     width: 90px !important;
+     height: 90px !important;
+    &:nth-child(2n) {
+      .prize-name {
+        color: #ffffff;
+      }
+    }
+    &:nth-child(2n+1) {
+      .prize-name {
+        color: #ffffff;
+      }
+    }
+  }
+  .start {
+    .absNormal(162px, 162px, 465px, @left: 190px);
+    transform: translateZ(99px);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .lotterycost {
+      .textfclaw(20px, #ffffff, @align: center, @lineH: 30px);
+      text-shadow: 0 -2px 2px #f34710,
+          /*上*/
+          2px -2px 2px #f34710,
+          /*右上*/
+          2px 0 2px #f34710,
+          /*右*/
+          2px 2px 2px #f34710,
+          /*右下*/
+          0 2px 2px #f34710,
+          /*下*/
+          -2px 2px 2px #f34710,
+          /*左下*/
+          -2px 0 2px #f34710,
+          /*左*/
+          -2px -2px 2px #f34710;
+        /*左上*/
+      .absNormal(120px, 32px, 149px, @left: 37px);
+      font-weight: bold;
+    }
+  }
+  .gray{
+    .absNormal(162px, 162px, 0px, @left: 0px);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+}

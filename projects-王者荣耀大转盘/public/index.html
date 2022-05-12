@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>王者荣耀转盘</title>
+  <script src="//yun.duiba.com.cn/spark/v2/spark.base.fz.wxpollyfill.js"></script>
+  <script src="//yun.duiba.com.cn/js-libs/rem/1.1.3/rem.min.js"></script>
+  <script type="text/javascript" src="//res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+  <script src="//yun.duiba.com.cn/h5/lib/zepto.min.js"></script>
+  <script crossorigin="anonymous" src="https://yun.duiba.com.cn/db_games/debug/vconsole.min.js"></script>
+
+
+
+  <script>
+    function getApp() {
+      return {
+        cloud: {},
+        cloudName: "clientTemplate2C",
+        requestType: "mock"
+      }
+    }
+    var CFG = CFG || {};
+    CFG.projectId = location.pathname.split('/')[2] || '1';
+
+    function getUrlParam(name) {
+      var search = window.location.search;
+      var matched = search
+        .slice(1)
+        .match(new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i'));
+      return search.length ? matched && matched[2] : null;
+    }
+
+    // 微信授权链接
+    // CFG.noLoginUrl =
+    //   location.origin + "/wechat/access?apk=2hTneSCszLeCwRVyMnEPW8bKiFwK&dbredirect=";
+    CFG.appID = '${APPID}';
+    CFG.noLoginUrl = "/wechat/access?apk=2hTneSCszLeCwRVyMnEPW8bKiFwK&dbredirect=";
+    CFG.MID_LINK = CFG.noLoginUrl + encodeURIComponent(CFG.activityUrl);
+    // CFG.activityUrl = location.origin + "/projectx/" + CFG.projectId + "/index.html?appID=" + CFG.appID;
+    CFG.activityUrl = "/projectx/" + CFG.projectId + "/index.html?appID=" + CFG.appID;
+    CFG.shareData = {
+      title: "老铁～我正在四川联通参加赢王者荣耀职业联赛秋季赛观赛门票活动！",
+      content: "更有超多好礼送不停～",
+      // thumbnail: "https://yun.duiba.com.cn/aurora/assets/6def53334c80093315da5b0b68f43134032d70da.png",
+      thumbnail: "https://yun.duiba.com.cn/spark/assets/a83633c5792f797bd3bfc3f409b0b308fcb0b937.png",
+      url: CFG.MID_LINK,
+    };
+
+    CFG.recordUrl = location.origin + "/projectx/" + CFG.projectId + "/f61ba93d7.html";
+    CFG.recordUrlAPP = location.origin + "/customShare/share?id=4964&redirectUrl=" +
+      encodeURIComponent(encodeURIComponent(CFG.recordUrl));
+    // CFG.recordUrl = "/projectx/" + CFG.projectId + "/f61ba93d7.html";
+    // CFG.recordUrlAPP = "/customShare/share?id=4964&redirectUrl=";
+
+    if (!getUrlParam("appID")) {
+      // alert("【警告】检测到活动url中没有appID参数\n缺少该参数会导致埋点、分享、app信息获取错误。")
+    }
+  </script>
+  <script>
+    var vConsole = new VConsole();
+  </script>
+
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+
+</html>

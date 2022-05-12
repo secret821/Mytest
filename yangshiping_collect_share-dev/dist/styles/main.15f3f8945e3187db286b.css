@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 0.24rem;
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+}
+.modal-hoc-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+.shareModal {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/sharemodal/sharebg.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 7.5rem;
+  height: 8.88rem;
+  top: calc((100vh - 10rem)/2);
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+
+.shareModal .helpbtn {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/sharemodal/helpbtn.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 4.13rem;
+  height: 0.89rem;
+  top: 6.9rem;
+  right: auto;
+  bottom: auto;
+  left: 1.7rem;
+}
+.askcard {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/askcard/askbg.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 7.5rem;
+  height: 11.2rem;
+  top: calc((100vh - 13rem)/2);
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+
+.askcard .askcardImage {
+  position: absolute;
+  width: 3.07rem;
+  height: auto;
+  top: 4.2rem;
+  right: auto;
+  bottom: auto;
+  left: 2.3rem;
+}
+
+.askcard .askcardImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.askcard .askcardImage .snowdec {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/givecard/snow.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 0.97rem;
+  height: 1.11rem;
+  top: -0.1rem;
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+
+.askcard .askcardImage .snowdec.right {
+  position: absolute;
+  width: 0.97rem;
+  height: 1.11rem;
+  top: -0.1rem;
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+
+.askcard .sendbtn {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/askcard/sendbtn.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 3.38rem;
+  height: 0.92rem;
+  top: 9.65rem;
+  right: auto;
+  bottom: auto;
+  left: 2.1rem;
+}
+.giveCardModal {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/givecard/givecardbg.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 7.5rem;
+  height: 11.2rem;
+  top: calc((100vh - 13rem)/2);
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+
+.giveCardModal .givecard {
+  position: absolute;
+  width: 3.07rem;
+  height: auto;
+  top: 4.2rem;
+  right: auto;
+  bottom: auto;
+  left: 2.2rem;
+}
+
+.giveCardModal .givecard img {
+  width: 100%;
+  height: 100%;
+}
+
+.giveCardModal .givecard .snowdec {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/givecard/snow.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 0.97rem;
+  height: 1.11rem;
+  top: -0.1rem;
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+
+.giveCardModal .givecard .snowdec.right {
+  position: absolute;
+  width: 0.97rem;
+  height: 1.11rem;
+  top: -0.1rem;
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+
+.giveCardModal .btn {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/givecard/receivebtn.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 3.38rem;
+  height: 0.92rem;
+  top: 9.65rem;
+  right: auto;
+  bottom: auto;
+  left: 2.1rem;
+}
+.loading {
+  width: 7.5rem;
+  height: 16.24rem;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.loading .bg174 {
+  width: 7.5rem;
+  height: 16.24rem;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/loading/bg174.png") no-repeat top left / 100% 100%;
+}
+
+.loading .progressBar {
+  width: 5.24rem;
+  height: 0.22rem;
+  left: 1.13rem;
+  top: 7.17rem;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 0.06rem;
+}
+
+.loading .progressBar .atBottom {
+  width: 5.24rem;
+  height: 0.22rem;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/loading/底部173.png") no-repeat top left / 100% 100%;
+}
+
+.loading .progressBar .loadingBg {
+  width: 5.16rem;
+  height: 0.14rem;
+  left: 0.05rem;
+  top: 0.04rem;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 0.06rem;
+}
+
+.loading .progressBar .above {
+  display: block;
+  position: relative;
+  width: 5.16rem;
+  height: 0.14rem;
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/loading/上面.png") no-repeat top left / 100% 100%;
+  border-radius: 0.06rem;
+}
+
+.loading .inLoad {
+  width: 1.17rem;
+  height: 0.23rem;
+  left: 3.22rem;
+  top: 7.58rem;
+  position: absolute;
+  font-size: 0.24rem;
+  line-height: 0.23rem;
+  color: #ffffff;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: translateX(-5.2rem);
+    transform: translateX(-5.2rem);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: translateX(-5.2rem);
+    transform: translateX(-5.2rem);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.homePage {
+  background: url("//yun.duiba.com.cn/spark/v2/temp_base/1642677119263/sharemodal/bg.png") no-repeat top left / 100% 100%;
+  position: absolute;
+  width: 7.5rem;
+  height: 16.24rem;
+  top: calc((100vh - 16.24rem)/2);
+  right: 0;
+  bottom: auto;
+  left: auto;
+  position: fixed;
+}
+
+/*# sourceMappingURL=main.15f3f8945e3187db286b.css.map*/
